@@ -1,0 +1,120 @@
+@startuml
+!pragma layout smetana
+
+title Domain Model - Patient Journey
+
+class Event {
+  date
+  type
+  description
+}
+
+class Appointment {
+  date
+  type
+  location
+}
+
+class MedicationLog {
+  date
+  medication
+  dose
+}
+
+class DiaryEntry {
+  date
+  title
+  content
+}
+
+class HormoneLog {
+  date
+  hormone
+  value
+}
+
+abstract class Journey {
+  startDate
+  status
+}
+
+class Patient {
+  name
+  dateOfBirth
+  diagnosis
+}
+
+class FertilityJourney {
+  roundNumber
+  eggsRetrieved
+  result
+}
+
+class CancerJourney {
+  cancerType
+  stage
+}
+
+class RehabilitationJourney {
+  injuryType
+  goal
+}
+
+class PsychiatryJourney {
+  condition
+}
+
+class OtherJourney {
+  description
+}
+
+enum Status {
+  ACTIVE
+  COMPLETED
+  PAUSED
+}
+
+enum Result {
+  POSITIVE
+  NEGATIVE
+  PENDING
+}
+
+enum EventType {
+  CONSULTATION
+  EXAMINATION
+  TREATMENT
+  TEST
+  OTHER
+}
+
+enum AppointmentType {
+  SCANNING
+  CONSULTATION
+  SURGERY
+  TRANSFER
+  BLOODTEST
+}
+
+' Inheritance
+FertilityJourney --|> Journey
+CancerJourney --|> Journey
+RehabilitationJourney --|> Journey
+PsychiatryJourney --|> Journey
+OtherJourney --|> Journey
+
+' Has a
+Patient *-- Journey : has a
+Journey *-- Event : has a
+Journey *-- Appointment : has a
+Journey *-- MedicationLog : has a
+Journey *-- DiaryEntry : has a
+FertilityJourney *-- HormoneLog : has a
+
+' Is a
+Journey -- Status : is a
+FertilityJourney -- Result : is a
+Event -- EventType : is a
+Appointment -- AppointmentType : is a
+
+@enduml
