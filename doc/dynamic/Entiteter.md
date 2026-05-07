@@ -9,11 +9,18 @@
   Important attributes: name and date of birth are used to identify the patient. diagnosis describes the reason for treatment (e.g. PCOS or unexplained infertility).
 
 
-- **Round** 
-  An IVF round is one complete treatment process from stimulation to pregnancy test. 
-  A patient can have multiple rounds if the first attempt is unsuccessful — the public health system offers up to 3 attempts. 
-  Round is the most important "container" in the system — everything else (medication, hormones, diary, appointments) belongs to a specific round. 
-  Important attributes: status (Active / Completed), result (Positive / Negative / Pending), eggs_retrieved and eggs_fertilised are used to compare rounds in the history.
+- **Journey (abstract)**
+  A Journey is the most important container in the system — everything else (events, medication, diary, appointments) belongs to a specific journey. 
+  Journey is abstract, meaning you never create a plain Journey — only a specific type such as FertilityJourney. 
+  All journey types share the same core data: start date and status. Important attributes: startDate (when the journey began), status (Active / Completed / Paused)
+
+
+- **FertilityJourney**
+  A FertilityJourney is a concrete journey type that extends Journey with fertility-specific data. 
+  It represents one complete IVF treatment process from stimulation to pregnancy test. 
+  A patient can have multiple rounds if the first attempt is unsuccessful. 
+  Important attributes: roundNumber, eggsRetrieved and eggsFertilised are used to compare rounds in the history. 
+  result (Positive / Negative / Pending) records the outcome of the pregnancy test.
 
 
 - **Event**
@@ -29,9 +36,10 @@
   Important attributes: medication (the name of the medication), dose (e.g. "150 IU"), taken (whether it was taken that day).
 
 
-- **HormoneLog** 
+- **HormoneLog**
   During the stimulation period the patient's hormone levels are measured regularly — typically oestradiol and LH — to assess how the ovaries are responding to the medication. 
   HormoneLog stores these measurements so they can be displayed as a graph over time, giving the patient insight into their body's response to the treatment. 
+  HormoneLog belongs specifically to FertilityJourney as hormone tracking is unique to fertility treatment. 
   Important attributes: hormone (e.g. "Oestradiol"), value (the measured value), unit (e.g. "pmol/L").
 
 
