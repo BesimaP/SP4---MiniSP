@@ -1,0 +1,35 @@
+@startuml
+!pragma layout smetana
+
+actor "Patient" as u
+
+usecase "UC1: StartSystem" as UC1
+usecase "UC2: OpretPatient" as UC2
+usecase "UC3: VælgForløbstype" as UC3
+
+rectangle "Fertilitetforløb" {
+  usecase "UC4: StartNyRunde" as UC4
+  usecase "UC5: LogMedicin" as UC5
+  usecase "UC6: LogHormonværdi" as UC6
+  usecase "UC7: TilføjAftale" as UC7
+  usecase "UC8: SeTidslinje" as UC8
+  usecase "UC9: SkrivDagbogsnote" as UC9
+  usecase "UC10: SeRundeHistorik" as UC10
+  usecase "UC11: AfslutRunde" as UC11
+}
+
+u --> UC1
+
+UC1 --> UC2
+UC1 --> UC3
+UC2 --> UC3
+UC3 --> UC4
+UC4 --> UC5
+UC4 --> UC6
+UC4 --> UC7
+UC4 --> UC8
+UC4 --> UC9
+UC4 --> UC10
+UC4 --> UC11
+
+@enduml

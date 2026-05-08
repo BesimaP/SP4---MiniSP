@@ -1,17 +1,20 @@
 ## UC1 – StartSystem
-- Systemet starter og indlæser patientdata fra SQLite
+- Systemet starter og viser en login-skærm
+- Bruger indtaster brugernavn og adgangskode og klikker log ind
 - Viser dashboard
-- Ingen patient → UC2
+- Ingen konto → UC2
 
 - Regnvejrsdag: Databasen kan ikke læses → fejlbesked vises, brugeren kan prøve igen
+- Regnvejrsdag: Forkert brugernavn eller adgangskode → fejlbesked, logger ikke ind
 
 ## UC2 – Opretpatient
-- Systemet viser en skærm med felter til navn, fødselsdato og diagnose
+- Systemet viser en skærm med felter til navn, fødselsdato, diagnose, brugernavn og adgangskode
 - Bruger udfylder felterne og klikker Gem
-- Patient gemmes i DB
+- Systemet opretter en ny patient og gemmer den i databasen
 - Viser dashboard
 
 - Regnvejrsdag: Et eller flere påkrævede felter er tomme → fejlbesked, gemmer ikke
+- Regnvejrsdag: Brugernavn er allerede i brug → fejlbesked, gemmer ikke
 
 ## UC3 – VælgForløbstype
 - Systemet viser en skærm med valgmulighederne: Fertilitet, Kræft, Genoptræning, Psykiatri, Andet 

@@ -3,9 +3,6 @@
 ## Præsentationsrunde
 **Hvem er jeg? Hvad er mine ønsker til og erfaring med gruppearbejdet?**
 
-- Lucas:
-  Arbejde på et større programmeringsprojekt og fokus på samarbejdet heri.
-
 - Besima:
   Fagligt fremskridt og at arbejde i teams.
   At samarbejde med andre er en erfaring i forvejen men ikke indenfor kode.

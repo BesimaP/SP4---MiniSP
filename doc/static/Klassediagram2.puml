@@ -1,6 +1,60 @@
 @startuml
 !pragma layout smetana
 
+' ===== CONTROLLERS =====
+class LoginController {
+  + void handleLogin()
+  + void handleCreatePatient()
+}
+
+class DashboardController {
+  + void initialize()
+}
+
+class JourneyController {
+  + void handleSelectJourney()
+}
+
+class RoundController {
+  + void handleStartRound()
+  + void handleEndRound()
+}
+
+class MedicationController {
+  + void handleAddMedication()
+  + void handleSave()
+  + MedicationLog getMedicationLog()
+}
+
+class HormoneController {
+  + void handleAddValue()
+  + void handleSave()
+  + HormoneLog getHormoneLog()
+}
+
+class AppointmentController {
+  + void handleAddAppointment()
+  + void handleSave()
+  + Appointment getAppointment()
+}
+
+class TimelineController {
+  + void initialize()
+  + Event getEvent()
+}
+
+class DiaryController {
+  + void handleAddNote()
+  + void handleSave()
+  + DiaryEntry getDiaryEntry()
+}
+
+class HistoryController {
+  + void initialize()
+  + FertilityJourney getRound()
+}
+
+' ===== MODEL =====
 abstract class Journey {
   - LocalDate startDate
   - Status status
@@ -140,12 +194,27 @@ enum AppointmentType {
   OTHER
 }
 
+' ===== CONTROLLER -> MODEL =====
+LoginController --> Patient
+DashboardController --> Patient
+DashboardController --> Journey
+JourneyController --> Journey
+RoundController --> FertilityJourney
+MedicationController --> MedicationLog
+HormoneController --> HormoneLog
+AppointmentController --> Appointment
+TimelineController --> Event
+DiaryController --> DiaryEntry
+HistoryController --> FertilityJourney
+
+' ===== INHERITANCE =====
 FertilityJourney --|> Journey
 CancerJourney --|> Journey
 RehabilitationJourney --|> Journey
 PsychiatryJourney --|> Journey
 OtherJourney --|> Journey
 
+' ===== COMPOSITION =====
 Patient *-- Journey
 Journey *-- Event
 Journey *-- Appointment
@@ -153,6 +222,7 @@ Journey *-- MedicationLog
 Journey *-- DiaryEntry
 FertilityJourney *-- HormoneLog
 
+' ===== ENUMS =====
 Journey -- Status
 FertilityJourney -- Result
 Event -- EventType
