@@ -1,0 +1,229 @@
+@startuml
+!pragma layout smetana
+
+package "model" {
+  abstract class Journey {
+    - LocalDate startDate
+    - Status status
+    + void setStatus(Status status)
+    + LocalDate getStartDate()
+    + Status getStatus()
+  }
+
+  class Patient {
+    - String name
+    - LocalDate dateOfBirth
+    - String diagnosis
+    - String username
+    - String password
+    + String getName()
+    + LocalDate getDateOfBirth()
+    + String getDiagnosis()
+    + String getUsername()
+    + String getPassword()
+  }
+
+  class FertilityJourney {
+    - int roundNumber
+    - int eggsRetrieved
+    - int eggsFertilised
+    - Result result
+    + void setResult(Result result)
+    + int getRoundNumber()
+    + int getEggsRetrieved()
+    + int getEggsFertilised()
+    + Result getResult()
+  }
+
+  class CancerJourney {
+    - String cancerType
+    - String stage
+    + String getCancerType()
+    + String getStage()
+  }
+
+  class RehabilitationJourney {
+    - String injuryType
+    - String goal
+    + String getInjuryType()
+    + String getGoal()
+  }
+
+  class PsychiatryJourney {
+    - String condition
+    + String getCondition()
+  }
+
+  class OtherJourney {
+    - String description
+    + String getDescription()
+  }
+
+  class Event {
+    - LocalDate date
+    - EventType type
+    - String description
+    + LocalDate getDate()
+    + EventType getType()
+    + String getDescription()
+  }
+
+  class Appointment {
+    - LocalDate date
+    - AppointmentType type
+    - String location
+    + LocalDate getDate()
+    + AppointmentType getType()
+    + String getLocation()
+  }
+
+  class MedicationLog {
+    - LocalDate date
+    - String medication
+    - String dose
+    - boolean taken
+    + void setTaken(boolean taken)
+    + LocalDate getDate()
+    + String getMedication()
+    + String getDose()
+    + boolean isTaken()
+  }
+
+  class HormoneLog {
+    - LocalDate date
+    - String hormone
+    - double value
+    - String unit
+    + LocalDate getDate()
+    + String getHormone()
+    + double getValue()
+    + String getUnit()
+  }
+
+  class DiaryEntry {
+    - LocalDate date
+    - String title
+    - String content
+    + LocalDate getDate()
+    + String getTitle()
+    + String getContent()
+  }
+}
+
+package "controller" {
+  class LoginController {
+    + void handleLogin()
+    + void handleCreatePatient()
+  }
+
+  class DashboardController {
+    + void initialize()
+  }
+
+  class JourneyController {
+    + void handleSelectJourney()
+  }
+
+  class RoundController {
+    + void handleStartRound()
+    + void handleEndRound()
+  }
+
+  class MedicationController {
+    + void handleAddMedication()
+    + void handleSave()
+  }
+
+  class HormoneController {
+    + void handleAddValue()
+    + void handleSave()
+  }
+
+  class AppointmentController {
+    + void handleAddAppointment()
+    + void handleSave()
+  }
+
+  class TimelineController {
+    + void initialize()
+  }
+
+  class DiaryController {
+    + void handleAddNote()
+    + void handleSave()
+  }
+
+  class HistoryController {
+    + void initialize()
+  }
+}
+
+package "enums" {
+  enum Status {
+    ACTIVE
+    COMPLETED
+    PAUSED
+  }
+
+  enum Result {
+    POSITIVE
+    NEGATIVE
+    PENDING
+  }
+
+  enum EventType {
+    CONSULTATION
+    EXAMINATION
+    STIMULATION
+    EGG_RETRIEVAL
+    FERTILISATION
+    TRANSFER
+    PREGNANCY_TEST
+    OTHER
+  }
+
+  enum AppointmentType {
+    SCANNING
+    CONSULTATION
+    EGG_RETRIEVAL
+    TRANSFER
+    BLOOD_TEST
+    OTHER
+  }
+}
+
+' CONTROLLER -> MODEL
+LoginController --> Patient
+DashboardController --> Patient
+DashboardController --> Journey
+JourneyController --> Journey
+RoundController --> FertilityJourney
+MedicationController --> MedicationLog
+HormoneController --> HormoneLog
+AppointmentController --> Appointment
+TimelineController --> Event
+DiaryController --> DiaryEntry
+HistoryController --> FertilityJourney
+
+' INHERITANCE
+FertilityJourney --|> Journey
+CancerJourney --|> Journey
+RehabilitationJourney --|> Journey
+PsychiatryJourney --|> Journey
+OtherJourney --|> Journey
+
+' COMPOSITION
+Patient *-- Journey
+Journey *-- Event
+Journey *-- Appointment
+Journey *-- MedicationLog
+Journey *-- DiaryEntry
+FertilityJourney *-- HormoneLog
+
+' ENUMS
+Journey -- Status
+FertilityJourney -- Result
+Event -- EventType
+Appointment -- AppointmentType
+
+@enduml
