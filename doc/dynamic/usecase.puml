@@ -4,14 +4,14 @@
 actor "Patient" as u
 
 usecase "UC1: StartSystem" as UC1
-usecase "UC2: OpretPatient" as UC2
+usecase "UC2: AdministrerProfil" as UC2
 usecase "UC3: VælgForløbstype" as UC3
 
 rectangle "Fertilitetforløb" {
   usecase "UC4: StartNyRunde" as UC4
-  usecase "UC5: LogMedicin" as UC5
+  usecase "UC5: TilføjAftale" as UC5
   usecase "UC6: LogHormonværdi" as UC6
-  usecase "UC7: TilføjAftale" as UC7
+  usecase "UC7: LogMedicin" as UC7
   usecase "UC8: SeTidslinje" as UC8
   usecase "UC9: SkrivDagbogsnote" as UC9
   usecase "UC10: SeRundeHistorik" as UC10

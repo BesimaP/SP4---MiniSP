@@ -1,11 +1,11 @@
-# SP4 - MiniSP
+# SP4 - Simpl
 
 **Entities:**
 
 - **Patient** 
   The central entity in the system. Represents the person undergoing fertility treatment. 
-  All other data is connected to the patient via Round. 
-  In this version there is only one patient in the system (no login), but the entity is included so the system is correctly modelled and easy to extend. 
+  All other data is connected to the patient via Round.
+  The system supports multiple patients via login. Each patient has a unique username and password.
   Important attributes: name and date of birth are used to identify the patient. diagnosis describes the reason for treatment (e.g. PCOS or unexplained infertility).
 
 
@@ -45,8 +45,8 @@
 
 - **DiaryEntry**
   An IVF process is emotionally demanding. 
-  The diary gives the patient a private place to write notes to themselves — symptoms, thoughts, questions for the doctor or simply how the day has been. 
-  It is the most personal part of the system and distinguishes FertiliTrack from the clinics' own systems. 
+  The diary gives the patient a private place to write notes to themselves — symptoms, thoughts, questions for the doctor or simply how the day has been.
+  It is the most personal part of the system and distinguishes Simpl from the clinics' own systems. 
   Important attributes: title (short headline), content (free text without limitation), date (automatically filled with today's date).
 
 

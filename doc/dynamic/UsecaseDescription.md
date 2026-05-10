@@ -10,10 +10,11 @@ Regnvejrsdag:
 - Forkert brugernavn eller adgangskode: Systemet viser en fejlbesked og logger ikke ind.
 
 
-## UC2: OpretPatient
+## UC2: AdministrerProfil
 Systemet viser en skærm med felter til navn, fødselsdato, diagnose, brugernavn og adgangskode. 
-Brugeren udfylder felterne og klikker Gem. Systemet opretter en ny patient og gemmer den i databasen. 
-Systemet viser dashboardet.
+Brugeren udfylder felterne og klikker Gem. 
+Systemet opretter en ny patient og gemmer den i databasen. 
+Brugeren kan efterfølgende redigere sine oplysninger eller slette sin konto og data.
 
 Regnvejrsdag:
 - Et eller flere påkrævede felter er tomme: Systemet viser en fejlbesked og gemmer ikke.
@@ -41,14 +42,16 @@ Regnvejrsdag:
 - Der er allerede en aktiv runde: Systemet viser en fejlbesked og opretter ikke en ny runde.
 
 
-## UC5: LogMedicin
-Systemet viser en skærm med tidligere medicinindtastninger for den aktive runde. 
-Brugeren klikker Tilføj Medicin og udfylder navn, dosis og dato. 
-Brugeren klikker Gem. Systemet gemmer medicinindtastningen i databasen og opdaterer listen.
+## UC5: TilføjAftale
+Systemet viser en skærm med kommende aftaler i en kalendervisning. 
+Brugeren klikker Tilføj Aftale og udfylder dato, type (scanning, konsultation mv.) og sted. 
+Brugeren klikker Gem. Systemet gemmer aftalen i databasen og opdaterer listen. 
+Brugeren kan markere en aftale som gennemført samt redigere eller slette en aftale. 
+Dashboardet viser kommende vigtige datoer.
 
 Regnvejrsdag:
 - Et eller flere påkrævede felter er tomme: Systemet viser en fejlbesked og gemmer ikke.
-
+- Datoen er i fortiden: Systemet viser en advarsel og beder brugeren bekræfte inden der gemmes.
 
 ## UC6: LogHormonværdi
 Systemet viser en skærm med hormonværdier for den aktive runde. 
@@ -59,14 +62,14 @@ Regnvejrsdag:
 - Værdien er ikke et tal: Systemet viser en fejlbesked og gemmer ikke.
 
 
-## UC7: TilføjAftale
-Systemet viser en skærm med kommende aftaler for den aktive runde. 
-Brugeren klikker Tilføj Aftale og udfylder dato, type og sted. 
-Brugeren klikker Gem. Systemet gemmer aftalen i databasen og opdaterer listen.
+## UC7: LogMedicin
+Systemet viser en skærm med tidligere medicinindtastninger for den aktive runde. 
+Brugeren klikker Tilføj Medicin og udfylder navn, dosis og tidspunkt. 
+Brugeren kan registrere om medicin er taget samt redigere eller afslutte medicinering. 
+Brugeren klikker Gem. Systemet gemmer medicinindtastningen i databasen og opdaterer listen.
 
 Regnvejrsdag:
-- Datoen er i fortiden: Systemet viser en advarsel og beder brugeren bekræfte inden der gemmes.
-
+- Et eller flere påkrævede felter er tomme: Systemet viser en fejlbesked og gemmer ikke.
 
 ## UC8: SeTidslinje
 Systemet viser en skærm med alle hændelser for den aktive runde i kronologisk rækkefølge. 

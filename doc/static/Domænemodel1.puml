@@ -19,6 +19,7 @@ class MedicationLog {
   date
   medication
   dose
+  taken
 }
 
 class DiaryEntry {
@@ -31,6 +32,7 @@ class HormoneLog {
   date
   hormone
   value
+  unit
 }
 
 abstract class Journey {
@@ -49,6 +51,7 @@ class Patient {
 class FertilityJourney {
   roundNumber
   eggsRetrieved
+  eggsFertilised
   result
 }
 

@@ -110,51 +110,70 @@ package "model" {
   }
 }
 
+package "view" {
+  class StartSystemView
+  class AdministrerProfilView
+  class VælgForløbView
+  class StartNyRundeView
+  class TilføjAftaleView
+  class LogHormonværdiView
+  class LogMedicinView
+  class SeTidslinjeView
+  class SkrivDagbogsNoteView
+  class SeRundeHistorikView
+  class AfslutRundeView
+}
+
 package "controller" {
-  class LoginController {
+  class StartSystemController {
     + void handleLogin()
+  }
+
+  class AdministrerProfilController {
     + void handleCreatePatient()
+    + void handleEditPatient()
+    + void handleDeletePatient()
   }
 
-  class DashboardController {
-    + void initialize()
-  }
-
-  class JourneyController {
+  class VælgForløbController {
     + void handleSelectJourney()
   }
 
-  class RoundController {
+  class StartNyRundeController {
     + void handleStartRound()
-    + void handleEndRound()
   }
 
-  class MedicationController {
-    + void handleAddMedication()
+  class TilføjAftaleController {
+    + void handleAddAppointment()
+    + void handleMarkCompleted()
     + void handleSave()
   }
 
-  class HormoneController {
+  class LogHormonværdiController {
     + void handleAddValue()
     + void handleSave()
   }
 
-  class AppointmentController {
-    + void handleAddAppointment()
+  class LogMedicinController {
+    + void handleAddMedication()
     + void handleSave()
   }
 
-  class TimelineController {
+  class SeTidslinjeController {
     + void initialize()
   }
 
-  class DiaryController {
+  class SkrivDagbogsNoteController {
     + void handleAddNote()
     + void handleSave()
   }
 
-  class HistoryController {
+  class SeRundeHistorikController {
     + void initialize()
+  }
+
+  class AfslutRundeController {
+    + void handleEndRound()
   }
 }
 
@@ -192,18 +211,31 @@ package "enums" {
   }
 }
 
+' VIEW -> CONTROLLER
+StartSystemView --> StartSystemController
+AdministrerProfilView --> AdministrerProfilController
+VælgForløbView --> VælgForløbController
+StartNyRundeView --> StartNyRundeController
+TilføjAftaleView --> TilføjAftaleController
+LogHormonværdiView --> LogHormonværdiController
+LogMedicinView --> LogMedicinController
+SeTidslinjeView --> SeTidslinjeController
+SkrivDagbogsNoteView --> SkrivDagbogsNoteController
+SeRundeHistorikView --> SeRundeHistorikController
+AfslutRundeView --> AfslutRundeController
+
 ' CONTROLLER -> MODEL
-LoginController --> Patient
-DashboardController --> Patient
-DashboardController --> Journey
-JourneyController --> Journey
-RoundController --> FertilityJourney
-MedicationController --> MedicationLog
-HormoneController --> HormoneLog
-AppointmentController --> Appointment
-TimelineController --> Event
-DiaryController --> DiaryEntry
-HistoryController --> FertilityJourney
+StartSystemController --> Patient
+AdministrerProfilController --> Patient
+VælgForløbController --> Journey
+StartNyRundeController --> FertilityJourney
+TilføjAftaleController --> Appointment
+LogHormonværdiController --> HormoneLog
+LogMedicinController --> MedicationLog
+SeTidslinjeController --> Event
+SkrivDagbogsNoteController --> DiaryEntry
+SeRundeHistorikController --> FertilityJourney
+AfslutRundeController --> FertilityJourney
 
 ' INHERITANCE
 FertilityJourney --|> Journey
