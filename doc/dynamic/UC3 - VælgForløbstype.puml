@@ -1,0 +1,32 @@
+@startuml
+!pragma layout smetana
+
+title UC3: VælgForløbstype
+
+actor "Patient" as u
+participant "VælgForløbView" as v
+participant "VælgForløbController" as c
+participant "Journey" as m
+database "SQLite" as db
+
+u -> v : Vises efter login
+v -> c : initialize()
+c --> v : visForløbstyper()
+v --> u : Viser valgmuligheder: Fertilitet, Kræft, Genoptræning, Psykiatri, Andet
+
+u -> v : Vælger forløbstype
+u -> v : Klikker Fortsæt
+v -> c : handleSelectJourney()
+
+alt Ingen forløbstype valgt
+  c --> v : visFejlbesked()
+  v --> u : "Ingen forløbstype er valgt"
+else Alt OK
+  c -> m : new FertilityJourney() / CancerJourney() osv.
+  c -> db : INSERT INTO journey VALUES (?, ?, ?)
+  db --> c : OK
+  c --> v : visRelevantDashboard()
+  v --> u : Viser relevant dashboard
+end
+
+@enduml

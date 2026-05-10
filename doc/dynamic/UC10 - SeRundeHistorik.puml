@@ -1,0 +1,33 @@
+@startuml
+!pragma layout smetana
+
+title UC10: SeRundeHistorik
+
+actor "Patient" as u
+participant "SeRundeHistorikView" as v
+participant "SeRundeHistorikController" as c
+participant "FertilityJourney" as m
+database "SQLite" as db
+
+u -> v : Åbner rundehistorikskærm
+v -> c : initialize()
+c -> db : SELECT * FROM fertility_journey WHERE patient_id = ? AND status = 'COMPLETED'
+db --> c : ResultSet
+
+alt Ingen tidligere runder findes
+  c --> v : visTomBesked()
+  v --> u : "Der er ingen historik"
+else Runder findes
+  c -> m : new FertilityJourney(roundNumber, eggsRetrieved, eggsFertilised, result)
+  c --> v : visRunder()
+  v --> u : Viser alle tidligere runder
+end
+
+u -> v : Vælger en runde
+v -> c : handleSelectRound()
+c -> db : SELECT * FROM fertility_journey WHERE id = ?
+db --> c : ResultSet
+c --> v : visRundeDetaljer()
+v --> u : Viser detaljer: udtagne æg, befrugtede æg, resultat
+
+@enduml

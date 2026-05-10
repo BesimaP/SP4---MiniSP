@@ -1,0 +1,38 @@
+@startuml
+!pragma layout smetana
+
+title UC6: LogHormonværdi
+
+actor "Patient" as u
+participant "LogHormonværdiView" as v
+participant "LogHormonværdiController" as c
+participant "HormoneLog" as m
+database "SQLite" as db
+
+u -> v : Åbner hormonskærm
+v -> c : initialize()
+c -> db : SELECT * FROM hormone_log WHERE journey_id = ?
+db --> c : ResultSet
+c --> v : visHormonværdier()
+v --> u : Viser skærm med hormonværdier
+
+u -> v : Klikker Tilføj Værdi
+c --> v : visOpretVærdiSkærm()
+v --> u : Viser skærm med felter
+
+u -> v : Udfylder hormontype, værdi, enhed og dato
+u -> v : Klikker Gem
+v -> c : handleSave()
+
+alt Værdi er ikke et tal
+  c --> v : visFejlbesked()
+  v --> u : "Værdien er ikke et tal"
+else Alt OK
+  c -> m : new HormoneLog(date, hormone, value, unit)
+  c -> db : INSERT INTO hormone_log VALUES (?, ?, ?, ?, ?)
+  db --> c : OK
+  c --> v : visOpdateretListe()
+  v --> u : Liste opdateres
+end
+
+@enduml

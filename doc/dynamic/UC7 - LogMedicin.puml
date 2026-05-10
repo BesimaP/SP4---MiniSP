@@ -1,0 +1,45 @@
+@startuml
+!pragma layout smetana
+
+title UC7: LogMedicin
+
+actor "Patient" as u
+participant "LogMedicinView" as v
+participant "LogMedicinController" as c
+participant "MedicationLog" as m
+database "SQLite" as db
+
+u -> v : Åbner medicinsk skærm
+v -> c : initialize()
+c -> db : SELECT * FROM medication_log WHERE journey_id = ?
+db --> c : ResultSet
+c --> v : visMedicinliste()
+v --> u : Viser tidligere medicinindtastninger
+
+u -> v : Klikker Tilføj Medicin
+c --> v : visOpretMedicinSkærm()
+v --> u : Viser skærm med felter
+
+u -> v : Udfylder navn, dosis og tidspunkt
+u -> v : Klikker Gem
+v -> c : handleSave()
+
+alt Felter er tomme
+  c --> v : visFejlbesked()
+  v --> u : "Et eller flere påkrævede felter er tomme"
+else Alt OK
+  c -> m : new MedicationLog(date, medication, dose, taken)
+  c -> db : INSERT INTO medication_log VALUES (?, ?, ?, ?, ?)
+  db --> c : OK
+  c --> v : visOpdateretListe()
+  v --> u : Liste opdateres
+end
+
+u -> v : Markerer medicin som taget
+v -> c : handleMarkTaken()
+c -> db : UPDATE medication_log SET taken = 1 WHERE id = ?
+db --> c : OK
+c --> v : visOpdateretListe()
+v --> u : Medicin markeret som taget
+
+@enduml

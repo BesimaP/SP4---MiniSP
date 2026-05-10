@@ -1,0 +1,37 @@
+@startuml
+!pragma layout smetana
+
+title UC2: AdministrerProfil
+
+actor "Patient" as u
+participant "AdministrerProfilView" as v
+participant "AdministrerProfilController" as c
+participant "Patient" as m
+database "SQLite" as db
+
+u -> v : Klikker Opret Konto
+v -> c : handleCreatePatient()
+c --> v : visOpretSkærm()
+v --> u : Viser skærm med felter
+
+u -> v : Udfylder navn, fødselsdato, diagnose, brugernavn, adgangskode
+u -> v : Klikker Gem
+v -> c : handleSave()
+
+alt Felter er tomme
+  c --> v : visFejlbesked()
+  v --> u : "Et eller flere påkrævede felter er tomme"
+else Brugernavn allerede i brug
+  c -> db : SELECT * FROM patient WHERE username = ?
+  db --> c : ResultSet ikke tom
+  c --> v : visFejlbesked()
+  v --> u : "Brugernavn er allerede i brug"
+else Alt OK
+  c -> m : new Patient(name, dateOfBirth, diagnosis, username, password)
+  c -> db : INSERT INTO patient VALUES (?, ?, ?, ?, ?)
+  db --> c : OK
+  c --> v : visDashboard()
+  v --> u : Viser dashboard
+end
+
+@enduml

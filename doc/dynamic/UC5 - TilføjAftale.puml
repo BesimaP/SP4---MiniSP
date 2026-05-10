@@ -1,0 +1,55 @@
+@startuml
+!pragma layout smetana
+
+title UC5: TilføjAftale
+
+actor "Patient" as u
+participant "TilføjAftaleView" as v
+participant "TilføjAftaleController" as c
+participant "Appointment" as m
+database "SQLite" as db
+
+u -> v : Åbner aftaleskærm
+v -> c : initialize()
+c -> db : SELECT * FROM appointment WHERE journey_id = ?
+db --> c : ResultSet
+c --> v : visAftaler()
+v --> u : Viser kommende aftaler i kalendervisning
+
+u -> v : Klikker Tilføj Aftale
+c --> v : visOpretAftaleSkærm()
+v --> u : Viser skærm med felter
+
+u -> v : Udfylder dato, type og sted
+u -> v : Klikker Gem
+v -> c : handleSave()
+
+alt Felter er tomme
+  c --> v : visFejlbesked()
+  v --> u : "Et eller flere påkrævede felter er tomme"
+else Dato er i fortiden
+  c --> v : visAdvarsel()
+  v --> u : "Datoen er i fortiden — vil du gemme alligevel?"
+  u -> v : Bekræfter
+  v -> c : handleConfirm()
+  c -> m : new Appointment(date, type, location)
+  c -> db : INSERT INTO appointment VALUES (?, ?, ?, ?)
+  db --> c : OK
+  c --> v : visOpdateretListe()
+  v --> u : Liste opdateres
+else Alt OK
+  c -> m : new Appointment(date, type, location)
+  c -> db : INSERT INTO appointment VALUES (?, ?, ?, ?)
+  db --> c : OK
+  c --> v : visOpdateretListe()
+  v --> u : Liste opdateres
+end
+
+u -> v : Markerer aftale som gennemført
+v -> c : handleMarkCompleted()
+c -> db : UPDATE appointment SET completed = 1 WHERE id = ?
+db --> c : OK
+c --> v : visOpdateretListe()
+v --> u : Aftale markeret som gennemført
+
+@enduml

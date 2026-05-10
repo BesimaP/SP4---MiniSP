@@ -1,0 +1,32 @@
+@startuml
+!pragma layout smetana
+
+title UC11: AfslutRunde
+
+actor "Patient" as u
+participant "AfslutRundeView" as v
+participant "AfslutRundeController" as c
+participant "FertilityJourney" as m
+database "SQLite" as db
+
+u -> v : Klikker Afslut Runde
+v -> c : handleEndRound()
+c --> v : visAfslutRundeSkærm()
+v --> u : Viser skærm med valg af resultat
+
+u -> v : Vælger resultat: Positiv, Negativ eller Afventer
+u -> v : Klikker Afslut Runde
+v -> c : handleSave()
+
+alt Intet resultat valgt
+  c --> v : visFejlbesked()
+  v --> u : "Intet resultat er valgt"
+else Alt OK
+  c -> m : setResult(result)
+  c -> db : UPDATE fertility_journey SET status = 'COMPLETED', result = ? WHERE id = ?
+  db --> c : OK
+  c --> v : visDashboard()
+  v --> u : Dashboard opdateres
+end
+
+@enduml

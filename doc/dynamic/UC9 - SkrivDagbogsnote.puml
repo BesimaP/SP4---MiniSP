@@ -1,0 +1,38 @@
+@startuml
+!pragma layout smetana
+
+title UC9: SkrivDagbogsnote
+
+actor "Patient" as u
+participant "SkrivDagbogsNoteView" as v
+participant "SkrivDagbogsNoteController" as c
+participant "DiaryEntry" as m
+database "SQLite" as db
+
+u -> v : Åbner dagbogsskærm
+v -> c : initialize()
+c -> db : SELECT * FROM diary_entry WHERE journey_id = ? ORDER BY date DESC
+db --> c : ResultSet
+c --> v : visNoticer()
+v --> u : Viser tidligere noter
+
+u -> v : Klikker Tilføj Note
+c --> v : visOpretNoteSkærm()
+v --> u : Viser skærm med felter
+
+u -> v : Udfylder titel og indhold
+u -> v : Klikker Gem
+v -> c : handleSave()
+
+alt Titel er tom
+  c --> v : visFejlbesked()
+  v --> u : "Titel er tom"
+else Alt OK
+  c -> m : new DiaryEntry(date, title, content)
+  c -> db : INSERT INTO diary_entry VALUES (?, ?, ?, ?)
+  db --> c : OK
+  c --> v : visOpdateretListe()
+  v --> u : Liste opdateres
+end
+
+@enduml
