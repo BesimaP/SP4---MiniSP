@@ -24,3 +24,5 @@ abstract public class Journey {
         return status;
     }
 }
+
+
