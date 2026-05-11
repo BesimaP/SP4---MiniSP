@@ -1,5 +1,7 @@
 package model;
 
+import enums.AppointmentType;
+
 import java.time.LocalDate;
 
     public class Appointment {

@@ -1,5 +1,8 @@
 package model;
 
+import enums.Result;
+import enums.Status;
+
 import java.time.LocalDate;
 
 public class FertilityJourney extends Journey{
