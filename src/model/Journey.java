@@ -6,8 +6,8 @@ import java.time.LocalDate;
 
 abstract public class Journey {
 
-    LocalDate startDate;
-    Status status;
+    private LocalDate startDate;
+    private Status status;
 
     public Journey(LocalDate startDate, Status status) {
         this.startDate = startDate;
