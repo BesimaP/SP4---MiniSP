@@ -108,7 +108,9 @@ package "model" {
     + String getTitle()
     + String getContent()
   }
+}
 
+package "enums" {
   enum Status {
     ACTIVE
     COMPLETED

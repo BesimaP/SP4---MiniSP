@@ -1,4 +1,6 @@
 package model;
+import enums.Status;
+
 import java.time.LocalDate;
 
 public class OtherJourney extends Journey{

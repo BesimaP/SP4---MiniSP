@@ -1,4 +1,4 @@
-package enums;
+package model;
 
 public enum EventType {
     CONSULTATION,
@@ -9,4 +9,5 @@ public enum EventType {
     TRANSFER,
     PREGNANCY_TEST,
     OTHER
+
 }

@@ -1,5 +1,7 @@
 package model;
 
+import enums.Status;
+
 import java.time.LocalDate;
 
 abstract public class Journey {
