@@ -143,7 +143,7 @@ package "model" {
 }
 
 package "view" {
-  class LoginView
+  class StartSystemView
   class ProfileView
   class JourneyTypeView
   class NewRoundView
@@ -210,7 +210,7 @@ package "controller" {
 }
 
 ' VIEW -> CONTROLLER
-LoginView --> StartSystemController
+StartSystemView --> StartSystemController
 ProfileView --> ManageProfileController
 JourneyTypeView --> JourneyTypeController
 NewRoundView --> NewRoundController
