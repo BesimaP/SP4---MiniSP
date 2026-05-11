@@ -1,5 +1,4 @@
 package model;
-import jdk.internal.org.jline.utils.Status;
 import java.time.LocalDate;
 
 public class PsychiatryJourney extends Journey{
