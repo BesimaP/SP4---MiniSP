@@ -2,21 +2,21 @@
 
 **Entities:**
 
-- **Patient** 
+- **model.Patient** 
   The central entity in the system. Represents the person undergoing fertility treatment. 
   All other data is connected to the patient via Round.
   The system supports multiple patients via login. Each patient has a unique username and password.
   Important attributes: name and date of birth are used to identify the patient. diagnosis describes the reason for treatment (e.g. PCOS or unexplained infertility).
 
 
-- **Journey (abstract)**
-  A Journey is the most important container in the system — everything else (events, medication, diary, appointments) belongs to a specific journey. 
-  Journey is abstract, meaning you never create a plain Journey — only a specific type such as FertilityJourney. 
+- **model.Journey (abstract)**
+  A model.Journey is the most important container in the system — everything else (events, medication, diary, appointments) belongs to a specific journey. 
+  model.Journey is abstract, meaning you never create a plain model.Journey — only a specific type such as FertilityJourney. 
   All journey types share the same core data: start date and status. Important attributes: startDate (when the journey began), status (Active / Completed / Paused)
 
 
 - **FertilityJourney**
-  A FertilityJourney is a concrete journey type that extends Journey with fertility-specific data. 
+  A FertilityJourney is a concrete journey type that extends model.Journey with fertility-specific data. 
   It represents one complete IVF treatment process from stimulation to pregnancy test. 
   A patient can have multiple rounds if the first attempt is unsuccessful. 
   Important attributes: roundNumber, eggsRetrieved and eggsFertilised are used to compare rounds in the history. 
