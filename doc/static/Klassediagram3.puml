@@ -210,8 +210,8 @@ package "controller" {
 }
 
 ' VIEW -> CONTROLLER
-LoginView --> LoginController
-ProfileView --> ProfileController
+LoginView --> StartSystemController
+ProfileView --> ManageProfileController
 JourneyTypeView --> JourneyTypeController
 NewRoundView --> NewRoundController
 AppointmentView --> AppointmentController
@@ -223,8 +223,8 @@ RoundHistoryView --> RoundHistoryController
 EndRoundView --> EndRoundController
 
 ' CONTROLLER -> MODEL
-LoginController --> Patient
-ProfileController --> Patient
+StartSystemController --> Patient
+ManageProfileController --> Patient
 JourneyTypeController --> Journey
 NewRoundController --> FertilityJourney
 AppointmentController --> Appointment
