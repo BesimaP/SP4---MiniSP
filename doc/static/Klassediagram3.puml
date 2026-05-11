@@ -157,11 +157,11 @@ package "view" {
 }
 
 package "controller" {
-  class LoginController {
+  class StartSystemController {
     + void handleLogin()
   }
 
-  class ProfileController {
+  class ManageProfileController {
     + void handleCreatePatient()
     + void handleEditPatient()
     + void handleDeletePatient()
