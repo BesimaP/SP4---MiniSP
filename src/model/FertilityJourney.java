@@ -1,12 +1,15 @@
 package model;
 
-    public class FertilityJourney extends Journey{
+import java.time.LocalDate;
+
+public class FertilityJourney extends Journey{
         private int roundNumber;
         private int eggsRetrieved;
         private int eggsFertilised;
         private Result result;
 
-        public FertilityJourney(int roundNumber, int eggsRetrieved, int eggsFertilised, Result result){
+        public FertilityJourney(LocalDate startDate, Status status, int roundNumber, int eggsRetrieved, int eggsFertilised, Result result) {
+            super(startDate, status); // Sender startDate og status til Journey
             this.roundNumber = roundNumber;
             this.eggsRetrieved = eggsRetrieved;
             this.eggsFertilised = eggsFertilised;
