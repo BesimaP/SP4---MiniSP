@@ -108,76 +108,7 @@ package "model" {
     + String getTitle()
     + String getContent()
   }
-}
 
-package "view" {
-  class StartSystemView
-  class AdministrerProfilView
-  class VælgForløbView
-  class StartNyRundeView
-  class TilføjAftaleView
-  class LogHormonværdiView
-  class LogMedicinView
-  class SeTidslinjeView
-  class SkrivDagbogsNoteView
-  class SeRundeHistorikView
-  class AfslutRundeView
-}
-
-package "controller" {
-  class StartSystemController {
-    + void handleLogin()
-  }
-
-  class AdministrerProfilController {
-    + void handleCreatePatient()
-    + void handleEditPatient()
-    + void handleDeletePatient()
-  }
-
-  class VælgForløbController {
-    + void handleSelectJourney()
-  }
-
-  class StartNyRundeController {
-    + void handleStartRound()
-  }
-
-  class TilføjAftaleController {
-    + void handleAddAppointment()
-    + void handleMarkCompleted()
-    + void handleSave()
-  }
-
-  class LogHormonværdiController {
-    + void handleAddValue()
-    + void handleSave()
-  }
-
-  class LogMedicinController {
-    + void handleAddMedication()
-    + void handleSave()
-  }
-
-  class SeTidslinjeController {
-    + void initialize()
-  }
-
-  class SkrivDagbogsNoteController {
-    + void handleAddNote()
-    + void handleSave()
-  }
-
-  class SeRundeHistorikController {
-    + void initialize()
-  }
-
-  class AfslutRundeController {
-    + void handleEndRound()
-  }
-}
-
-package "enums" {
   enum Status {
     ACTIVE
     COMPLETED
@@ -211,31 +142,98 @@ package "enums" {
   }
 }
 
+package "view" {
+  class StartSystemView
+  class ProfileView
+  class JourneyTypeView
+  class NewRoundView
+  class AppointmentView
+  class HormoneLogView
+  class MedicationLogView
+  class TimelineView
+  class DiaryView
+  class RoundHistoryView
+  class EndRoundView
+}
+
+package "controller" {
+  class StartSystemController {
+    + void handleLogin()
+  }
+
+  class ManageProfileController {
+    + void handleCreatePatient()
+    + void handleEditPatient()
+    + void handleDeletePatient()
+  }
+
+  class JourneyTypeController {
+    + void handleSelectJourney()
+  }
+
+  class NewRoundController {
+    + void handleStartRound()
+  }
+
+  class AppointmentController {
+    + void handleAddAppointment()
+    + void handleMarkCompleted()
+    + void handleSave()
+  }
+
+  class HormoneLogController {
+    + void handleAddValue()
+    + void handleSave()
+  }
+
+  class MedicationLogController {
+    + void handleAddMedication()
+    + void handleSave()
+  }
+
+  class TimelineController {
+    + void initialize()
+  }
+
+  class DiaryController {
+    + void handleAddNote()
+    + void handleSave()
+  }
+
+  class RoundHistoryController {
+    + void initialize()
+  }
+
+  class EndRoundController {
+    + void handleEndRound()
+  }
+}
+
 ' VIEW -> CONTROLLER
 StartSystemView --> StartSystemController
-AdministrerProfilView --> AdministrerProfilController
-VælgForløbView --> VælgForløbController
-StartNyRundeView --> StartNyRundeController
-TilføjAftaleView --> TilføjAftaleController
-LogHormonværdiView --> LogHormonværdiController
-LogMedicinView --> LogMedicinController
-SeTidslinjeView --> SeTidslinjeController
-SkrivDagbogsNoteView --> SkrivDagbogsNoteController
-SeRundeHistorikView --> SeRundeHistorikController
-AfslutRundeView --> AfslutRundeController
+ProfileView --> ManageProfileController
+JourneyTypeView --> JourneyTypeController
+NewRoundView --> NewRoundController
+AppointmentView --> AppointmentController
+HormoneLogView --> HormoneLogController
+MedicationLogView --> MedicationLogController
+TimelineView --> TimelineController
+DiaryView --> DiaryController
+RoundHistoryView --> RoundHistoryController
+EndRoundView --> EndRoundController
 
 ' CONTROLLER -> MODEL
 StartSystemController --> Patient
-AdministrerProfilController --> Patient
-VælgForløbController --> Journey
-StartNyRundeController --> FertilityJourney
-TilføjAftaleController --> Appointment
-LogHormonværdiController --> HormoneLog
-LogMedicinController --> MedicationLog
-SeTidslinjeController --> Event
-SkrivDagbogsNoteController --> DiaryEntry
-SeRundeHistorikController --> FertilityJourney
-AfslutRundeController --> FertilityJourney
+ManageProfileController --> Patient
+JourneyTypeController --> Journey
+NewRoundController --> FertilityJourney
+AppointmentController --> Appointment
+HormoneLogController --> HormoneLog
+MedicationLogController --> MedicationLog
+TimelineController --> Event
+DiaryController --> DiaryEntry
+RoundHistoryController --> FertilityJourney
+EndRoundController --> FertilityJourney
 
 ' INHERITANCE
 FertilityJourney --|> Journey

@@ -24,7 +24,7 @@ Regnvejrsdag:
 ## UC3: VælgForløbstype
 Systemet viser en skærm med valgmulighederne: Fertilitet, Kræft, Genoptræning, Psykiatri eller Andet. 
 Brugeren vælger en type og klikker Fortsæt. 
-Systemet opretter et nyt Journey med den valgte type og status AKTIV og gemmer det i databasen. 
+Systemet opretter et nyt model.Journey med den valgte type og status AKTIV og gemmer det i databasen. 
 Systemet sender brugeren videre til det relevante dashboard.
 
 Regnvejrsdag:
