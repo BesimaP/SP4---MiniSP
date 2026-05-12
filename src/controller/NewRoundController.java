@@ -24,7 +24,7 @@ public class NewRoundController {
             // Udfyld ?
             statement.setInt(1, journeyId);
             statement.setInt(2, roundNumber);
-            statement.setString(3, "PENDING");
+            statement.setString(3, "PENDING"); //enum status
 
             // Gem i databasen
             statement.executeUpdate();

@@ -1,49 +1,45 @@
 package controller;
 
 import model.DatabaseConnection;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-// Håndterer tilføjelse og gemning af hormonværdier
-
 public class HormoneLogController {
 
     // Køres når brugeren klikker Tilføj Værdi
-    public void handleAddValue(LocalDate date, String hormone, double value, String unit) {
-        Connection connection = DatabaseConnection.getConnection();
-        String sql = "INSERT INTO patient (date, hormone, value, unit) VALUES (?, ?, ?, ?)";
-
-        try{
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setString(1, date.toString());
-            statement.setString(2, hormone);
-            statement.setDouble(3, value);
-            statement.setString(4, unit);
-            statement.executeUpdate();
-            System.out.println("Values are added");
-        }catch(SQLException e){
-            System.out.println("Values could not be added: "+ e.getMessage());
-        }
+    public void handleAddValue(int journeyId, LocalDate date, String hormone, double value, String unit) {
+        // Kald handleSave med de indtastede oplysninger
+        handleSave(journeyId, date, hormone, value, unit);
     }
 
-    // Køres når brugeren klikker Gem
-    public void handleSave(LocalDate date, String hormone, double value, String unit) {
-        Connection connection = DatabaseConnection.getConnection();
-        String sql = "INSERT INTO patient (date, hormone, value, unit) VALUES (?, ?, ?, ?)";
+    // Gemmer en hormonværdi i databasen
+    public void handleSave(int journeyId, LocalDate date, String hormone, double value, String unit) {
 
-        try{
+        // Hent databaseforbindelsen
+        Connection connection = DatabaseConnection.getConnection();
+
+        // Gem hormonværdien i hormone_log tabellen
+        String sql = "INSERT INTO hormone_log (journey_id, date, hormone, value, unit) VALUES (?, ?, ?, ?, ?)";
+
+        try {
+            // Gør SQL klar
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setString(1, date.toString());
-            statement.setString(2, hormone);
-            statement.setDouble(3, value);
-            statement.setString(4, unit);
+
+            // Udfyld de fem ?
+            statement.setInt(1, journeyId);          // hvilket forløb
+            statement.setString(2, date.toString()); // dato
+            statement.setString(3, hormone);          // hormontype
+            statement.setDouble(4, value);            // værdi
+            statement.setString(5, unit);             // enhed
+
+            // Gem i databasen
             statement.executeUpdate();
-            System.out.println("The values are saved");
-        }catch (SQLException e){
-            System.out.println("The values could not be saved: "+ e.getMessage());
+            System.out.println("Hormone value saved!");
+
+        } catch (SQLException e) {
+            System.out.println("Could not save hormone value: " + e.getMessage());
         }
     }
 }
