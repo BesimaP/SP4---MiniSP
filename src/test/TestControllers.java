@@ -58,7 +58,7 @@ public class TestControllers {
 
         // Test 8 — Skriv dagbogsnote
         System.out.println("\n--- Test 8: Dagbogsnote ---");
-        DiaryController diary = new DiaryController(session);
+        DiaryController diary = new DiaryController();
         diary.handleSave(1, LocalDate.now(), "Min første note", "Det går godt!");
 
         // Test 9 — Se rundehistorik

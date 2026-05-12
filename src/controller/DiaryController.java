@@ -8,16 +8,11 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 
 public class DiaryController {
-    private Session session;
-
-    public DiaryController(Session session){
-        this.session = session;
-    }
 
     // Køres når brugeren klikker Tilføj Note
     public void handleAddNote(LocalDate date, String title, String content) {
         // Kald handleSave med de indtastede oplysninger
-        handleSave(session.getCurrentJourneyId(), date, title, content);
+        handleSave(Session.getCurrentJourneyId(), date, title, content);
     }
 
     // Gemmer en dagbogsnote i databasen

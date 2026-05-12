@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="ProfileView,startsystem,dashboard">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/DiaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DiaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/TestControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestControllers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/DiaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/DiaryController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +73,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "ProfileView__Besima",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
