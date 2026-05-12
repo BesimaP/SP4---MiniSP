@@ -16,11 +16,13 @@ public class StartSystemController {
     public Patient handleLogin(String userName, String passWord){
         Connection connection = DatabaseConnection.getConnection();
     String sql = "SELECT * FROM patient WHERE username = ? AND password = ?";
+
     try {
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setString(1, userName);
         statement.setString(2, passWord);
         ResultSet result = statement.executeQuery();
+
         if(result.next()){
             System.out.println("Login succesfull!");
             return new Patient(
@@ -39,7 +41,4 @@ public class StartSystemController {
         return null;
     }
 }
-
-
-
 }
