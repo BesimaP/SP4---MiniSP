@@ -1,8 +1,8 @@
+import controller.DiaryController;
 import controller.ManageProfileController;
 import controller.StartSystemController;
 import model.DatabaseConnection;
 import model.DatabaseInitializer;
-
 import java.time.LocalDate;
 
 public class Main {
@@ -14,6 +14,14 @@ public class Main {
         // Opret tabellerne hvis de ikke allerede eksisterer
         DatabaseInitializer.initialize();
 
+        //Diary entry test
+        DiaryController diaryController = new DiaryController();
+        diaryController.handleSave(
+                1,
+                LocalDate.of(2025, 1, 12),
+                "Min første entry",
+                "I dag gik det godt!"
+        );
 
         ManageProfileController manageProfileController = new ManageProfileController();
         manageProfileController.createUser("Tess", LocalDate.of(2001, 10,25), "pcos", "Tess123", "Kat123");
