@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="sekvensdiagram rettet til engelsk">
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="ProfileView,startsystem,dashboard">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/dynamic/usecase.puml" beforeDir="false" afterPath="$PROJECT_DIR$/doc/dynamic/usecase.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/static/Klassediagram3.puml" beforeDir="false" afterPath="$PROJECT_DIR$/doc/static/Klassediagram3.puml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -59,6 +60,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.TestControllers.executor": "Run",
+    "Maven.Simpl [javafx:run].executor": "Run",
     "Maven.Simpl [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
@@ -67,7 +69,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "ProfileView__Besima",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
@@ -76,7 +78,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.completion",
+    "settings.editor.selected.configurable": "project.propCompiler",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -87,7 +89,14 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Maven.Simpl [javafx:run]">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="SP4---MiniSP" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestControllers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.TestControllers" />
       <module name="SP4---MiniSP" />
@@ -107,8 +116,46 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Simpl [javafx:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.TestControllers" />
+      <item itemvalue="Maven.Simpl [javafx:run]" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.TestControllers" />
+        <item itemvalue="Application.TestControllers" />
         <item itemvalue="Application.TestControllers" />
       </list>
     </recent_temporary>
@@ -136,7 +183,7 @@
       <workItem from="1778581693768" duration="358000" />
       <workItem from="1778582220361" duration="56000" />
       <workItem from="1778582281291" duration="3448000" />
-      <workItem from="1778587078497" duration="3271000" />
+      <workItem from="1778587078497" duration="5020000" />
     </task>
     <task id="LOCAL-00001" summary="Oprettet:&#10;Event.java&#10;DiaryEntry.java&#10;CancerJourney.java&#10;RehabilitationJourney.java&#10;PsychiatryJourney.java&#10;OtherJourney.java&#10;ENUM: EventType">
       <option name="closed" value="true" />
@@ -266,7 +313,39 @@
       <option name="project" value="LOCAL" />
       <updated>1778589846478</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="klassediagram session oprettet">
+      <option name="closed" value="true" />
+      <created>1778590370222</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1778590370222</updated>
+    </task>
+    <task id="LOCAL-00018" summary="ProfileView,startsystem,dashboard">
+      <option name="closed" value="true" />
+      <created>1778609583567</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1778609583567</updated>
+    </task>
+    <task id="LOCAL-00019" summary="ProfileView,startsystem,dashboard">
+      <option name="closed" value="true" />
+      <created>1778609826360</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1778609826360</updated>
+    </task>
+    <task id="LOCAL-00020" summary="ProfileView,startsystem,dashboard">
+      <option name="closed" value="true" />
+      <created>1778611157289</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1778611157289</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,6 +366,8 @@
     <MESSAGE value="kommentar sat ind i package model" />
     <MESSAGE value="småfejl" />
     <MESSAGE value="sekvensdiagram rettet til engelsk" />
-    <option name="LAST_COMMIT_MESSAGE" value="sekvensdiagram rettet til engelsk" />
+    <MESSAGE value="klassediagram session oprettet" />
+    <MESSAGE value="ProfileView,startsystem,dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="ProfileView,startsystem,dashboard" />
   </component>
 </project>

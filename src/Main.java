@@ -15,7 +15,7 @@ public class Main extends Application {
         // Opret forbindelse til databasen
         DatabaseConnection.getConnection();
 
-        // Opret tabellerne hvis de ikke allerede eksisterer
+        // Opret tabellerne
         DatabaseInitializer.initialize();
 
         // Vis login-skærmen
@@ -25,7 +25,6 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        // Start JavaFX
         launch(args);
     }
 }
