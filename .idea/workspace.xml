@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="startsystemview done">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/EndRoundController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/EndRoundController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/JourneyTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/JourneyTypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ManageProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ManageProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/RoundHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/RoundHistoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/TimelineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/TimelineController.java" afterDir="false" />
-    </list>
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="de sidste klasser i controller er lavet" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +112,7 @@
       <workItem from="1778569909618" duration="1884000" />
       <workItem from="1778581693768" duration="358000" />
       <workItem from="1778582220361" duration="56000" />
-      <workItem from="1778582281291" duration="3422000" />
+      <workItem from="1778582281291" duration="3448000" />
     </task>
     <task id="LOCAL-00001" summary="Oprettet:&#10;Event.java&#10;DiaryEntry.java&#10;CancerJourney.java&#10;RehabilitationJourney.java&#10;PsychiatryJourney.java&#10;OtherJourney.java&#10;ENUM: EventType">
       <option name="closed" value="true" />
@@ -201,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778581607515</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="de sidste klasser i controller er lavet">
+      <option name="closed" value="true" />
+      <created>1778587022928</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1778587022928</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +217,8 @@
     <MESSAGE value="ManageProfileController" />
     <MESSAGE value="HormoneLogController" />
     <MESSAGE value="startsystemview done" />
-    <option name="LAST_COMMIT_MESSAGE" value="startsystemview done" />
+    <MESSAGE value="de sidste klasser i controller er lavet" />
+    <option name="LAST_COMMIT_MESSAGE" value="de sidste klasser i controller er lavet" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,41 +1,46 @@
 package controller;
 
 import model.DatabaseConnection;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
 // Håndterer tilføjelse og gemning af medicinindtastninger
-
 public class MedicationLogController {
 
     // Køres når brugeren klikker Tilføj Medicin
-    public void handleAddMedication() {
-
+    public void handleAddMedication(int journeyId, LocalDate date, String medication, String dose, boolean taken) {
+        // Kald handleSave med de indtastede oplysninger
+        handleSave(journeyId, date, medication, dose, taken);
     }
 
+    // Gemmer en medicinindtastning i databasen
+    public void handleSave(int journeyId, LocalDate date, String medication, String dose, boolean taken) {
 
-    // Køres når brugeren klikker Gem
-    public void handleSave(LocalDate date, String medication, String dose, boolean taken) {
+        // Hent databaseforbindelsen
         Connection connection = DatabaseConnection.getConnection();
-        String sql = "INSERT INTO medicationLog (date, hormone, value, unit) VALUES (?, ?, ?, ?)";
 
-        try{
+        // Gem medicinindtastningen i medication_log tabellen
+        String sql = "INSERT INTO medication_log (journey_id, date, medication, dose, taken) VALUES (?, ?, ?, ?, ?)";
+
+        try {
+            // Gør SQL klar
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setString(1, date.toString());
-            statement.setString(2, medication);
-            statement.setString(3, dose);
-            statement.setBoolean(4, taken);
+
+            // Udfyld de fem ?
+            statement.setInt(1, journeyId);           // hvilket forløb
+            statement.setString(2, date.toString());  // dato
+            statement.setString(3, medication);        // medicinens navn
+            statement.setString(4, dose);              // dosis
+            statement.setBoolean(5, taken);            // om medicinen er taget
+
+            // Gem i databasen
             statement.executeUpdate();
-            System.out.println("The values have been saved!");
-        }catch (SQLException e){
-            System.out.println("The values could not be saved: "+ e.getMessage());
+            System.out.println("Medication saved!");
+
+        } catch (SQLException e) {
+            System.out.println("Could not save medication: " + e.getMessage());
         }
-
     }
-
-    }
-
-
+}
