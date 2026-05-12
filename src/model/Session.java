@@ -3,22 +3,22 @@ package model;
 //Bruger logger ind -> Bruger vælger forløb -> bruges af de enkelte controllers
 
 public class Session {
-    private Patient currentPatient; //Gemmer den patient der er logget ind
-    private int currentJourneyId; //Gemmer id på den Journey brugeren har valgt
+    private static Patient currentPatient; //Gemmer den patient der er logget ind
+    private static int currentJourneyId; //Gemmer id på den Journey brugeren har valgt
 
-    public void setCurrentPatient(Patient patient){
-        this.currentPatient = patient;
+    public static void setCurrentPatient(Patient patient){
+        currentPatient = patient;
     }
 
-    public Patient getCurrentPatient(){
+    public static Patient getCurrentPatient(){
         return currentPatient;
     }
 
-    public void setCurrentJourneyId(int JourneyId) {
-        this.currentJourneyId = JourneyId;
+    public static void setCurrentJourneyId(int JourneyId) {
+        currentJourneyId = JourneyId;
     }
 
-    public int getCurrentJourneyId(){
+    public static int getCurrentJourneyId(){
         return currentJourneyId;
     }
 }
