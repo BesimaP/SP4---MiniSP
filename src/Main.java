@@ -1,29 +1,27 @@
-import controller.ManageProfileController;
-import controller.StartSystemController;
+import javafx.application.Application;
+import javafx.stage.Stage;
 import model.DatabaseConnection;
 import model.DatabaseInitializer;
+import view.StartSystemView;
 
-import java.time.LocalDate;
+public class Main extends Application {
 
-public class Main {
+    @Override
+    public void start(Stage stage) {
 
-    public static void main(String [] args){
         // Opret forbindelse til databasen
         DatabaseConnection.getConnection();
 
         // Opret tabellerne hvis de ikke allerede eksisterer
         DatabaseInitializer.initialize();
 
-        /*
-        Opret bruger
-        ManageProfileController manageProfileController = new ManageProfileController();
-        manageProfileController.createUser("Tess", LocalDate.of(2001, 10,25), "pcos", "Tess123", "Kat123");
+        // Vis login-skærmen
+        StartSystemView view = new StartSystemView();
+        view.show(stage);
+    }
 
-         */
-
-        //Login bruger
-
-        StartSystemController start = new StartSystemController();
-        start.handleLogin("Tess123", "Kat123");
+    public static void main(String[] args) {
+        // Start JavaFX
+        launch(args);
     }
 }
