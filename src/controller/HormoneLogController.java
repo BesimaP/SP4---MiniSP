@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 
 // Håndterer tilføjelse og gemning af hormonværdier
+
 public class HormoneLogController {
 
     // Køres når brugeren klikker Tilføj Værdi
