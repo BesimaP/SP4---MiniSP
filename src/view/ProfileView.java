@@ -1,4 +1,4 @@
 package view;
 
-public class ProfileView {
+    public class ProfileView {
 }

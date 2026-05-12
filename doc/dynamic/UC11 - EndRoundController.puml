@@ -1,0 +1,32 @@
+@startuml
+!pragma layout smetana
+
+title UC11: EndRound
+
+actor "Patient" as u
+participant "EndRoundView" as v
+participant "EndRoundController" as c
+participant "FertilityJourney" as m
+database "SQLite" as db
+
+u -> v : Clicks End Round
+v -> c : handleEndRound()
+c --> v : showEndRoundScreen()
+v --> u : Shows screen with result options
+
+u -> v : Selects result: Positive, Negative or Pending
+u -> v : Clicks End Round
+v -> c : handleSave()
+
+alt No result selected
+  c --> v : showError()
+  v --> u : "No result selected"
+else All OK
+  c -> m : setResult(result)
+  c -> db : UPDATE fertility_journey SET result = ? WHERE id = ?
+  db --> c : OK
+  c --> v : showDashboard()
+  v --> u : Dashboard updated
+end
+
+@enduml

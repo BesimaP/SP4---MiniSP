@@ -1,0 +1,36 @@
+@startuml
+!pragma layout smetana
+
+title UC1: StartSystem
+
+actor "Patient" as u
+participant "StartSystemView" as v
+participant "StartSystemController" as c
+participant "Patient" as m
+database "SQLite" as db
+
+u -> v : Opens application
+v -> c : show(stage)
+c -> db : SELECT * FROM patient WHERE username = ? AND password = ?
+db --> c : ResultSet
+
+alt Patient found
+  c -> m : new Patient(name, dateOfBirth, diagnosis)
+  c --> v : showDashboard()
+  v --> u : Shows dashboard
+else Patient not found
+  c --> v : showLoginScreen()
+  v --> u : Shows login screen
+end
+
+alt Wrong login
+  c --> v : showError()
+  v --> u : "Wrong username or password"
+end
+
+alt Database error
+  c --> v : showError()
+  v --> u : "Could not read database"
+end
+
+@enduml

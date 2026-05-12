@@ -1,0 +1,33 @@
+@startuml
+!pragma layout smetana
+
+title UC10: RoundHistory
+
+actor "Patient" as u
+participant "RoundHistoryView" as v
+participant "RoundHistoryController" as c
+participant "FertilityJourney" as m
+database "SQLite" as db
+
+u -> v : Opens round history screen
+v -> c : show(stage)
+c -> db : SELECT * FROM fertility_journey WHERE journey_id = ?
+db --> c : ResultSet
+
+alt No previous rounds found
+  c --> v : showEmptyMessage()
+  v --> u : "No history found"
+else Rounds found
+  c -> m : new FertilityJourney(roundNumber, eggsRetrieved, eggsFertilised, result)
+  c --> v : showRounds()
+  v --> u : Shows all previous rounds
+end
+
+u -> v : Selects a round
+v -> c : handleSelectRound()
+c -> db : SELECT * FROM fertility_journey WHERE id = ?
+db --> c : ResultSet
+c --> v : showRoundDetails()
+v --> u : Shows details: eggs retrieved, eggs fertilised, result
+
+@enduml

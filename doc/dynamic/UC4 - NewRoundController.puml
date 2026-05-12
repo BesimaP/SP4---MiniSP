@@ -1,0 +1,34 @@
+@startuml
+!pragma layout smetana
+
+title UC4: NewRound
+
+actor "Patient" as u
+participant "NewRoundView" as v
+participant "NewRoundController" as c
+participant "FertilityJourney" as m
+database "SQLite" as db
+
+u -> v : Clicks Start New Round
+v -> c : handleStartRound()
+
+c -> db : SELECT * FROM fertility_journey WHERE status = 'ACTIVE'
+db --> c : ResultSet
+
+alt Round already active
+  c --> v : showError()
+  v --> u : "A round is already active"
+else All OK
+  c --> v : showNewRoundScreen()
+  v --> u : Shows screen for new IVF round
+  u -> v : Fills in fields
+  u -> v : Clicks Start Round
+  v -> c : handleSave()
+  c -> m : new FertilityJourney(roundNumber, startDate)
+  c -> db : INSERT INTO fertility_journey VALUES (?, ?, ?)
+  db --> c : OK
+  c --> v : showDashboard()
+  v --> u : Dashboard updated with new round
+end
+
+@enduml

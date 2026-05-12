@@ -1,0 +1,31 @@
+@startuml
+!pragma layout smetana
+
+title UC8: Timeline
+
+actor "Patient" as u
+participant "TimelineView" as v
+participant "TimelineController" as c
+participant "Event" as m
+database "SQLite" as db
+
+u -> v : Opens timeline screen
+v -> c : show(stage)
+c -> db : SELECT * FROM event WHERE journey_id = ? ORDER BY date ASC
+db --> c : ResultSet
+
+alt No events found
+  c --> v : showEmptyMessage()
+  v --> u : "Timeline is empty"
+else Events found
+  c -> m : new Event(date, type, description)
+  c --> v : showEvents()
+  v --> u : Shows all events chronologically
+end
+
+u -> v : Clicks on an event
+v -> c : handleSelectEvent()
+c --> v : showDetails()
+v --> u : Shows details for the event
+
+@enduml

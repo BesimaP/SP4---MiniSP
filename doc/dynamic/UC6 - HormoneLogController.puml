@@ -1,0 +1,38 @@
+@startuml
+!pragma layout smetana
+
+title UC6: HormoneLog
+
+actor "Patient" as u
+participant "HormoneLogView" as v
+participant "HormoneLogController" as c
+participant "HormoneLog" as m
+database "SQLite" as db
+
+u -> v : Opens hormone screen
+v -> c : show(stage)
+c -> db : SELECT * FROM hormone_log WHERE journey_id = ?
+db --> c : ResultSet
+c --> v : showHormoneValues()
+v --> u : Shows screen with hormone values
+
+u -> v : Clicks Add Value
+c --> v : showCreateValueScreen()
+v --> u : Shows screen with fields
+
+u -> v : Fills in hormone type, value, unit and date
+u -> v : Clicks Save
+v -> c : handleSave()
+
+alt Value is not a number
+  c --> v : showError()
+  v --> u : "Value is not a number"
+else All OK
+  c -> m : new HormoneLog(date, hormone, value, unit)
+  c -> db : INSERT INTO hormone_log VALUES (?, ?, ?, ?, ?)
+  db --> c : OK
+  c --> v : showUpdatedList()
+  v --> u : List updated
+end
+
+@enduml

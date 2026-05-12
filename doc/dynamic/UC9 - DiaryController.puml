@@ -1,0 +1,38 @@
+@startuml
+!pragma layout smetana
+
+title UC9: Diary
+
+actor "Patient" as u
+participant "DiaryView" as v
+participant "DiaryController" as c
+participant "DiaryEntry" as m
+database "SQLite" as db
+
+u -> v : Opens diary screen
+v -> c : show(stage)
+c -> db : SELECT * FROM diary_entry WHERE journey_id = ? ORDER BY date DESC
+db --> c : ResultSet
+c --> v : showNotes()
+v --> u : Shows previous notes
+
+u -> v : Clicks Add Note
+c --> v : showCreateNoteScreen()
+v --> u : Shows screen with fields
+
+u -> v : Fills in title and content
+u -> v : Clicks Save
+v -> c : handleSave()
+
+alt Title is empty
+  c --> v : showError()
+  v --> u : "Title is empty"
+else All OK
+  c -> m : new DiaryEntry(date, title, content)
+  c -> db : INSERT INTO diary_entry VALUES (?, ?, ?, ?)
+  db --> c : OK
+  c --> v : showUpdatedList()
+  v --> u : List updated
+end
+
+@enduml

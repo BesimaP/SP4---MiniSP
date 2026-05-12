@@ -1,37 +1,37 @@
 @startuml
 !pragma layout smetana
 
-title UC2: AdministrerProfil
+title UC2: ManageProfile
 
 actor "Patient" as u
-participant "AdministrerProfilView" as v
-participant "AdministrerProfilController" as c
+participant "ProfileView" as v
+participant "ManageProfileController" as c
 participant "Patient" as m
 database "SQLite" as db
 
-u -> v : Klikker Opret Konto
+u -> v : Clicks Create Account
 v -> c : handleCreatePatient()
-c --> v : visOpretSkærm()
-v --> u : Viser skærm med felter
+c --> v : showCreateScreen()
+v --> u : Shows screen with fields
 
-u -> v : Udfylder navn, fødselsdato, diagnose, brugernavn, adgangskode
-u -> v : Klikker Gem
+u -> v : Fills in name, dateOfBirth, diagnosis, username, password
+u -> v : Clicks Save
 v -> c : handleSave()
 
-alt Felter er tomme
-  c --> v : visFejlbesked()
-  v --> u : "Et eller flere påkrævede felter er tomme"
-else Brugernavn allerede i brug
+alt Fields are empty
+  c --> v : showError()
+  v --> u : "One or more required fields are empty"
+else Username already in use
   c -> db : SELECT * FROM patient WHERE username = ?
-  db --> c : ResultSet ikke tom
-  c --> v : visFejlbesked()
-  v --> u : "Brugernavn er allerede i brug"
-else Alt OK
+  db --> c : ResultSet not empty
+  c --> v : showError()
+  v --> u : "Username already in use"
+else All OK
   c -> m : new Patient(name, dateOfBirth, diagnosis, username, password)
   c -> db : INSERT INTO patient VALUES (?, ?, ?, ?, ?)
   db --> c : OK
-  c --> v : visDashboard()
-  v --> u : Viser dashboard
+  c --> v : showDashboard()
+  v --> u : Shows dashboard
 end
 
 @enduml

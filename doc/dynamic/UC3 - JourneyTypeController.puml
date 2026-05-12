@@ -1,0 +1,32 @@
+@startuml
+!pragma layout smetana
+
+title UC3: JourneyType
+
+actor "Patient" as u
+participant "JourneyTypeView" as v
+participant "JourneyTypeController" as c
+participant "Journey" as m
+database "SQLite" as db
+
+u -> v : Shown after login
+v -> c : show(stage)
+c --> v : showJourneyTypes()
+v --> u : Shows options: Fertility, Cancer, Rehabilitation, Psychiatry, Other
+
+u -> v : Selects journey type
+u -> v : Clicks Continue
+v -> c : handleSelectJourney()
+
+alt No journey type selected
+  c --> v : showError()
+  v --> u : "No journey type selected"
+else All OK
+  c -> m : new FertilityJourney() / CancerJourney() etc.
+  c -> db : INSERT INTO journey VALUES (?, ?, ?, ?)
+  db --> c : OK
+  c --> v : showRelevantDashboard()
+  v --> u : Shows relevant dashboard
+end
+
+@enduml
