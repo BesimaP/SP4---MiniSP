@@ -23,6 +23,15 @@ package "model" {
     + String getPassword()
   }
 
+  class Session {
+    - Patient currentPatient
+    - int currentJourneyId
+    + void setCurrentPatient(Patient patient)
+    + Patient getCurrentPatient()
+    + void setCurrentJourneyId(int journeyId)
+    + int getCurrentJourneyId()
+  }
+
   class FertilityJourney {
     - int roundNumber
     - int eggsRetrieved
@@ -160,7 +169,7 @@ package "view" {
 
 package "controller" {
   class StartSystemController {
-    + void handleLogin()
+    + Patient handleLogin()
   }
 
   class ManageProfileController {
@@ -226,16 +235,26 @@ EndRoundView --> EndRoundController
 
 ' CONTROLLER -> MODEL
 StartSystemController --> Patient
+StartSystemController --> Session
 ManageProfileController --> Patient
 JourneyTypeController --> Journey
+JourneyTypeController --> Session
 NewRoundController --> FertilityJourney
+NewRoundController --> Session
 AppointmentController --> Appointment
+AppointmentController --> Session
 HormoneLogController --> HormoneLog
+HormoneLogController --> Session
 MedicationLogController --> MedicationLog
+MedicationLogController --> Session
 TimelineController --> Event
+TimelineController --> Session
 DiaryController --> DiaryEntry
+DiaryController --> Session
 RoundHistoryController --> FertilityJourney
+RoundHistoryController --> Session
 EndRoundController --> FertilityJourney
+EndRoundController --> Session
 
 ' INHERITANCE
 FertilityJourney --|> Journey
