@@ -3,6 +3,8 @@ package test;
 import controller.*;
 import model.DatabaseConnection;
 import model.DatabaseInitializer;
+import model.Session;
+
 import java.time.LocalDate;
 
 public class TestControllers {
@@ -12,6 +14,10 @@ public class TestControllers {
         // Opret forbindelse og tabeller
         DatabaseConnection.getConnection();
         DatabaseInitializer.initialize();
+
+        // Opret session
+        Session session = new Session();
+        session.setCurrentJourneyId(1);
 
         System.out.println("=== TEST START ===");
 
@@ -52,7 +58,7 @@ public class TestControllers {
 
         // Test 8 — Skriv dagbogsnote
         System.out.println("\n--- Test 8: Dagbogsnote ---");
-        DiaryController diary = new DiaryController();
+        DiaryController diary = new DiaryController(session);
         diary.handleSave(1, LocalDate.now(), "Min første note", "Det går godt!");
 
         // Test 9 — Se rundehistorik

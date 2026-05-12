@@ -1,7 +1,10 @@
+import controller.DiaryController;
+import controller.ManageProfileController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.DatabaseConnection;
 import model.DatabaseInitializer;
+import model.Session;
 import view.StartSystemView;
 
 public class Main extends Application {
@@ -19,6 +22,7 @@ public class Main extends Application {
         StartSystemView view = new StartSystemView();
         view.show(stage);
     }
+
 
     public static void main(String[] args) {
         // Start JavaFX
