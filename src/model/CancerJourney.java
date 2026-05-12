@@ -1,23 +1,29 @@
 package model;
-import enums.Status;
 
+import enums.Status;
 import java.time.LocalDate;
 
-public class CancerJourney extends Journey {
-    private String cancerType;
-    private String stage;
+    // Repræsenterer et kræftforløb — ikke implementeret i denne version
+    public class CancerJourney extends Journey {
 
-    public CancerJourney(LocalDate startDate, Status status, String cancerType, String stage){
-        super(startDate, status); // kalder Journeys constructor
-        this.cancerType = cancerType;
-        this.stage = stage;
+        // Felter
+        private String cancerType;
+        private String stage;
 
-    }
+        // Konstruktør — kalder Journey's konstruktør via super()
+        public CancerJourney(LocalDate startDate, Status status, String cancerType, String stage) {
+            super(startDate, status);
+            this.cancerType = cancerType;
+            this.stage = stage;
+        }
 
-    public String getCancerType(){
-        return cancerType;
+        // Hent kræfttypen
+        public String getCancerType() {
+            return cancerType;
+        }
+
+        // Hent stadiet
+        public String getStage() {
+            return stage;
+        }
     }
-    public String getStage(){
-        return stage;
-    }
-}

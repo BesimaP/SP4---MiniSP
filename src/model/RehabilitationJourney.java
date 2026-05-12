@@ -1,22 +1,29 @@
 package model;
-import enums.Status;
 
+import enums.Status;
 import java.time.LocalDate;
 
-public class RehabilitationJourney extends Journey{
-    private String injuryType;
-    private String goal;
+    // Repræsenterer et genoptræningsforløb — ikke implementeret i denne version
+    public class RehabilitationJourney extends Journey {
 
-    public RehabilitationJourney(LocalDate startDate, Status status, String injuryType, String goal){
-        super(startDate, status);
-        this.injuryType = injuryType;
-        this.goal = goal;
-    }
+        // Felter
+        private String injuryType;
+        private String goal;
 
-    public String getInjuryType(){
-        return injuryType;
+        // Konstruktør — kalder Journey's konstruktør via super()
+        public RehabilitationJourney(LocalDate startDate, Status status, String injuryType, String goal) {
+            super(startDate, status);
+            this.injuryType = injuryType;
+            this.goal = goal;
+        }
+
+        // Hent skadetypen
+        public String getInjuryType() {
+            return injuryType;
+        }
+
+        // Hent målet for genoptræningen
+        public String getGoal() {
+            return goal;
+        }
     }
-    public String getGoal(){
-        return goal;
-    }
-}

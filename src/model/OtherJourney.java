@@ -1,17 +1,22 @@
 package model;
-import enums.Status;
 
+import enums.Status;
 import java.time.LocalDate;
 
-public class OtherJourney extends Journey{
-    private String description;
+    // Repræsenterer et andet forløb — ikke implementeret i denne version
+    public class OtherJourney extends Journey {
 
-    public OtherJourney(LocalDate startDate, Status status, String description){
-        super(startDate, status);
-        this.description = description;
-    }
+        // Felter
+        private String description;
 
-    public String getDescription(){
-        return description;
+        // Konstruktør — kalder Journey's konstruktør via super()
+        public OtherJourney(LocalDate startDate, Status status, String description) {
+            super(startDate, status);
+            this.description = description;
+        }
+
+        // Hent beskrivelsen af forløbet
+        public String getDescription() {
+            return description;
+        }
     }
-}

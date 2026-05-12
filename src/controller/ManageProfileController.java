@@ -13,7 +13,7 @@ public class ManageProfileController {
     public void handleCreatePatient(String name, LocalDate dateOfBirth, String diagnosis, String username, String password) {
         Connection connection = DatabaseConnection.getConnection();
 
-        String sql = "INSERT INTO patient ( name , dateOfBirth , diagnosis , userName , password ) VALUES ( ? , ? , ? , ?, ?)";
+        String sql = "INSERT INTO patient ( name , dateOfBirth , diagnosis , username , password ) VALUES ( ? , ? , ? , ?, ?)";
 
         try {
             PreparedStatement statement = connection.prepareStatement(sql);

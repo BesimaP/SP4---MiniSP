@@ -1,29 +1,36 @@
 package model;
+
 import enums.EventType;
 import java.time.LocalDate;
 
-public class Event {
-    private LocalDate date;
-    private EventType type;
-    private String description;
+    // Repræsenterer en hændelse i patientens forløb
+    // Bruges til at bygge tidslinjen og give patienten overblik over forløbet
+    public class Event {
 
-    //Constructor
-    public Event(LocalDate date, EventType type, String description){
-        this.date = date;
-        this.type = type;
-        this.description = description;
-    }
-    //Brug af Event-objekt: Event myEvent = new Event(LocalDate.now(), EventType.CONSULTATION, "Første konsultation");
+        // Felter
+        private LocalDate date;
+        private EventType type;
+        private String description;
 
-    //Getters
-    public LocalDate getDate(){
-        return date;
-    }
+        // Konstruktør — bruges når vi opretter en ny hændelse
+        public Event(LocalDate date, EventType type, String description) {
+            this.date = date;
+            this.type = type;
+            this.description = description;
+        }
 
-    public EventType getType() {
-        return type;
+        // Hent datoen for hændelsen
+        public LocalDate getDate() {
+            return date;
+        }
+
+        // Hent typen af hændelsen
+        public EventType getType() {
+            return type;
+        }
+
+        // Hent beskrivelsen af hændelsen
+        public String getDescription() {
+            return description;
+        }
     }
-    public String getDescription(){
-        return description;
-    }
-}

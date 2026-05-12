@@ -2,7 +2,7 @@ package model;
 
 import java.time.LocalDate;
 
-// Repræsenterer en hormonmåling i et fertilitetforløb
+    // Repræsenterer en hormonmåling i et fertilitetforløb
     public class HormoneLog {
 
         // Felter
