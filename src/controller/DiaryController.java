@@ -7,14 +7,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-/*CREATE TABLE IF NOT EXISTS diary_entry (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        journey_id INTEGER NOT NULL,
-        date TEXT NOT NULL,
-        title TEXT NOT NULL,
-        content TEXT,
-        FOREIGN KEY (journey_id) REFERENCES journey(id)*/
-
 public class DiaryController {
     public void handleAddNote(){
 
