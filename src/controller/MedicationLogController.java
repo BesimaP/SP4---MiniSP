@@ -29,7 +29,7 @@ public class MedicationLogController {
             statement.setString(3, dose);
             statement.setBoolean(4, taken);
             statement.executeUpdate();
-            System.out.println("The values are saved");
+            System.out.println("The values have been saved!");
         }catch (SQLException e){
             System.out.println("The values could not be saved: "+ e.getMessage());
         }
