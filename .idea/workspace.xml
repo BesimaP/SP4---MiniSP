@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="..">
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="ManageProfileController">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ManageProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ManageProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/StartSystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/StartSystemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/HormoneLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/HormoneLogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -172,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778572523845</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="ManageProfileController">
+      <option name="closed" value="true" />
+      <created>1778576830492</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1778576830492</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +191,8 @@
     <MESSAGE value="HormoneLog.java, HormoneLogController, MedicationLog og MedicationLogController indsat" />
     <MESSAGE value="." />
     <MESSAGE value=".." />
-    <option name="LAST_COMMIT_MESSAGE" value=".." />
+    <MESSAGE value="ManageProfileController" />
+    <option name="LAST_COMMIT_MESSAGE" value="ManageProfileController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

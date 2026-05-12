@@ -14,8 +14,16 @@ public class Main {
         // Opret tabellerne hvis de ikke allerede eksisterer
         DatabaseInitializer.initialize();
 
-
+        /*
+        Opret bruger
         ManageProfileController manageProfileController = new ManageProfileController();
         manageProfileController.createUser("Tess", LocalDate.of(2001, 10,25), "pcos", "Tess123", "Kat123");
+
+         */
+
+        //Login bruger
+
+        StartSystemController start = new StartSystemController();
+        start.handleLogin("Tess123", "Kat123");
     }
 }
