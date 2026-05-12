@@ -1,32 +1,41 @@
 package controller;
 
 import model.DatabaseConnection;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-public class JourneyTypeController {
+    // JourneyTypeController håndterer oprettelse af et nyt forløb.
+    // Når patienten vælger en forløbstype gemmes det i journey tabellen
+    // med status ACTIVE og dagens dato som startdato.
+    public class JourneyTypeController {
 
-    public void handleSelectJourney(int patientId, String type){
-        Connection connection = DatabaseConnection.getConnection();
+        // Opretter et nyt forløb i databasen
+        public void handleSelectJourney(int patientId, String type) {
 
-        String sql = "INSERT INTO journey(patient_id, type, startDate,status) VALUES (?, ?, ?, ?)";
+            // Hent databaseforbindelsen
+            Connection connection = DatabaseConnection.getConnection();
 
-        try{
-            PreparedStatement statement = connection.prepareStatement(sql);
+            // Gem det nye forløb i journey tabellen
+            String sql = "INSERT INTO journey (patient_id, type, startDate, status) VALUES (?, ?, ?, ?)";
 
-            statement.setInt(1, patientId);        // patient_id
-            statement.setString(2, type);          // forløbstype fx "Fertilitet"
-            statement.setString(3, LocalDate.now().toString()); // startdato — i dag
-            statement.setString(4, "ACTIVE");      // status — altid ACTIVE når man starter
+            try {
+                // Gør SQL klar
+                PreparedStatement statement = connection.prepareStatement(sql);
 
-            statement.executeUpdate();
-            System.out.println("Journey created!");
-        } catch (SQLException e) {
-            System.out.println("Could not create journey");
+                // Udfyld de fire ?
+                statement.setInt(1, patientId);                     // hvilken patient
+                statement.setString(2, type);                       // forløbstype fx "Fertilitet"
+                statement.setString(3, LocalDate.now().toString()); // startdato — i dag
+                statement.setString(4, "ACTIVE");                   // status — altid ACTIVE når man starter
+
+                // Gem i databasen
+                statement.executeUpdate();
+                System.out.println("Journey created!");
+
+            } catch (SQLException e) {
+                System.out.println("Could not create journey: " + e.getMessage());
+            }
         }
-
     }
-}

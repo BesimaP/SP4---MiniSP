@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="MedicationLogController rettet og tilføjet kommentar">
-      <change afterPath="$PROJECT_DIR$/src/test/TestControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/DiaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DiaryController.java" afterDir="false" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="kommentar sat ind i package model">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/JourneyTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/JourneyTypeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/StartSystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/StartSystemController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +136,7 @@
       <workItem from="1778581693768" duration="358000" />
       <workItem from="1778582220361" duration="56000" />
       <workItem from="1778582281291" duration="3448000" />
-      <workItem from="1778587078497" duration="464000" />
+      <workItem from="1778587078497" duration="2013000" />
     </task>
     <task id="LOCAL-00001" summary="Oprettet:&#10;Event.java&#10;DiaryEntry.java&#10;CancerJourney.java&#10;RehabilitationJourney.java&#10;PsychiatryJourney.java&#10;OtherJourney.java&#10;ENUM: EventType">
       <option name="closed" value="true" />
@@ -233,7 +234,23 @@
       <option name="project" value="LOCAL" />
       <updated>1778587339502</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="test package oprettet">
+      <option name="closed" value="true" />
+      <created>1778587634907</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1778587634907</updated>
+    </task>
+    <task id="LOCAL-00014" summary="kommentar sat ind i package model">
+      <option name="closed" value="true" />
+      <created>1778588457696</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1778588457696</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,18 +267,8 @@
     <MESSAGE value="startsystemview done" />
     <MESSAGE value="de sidste klasser i controller er lavet" />
     <MESSAGE value="MedicationLogController rettet og tilføjet kommentar" />
-    <option name="LAST_COMMIT_MESSAGE" value="MedicationLogController rettet og tilføjet kommentar" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/model/Appointment.java</url>
-          <line>9</line>
-          <properties field="location" class="model.Appointment" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="test package oprettet" />
+    <MESSAGE value="kommentar sat ind i package model" />
+    <option name="LAST_COMMIT_MESSAGE" value="kommentar sat ind i package model" />
   </component>
 </project>
