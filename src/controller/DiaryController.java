@@ -1,31 +1,35 @@
 package controller;
 
 import model.DatabaseConnection;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
 public class DiaryController {
-    public void handleAddNote(){
 
+    // Køres når brugeren klikker Tilføj Note
+    public void handleAddNote(int journeyId, LocalDate date, String title, String content) {
+        // Kald handleSave med de indtastede oplysninger
+        handleSave(journeyId, date, title, content);
     }
 
-    public void handleSave(int journey_id, LocalDate date, String title, String content){
+    // Gemmer en dagbogsnote i databasen
+    public void handleSave(int journeyId, LocalDate date, String title, String content) {
         Connection connection = DatabaseConnection.getConnection();
 
-        String sql = "INSERT INTO diary_entry (journey_id, date , title , content ) VALUES (? , ? , ?, ?)";
+        String sql = "INSERT INTO diary_entry (journey_id, date, title, content) VALUES (?, ?, ?, ?)";
+
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, journey_id);
-            statement.setString(2, date.toString());
-            statement.setString(3, title);
-            statement.setString(4, content);
+            statement.setInt(1, journeyId);           // hvilket forløb
+            statement.setString(2, date.toString());  // dato
+            statement.setString(3, title);             // titel
+            statement.setString(4, content);           // indhold
             statement.executeUpdate();
-            System.out.println("Diary entry is successful ");
+            System.out.println("Diary entry saved!");
         } catch (SQLException e) {
-            System.out.println("Could not create diary entry " + e.getMessage());
+            System.out.println("Could not save diary entry: " + e.getMessage());
         }
-    };
+    }
 }
