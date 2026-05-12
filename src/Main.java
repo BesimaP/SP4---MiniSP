@@ -2,7 +2,6 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import model.DatabaseConnection;
 import model.DatabaseInitializer;
-import view.ProfileView;
 import view.StartSystemView;
 
 public class Main extends Application {
@@ -13,17 +12,15 @@ public class Main extends Application {
         // Opret forbindelse til databasen
         DatabaseConnection.getConnection();
 
-        // Opret tabellerne hvis de ikke allerede eksisterer
+        // Opret tabellerne
         DatabaseInitializer.initialize();
 
-        //Test - vis ProfileView
-        ProfileView view2 = new ProfileView();
-        view2.show(stage);
-
+        // Vis login-skærmen
+        StartSystemView view = new StartSystemView();
+        view.show(stage);
     }
 
     public static void main(String[] args) {
-        // Start JavaFX
         launch(args);
     }
 }
