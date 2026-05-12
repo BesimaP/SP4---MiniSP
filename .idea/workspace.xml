@@ -4,10 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="sekvensdiagram rettet til engelsk">
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="klassediagram session oprettet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/dynamic/usecase.puml" beforeDir="false" afterPath="$PROJECT_DIR$/doc/dynamic/usecase.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/static/Klassediagram3.puml" beforeDir="false" afterPath="$PROJECT_DIR$/doc/static/Klassediagram3.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpl.db" beforeDir="false" afterPath="$PROJECT_DIR$/simpl.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ProfileView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ProfileView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/JourneyTypeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/JourneyTypeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/ManageProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ManageProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/StartSystemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/StartSystemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Appointment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Appointment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/CancerJourney.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/CancerJourney.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/DiaryEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/DiaryEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Event.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/FertilityJourney.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/FertilityJourney.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Journey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Journey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/OtherJourney.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/OtherJourney.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Patient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/PsychiatryJourney.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/PsychiatryJourney.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/RehabilitationJourney.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/RehabilitationJourney.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +83,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "ProfileView__Besima",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
@@ -136,7 +152,7 @@
       <workItem from="1778581693768" duration="358000" />
       <workItem from="1778582220361" duration="56000" />
       <workItem from="1778582281291" duration="3448000" />
-      <workItem from="1778587078497" duration="3271000" />
+      <workItem from="1778587078497" duration="5020000" />
     </task>
     <task id="LOCAL-00001" summary="Oprettet:&#10;Event.java&#10;DiaryEntry.java&#10;CancerJourney.java&#10;RehabilitationJourney.java&#10;PsychiatryJourney.java&#10;OtherJourney.java&#10;ENUM: EventType">
       <option name="closed" value="true" />
@@ -266,7 +282,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778589846478</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="klassediagram session oprettet">
+      <option name="closed" value="true" />
+      <created>1778590370222</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1778590370222</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,6 +311,7 @@
     <MESSAGE value="kommentar sat ind i package model" />
     <MESSAGE value="småfejl" />
     <MESSAGE value="sekvensdiagram rettet til engelsk" />
-    <option name="LAST_COMMIT_MESSAGE" value="sekvensdiagram rettet til engelsk" />
+    <MESSAGE value="klassediagram session oprettet" />
+    <option name="LAST_COMMIT_MESSAGE" value="klassediagram session oprettet" />
   </component>
 </project>
