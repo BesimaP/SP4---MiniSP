@@ -20,7 +20,7 @@ public class MedicationLogController {
     // Køres når brugeren klikker Gem
     public void handleSave(LocalDate date, String medication, String dose, boolean taken) {
         Connection connection = DatabaseConnection.getConnection();
-        String sql = "INSERT INTO patient (date, hormone, value, unit) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO medicationLog (date, hormone, value, unit) VALUES (?, ?, ?, ?)";
 
         try{
             PreparedStatement statement = connection.prepareStatement(sql);
