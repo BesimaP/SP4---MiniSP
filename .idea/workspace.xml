@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="endround">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="EndRoundController rettet">
+      <change beforePath="$PROJECT_DIR$/src/view/StartSystemView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/StartSystemView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/StartSystemView.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -563,14 +566,29 @@
       <option name="project" value="LOCAL" />
       <updated>1778677169366</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="EndRoundController rettet">
+      <option name="closed" value="true" />
+      <created>1778678934327</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1778678934327</updated>
+    </task>
+    <task id="LOCAL-00049" summary="EndRoundController rettet">
+      <option name="closed" value="true" />
+      <created>1778678942355</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1778678942355</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="kommentar sat ind i package model" />
     <MESSAGE value="småfejl" />
     <MESSAGE value="sekvensdiagram rettet til engelsk" />
     <MESSAGE value="klassediagram session oprettet" />
@@ -595,6 +613,7 @@
     <MESSAGE value="JourneyTypeView opdateret" />
     <MESSAGE value="alle view opdateret så layout er automatisk" />
     <MESSAGE value="endround" />
-    <option name="LAST_COMMIT_MESSAGE" value="endround" />
+    <MESSAGE value="EndRoundController rettet" />
+    <option name="LAST_COMMIT_MESSAGE" value="EndRoundController rettet" />
   </component>
 </project>
