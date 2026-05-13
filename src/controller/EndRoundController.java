@@ -12,7 +12,7 @@ public class EndRoundController {
         Connection connection = DatabaseConnection.getConnection();
 
         // Opdater rundens status og resultat
-        String sql = "UPDATE fertility_journey SET result = ? WHERE id = ?";
+        String sql = "UPDATE fertility_journey SET result = ? WHERE id = ? AND journey_id = ?";
 
         try {
             // Gør SQL klar

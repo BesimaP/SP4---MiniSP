@@ -15,7 +15,6 @@ public class DiaryView {
 
     // Opretter controller objekt
     private DiaryController controller = new DiaryController();
-
     public void show(Stage stage) {
 
         // 1. Opret felter og knapper
@@ -27,7 +26,7 @@ public class DiaryView {
         saveButton.setOnAction(e -> {
             String title = titleField.getText();
             String content = contentField.getText();
-            controller.handleSave(Session.getCurrentJourneyId(), LocalDate.now(), title, content);
+            controller.handleSave(LocalDate.now(), title, content);
         });
 
         // 3. Layout — bygges op udenfor setOnAction

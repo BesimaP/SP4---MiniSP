@@ -3,6 +3,8 @@ package controller;
 import enums.EventType;
 import model.DatabaseConnection;
 import model.Event;
+import model.Session;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,7 +15,8 @@ import java.util.ArrayList;
 public class TimelineController {
 
     // Henter alle hændelser for det aktive forløb
-    public ArrayList<Event> initialize(int journeyId) {
+    public ArrayList<Event> initialize() {
+        int journeyId = Session.getCurrentJourneyId();
         Connection connection = DatabaseConnection.getConnection();
 
         // Hent alle hændelser sorteret efter dato
