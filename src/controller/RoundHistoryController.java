@@ -2,45 +2,46 @@ package controller;
 
 import model.DatabaseConnection;
 import model.Session;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class RoundHistoryController {
 
     // Henter alle IVF-runder for det aktive forløb
-    public void initialize() {
-        int journeyId = Session.getCurrentJourneyId();
+    public ArrayList<String> initialize() {
         Connection connection = DatabaseConnection.getConnection();
-
-        // Hent alle runder fra databasen
         String sql = "SELECT * FROM fertility_journey WHERE journey_id = ?";
 
-        try {
-            // Gør SQL klar
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, journeyId); // hvilket forløb
+        ArrayList<String> rounds = new ArrayList<>();
 
-            // Hent svaret fra databasen
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, Session.getCurrentJourneyId());
+
             ResultSet result = statement.executeQuery();
 
             // Løb igennem alle runder
             while (result.next()) {
-                int roundNumber = result.getInt("roundNumber");       // rundenummer
-                int eggsRetrieved = result.getInt("eggsRetrieved");   // udtagne æg
-                int eggsFertilised = result.getInt("eggsFertilised"); // befrugtede æg
-                String roundResult = result.getString("result");       // resultat
+                int roundNumber = result.getInt("roundNumber");
+                int eggsRetrieved = result.getInt("eggsRetrieved");
+                int eggsFertilised = result.getInt("eggsFertilised");
+                String roundResult = result.getString("result");
 
-                System.out.println("Round: " + roundNumber);
-                System.out.println("Eggs retrieved: " + eggsRetrieved);
-                System.out.println("Eggs fertilised: " + eggsFertilised);
-                System.out.println("Result: " + roundResult);
+                // Tilføj runden som en tekstlinje
+                rounds.add("Round " + roundNumber +
+                        " — Eggs retrieved: " + eggsRetrieved +
+                        " — Eggs fertilised: " + eggsFertilised +
+                        " — Result: " + roundResult);
             }
+            System.out.println("Round history loaded!");
 
         } catch (SQLException e) {
             System.out.println("Could not load round history: " + e.getMessage());
         }
+
+        return rounds;
     }
 }
