@@ -13,11 +13,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Patient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import view.ProfileView;
 import view.DashboardView;
 
 public class StartSystemView {
 
+    private static final Logger log = LoggerFactory.getLogger(StartSystemView.class);
     // Vi opretter et controller-objekt som vi bruger til at håndtere login
     // Controller ved hvordan man tjekker brugernavn og adgangskode i databasen
     private StartSystemController controller = new StartSystemController();
@@ -69,6 +72,14 @@ public class StartSystemView {
                 messageLabel.setText("Wrong username or password!");
             }
         });
+        usernameField.setOnAction(e -> {
+            loginButton.fire();
+        });
+        passwordField.setOnAction(e -> {
+            loginButton.fire();
+        });
+
+
 
         // Når brugeren klikker Create new profile åbner vi ProfileView
         // Vi sender stage med så ProfileView kan vises i samme vindue
