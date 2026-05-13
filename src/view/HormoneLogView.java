@@ -3,13 +3,11 @@ package view;
 import controller.HormoneLogController;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.time.LocalDate;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
+
 import model.Session;
 
 public class HormoneLogView {
@@ -17,7 +15,8 @@ public class HormoneLogView {
 
 
     public void show(Stage stage){
-        Label dateLabel = new Label("Date (yyyy-mm-dd):");
+        Label dateLabel = new Label("Date: ");
+        DatePicker datePicker = new DatePicker();
         Label hormoneLabel = new Label("Hormone:");
         Label valueLabel = new Label("Value:");
         Label unitLabel = new Label("Unit:");
@@ -31,11 +30,17 @@ public class HormoneLogView {
                 "AMH",
                 "FSH",
                 "LH",
-                "HCG"
+                "hCG"
         );
         hormoneBox.setPromptText("Choose hormon:");
         TextField valueField = new TextField();
-        TextField unitField = new TextField();
+        ComboBox<String> unitBox = new ComboBox<>();
+        unitBox.getItems().addAll(
+                "pmol/L",
+                "IU/L",
+                "nmol/L"
+        );
+        unitBox.setPromptText("Choose unit:");
 
 
         // Besked der vises efter gem
@@ -48,10 +53,10 @@ public class HormoneLogView {
         saveButton.setOnAction(e -> {
 
             // getText() henter hvad brugeren har skrevet i feltet
-            LocalDate date = LocalDate.parse(dateField.getText());
+            LocalDate date = datePicker.getValue();
             String hormone = hormoneBox.getValue();
             Double value = Double.parseDouble(valueField.getText());
-            String unit = unitField.getText();
+            String unit = unitBox.getValue();
 
             // Vi sender brugernavn og adgangskode til controlleren
             // Controlleren tjekker om de findes i databasen
@@ -75,7 +80,7 @@ public class HormoneLogView {
                 dateLabel, dateField,
                 hormoneLabel, hormoneBox,
                 valueLabel, valueField,
-                unitLabel, unitField,
+                unitLabel, unitBox,
                 saveButton,
                 messageLabel,
                 backButton);
