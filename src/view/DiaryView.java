@@ -3,10 +3,7 @@ package view;
 import controller.DiaryController;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Session;
@@ -25,6 +22,15 @@ public class DiaryView {
         Label messageLabel = new Label("");
 
         DatePicker datePicker = new DatePicker();
+        ComboBox<String>moodbox = new ComboBox<>();
+        moodbox.getItems().addAll(
+                "😊 Happy",
+                "😐 Neutral",
+                "😢 Sad",
+                "😰 Anxious",
+                "😴 Tired"
+        );
+        moodbox.setPromptText("How are you feeling?");
 
         Button saveButton = new Button("Save");
         Button backButton = new Button("Back to dashboard");
@@ -63,6 +69,7 @@ public class DiaryView {
         layout.setPadding(new Insets(20));
         layout.getChildren().addAll(
                 new Label("Date:"), datePicker,
+                new Label("Title:"), moodbox,
                 new Label("Title:"), titleField,
                 new Label("Content:"), contentField,
                 saveButton,

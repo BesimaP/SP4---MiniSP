@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="dato på dairyview tilføjet" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/DiaryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DiaryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/DiaryView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/DiaryView.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,6 +186,7 @@
       <workItem from="1778582220361" duration="56000" />
       <workItem from="1778582281291" duration="3448000" />
       <workItem from="1778587078497" duration="5020000" />
+      <workItem from="1778665952794" duration="894000" />
     </task>
     <task id="LOCAL-00001" summary="Oprettet:&#10;Event.java&#10;DiaryEntry.java&#10;CancerJourney.java&#10;RehabilitationJourney.java&#10;PsychiatryJourney.java&#10;OtherJourney.java&#10;ENUM: EventType">
       <option name="closed" value="true" />
@@ -407,7 +412,23 @@
       <option name="project" value="LOCAL" />
       <updated>1778665836091</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="test">
+      <option name="closed" value="true" />
+      <created>1778666163544</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1778666163544</updated>
+    </task>
+    <task id="LOCAL-00030" summary="test">
+      <option name="closed" value="true" />
+      <created>1778666453893</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1778666453893</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -438,6 +459,7 @@
     <MESSAGE value="klik." />
     <MESSAGE value="back to dashboardvi" />
     <MESSAGE value="dato på dairyview tilføjet" />
-    <option name="LAST_COMMIT_MESSAGE" value="dato på dairyview tilføjet" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
 </project>
