@@ -1,6 +1,8 @@
 package controller;
 
 import model.DatabaseConnection;
+import model.Session;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -9,8 +11,8 @@ import java.sql.SQLException;
 public class NewRoundController {
 
     // Gemmer en ny IVF-runde i databasen
-    public void handleStartRound(int journeyId, int roundNumber) {
-
+    public void handleStartRound(int roundNumber) {
+        int journeyId = Session.getCurrentJourneyId();
         // Hent forbindelse
         Connection connection = DatabaseConnection.getConnection();
 

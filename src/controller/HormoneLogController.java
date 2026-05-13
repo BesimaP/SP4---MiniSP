@@ -1,6 +1,8 @@
 package controller;
 
 import model.DatabaseConnection;
+import model.Session;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -9,14 +11,14 @@ import java.time.LocalDate;
 public class HormoneLogController {
 
     // Køres når brugeren klikker Tilføj Værdi
-    public void handleAddValue(int journeyId, LocalDate date, String hormone, double value, String unit) {
+    public void handleAddValue(LocalDate date, String hormone, double value, String unit) {
         // Kald handleSave med de indtastede oplysninger
-        handleSave(journeyId, date, hormone, value, unit);
+        handleSave(date, hormone, value, unit);
     }
 
     // Gemmer en hormonværdi i databasen
-    public void handleSave(int journeyId, LocalDate date, String hormone, double value, String unit) {
-
+    public void handleSave(LocalDate date, String hormone, double value, String unit) {
+        int journeyId = Session.getCurrentJourneyId(); //hentes fra session
         // Hent databaseforbindelsen
         Connection connection = DatabaseConnection.getConnection();
 

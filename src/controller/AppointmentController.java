@@ -1,17 +1,22 @@
 package controller;
 
 import model.DatabaseConnection;
+import model.Session;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class AppointmentController {
         // Køres når brugeren klikker Tilføj Aftale
-        public void handleAddAppointment(String date, String type, String location) {
-            // Kald handleSave med de indtastede oplysninger
-            handleSave(1, date, type, location); //STOR SANDSYNDLIGHED FOR FORKERT
+        public void handleAddAppointment(LocalDate date, String type, String location){
+            handleSave(date, type, location);
         }
+
+        //Muligt alternativ til koden herover
+
+
 
         // Køres når brugeren markerer en aftale som gennemført
         public void handleMarkCompleted(int appointmentId) {
@@ -34,7 +39,8 @@ public class AppointmentController {
         }
 
         // Køres når brugeren klikker Gem
-        public void handleSave(int journeyId, String date, String type, String location) {
+        public void handleSave(LocalDate date, String type, String location) {
+            int journeyId = Session.getCurrentJourneyId();
             Connection connection = DatabaseConnection.getConnection();
 
             String sql = "INSERT INTO appointment (journey_id, date, type, location) VALUES (?, ?, ?, ?)";
@@ -43,7 +49,7 @@ public class AppointmentController {
                 PreparedStatement statement = connection.prepareStatement(sql);
 
                 statement.setInt(1, journeyId);
-                statement.setString(2,date);
+                statement.setString(2,date.toString()); // LocalDate -> String til databasen
                 statement.setString(3,type);
                 statement.setString(4, location);
 

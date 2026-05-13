@@ -9,14 +9,17 @@ import java.time.LocalDate;
 
 public class DiaryController {
 
+    public DiaryController(){} //tom constructor
+
     // Køres når brugeren klikker Tilføj Note
     public void handleAddNote(LocalDate date, String title, String content) {
         // Kald handleSave med de indtastede oplysninger
-        handleSave(Session.getCurrentJourneyId(), date, title, content);
+        handleSave(date, title, content);
     }
 
     // Gemmer en dagbogsnote i databasen
-    public void handleSave(int journeyId, LocalDate date, String title, String content) {
+    public void handleSave(LocalDate date, String title, String content) {
+        int journeyId = Session.getCurrentJourneyId(); //henter fra session
         Connection connection = DatabaseConnection.getConnection();
 
         String sql = "INSERT INTO diary_entry (journey_id, date, title, content) VALUES (?, ?, ?, ?)";

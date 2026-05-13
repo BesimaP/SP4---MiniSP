@@ -1,6 +1,8 @@
 package controller;
 
 import model.DatabaseConnection;
+import model.Session;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -10,14 +12,14 @@ import java.time.LocalDate;
 public class MedicationLogController {
 
     // Køres når brugeren klikker Tilføj Medicin
-    public void handleAddMedication(int journeyId, LocalDate date, String medication, String dose, boolean taken) {
+    public void handleAddMedication(LocalDate date, String medication, String dose, boolean taken) {
         // Kald handleSave med de indtastede oplysninger
-        handleSave(journeyId, date, medication, dose, taken);
+        handleSave(date, medication, dose, taken);
     }
 
     // Gemmer en medicinindtastning i databasen
-    public void handleSave(int journeyId, LocalDate date, String medication, String dose, boolean taken) {
-
+    public void handleSave(LocalDate date, String medication, String dose, boolean taken) {
+        int journeyId = Session.getCurrentJourneyId(); //hentes fra session
         // Hent databaseforbindelsen
         Connection connection = DatabaseConnection.getConnection();
 

@@ -1,6 +1,8 @@
 package controller;
 
 import model.DatabaseConnection;
+import model.Session;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,7 +11,8 @@ import java.sql.SQLException;
 public class RoundHistoryController {
 
     // Henter alle IVF-runder for det aktive forløb
-    public void initialize(int journeyId) {
+    public void initialize() {
+        int journeyId = Session.getCurrentJourneyId();
         Connection connection = DatabaseConnection.getConnection();
 
         // Hent alle runder fra databasen
