@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="idea">
-      <change beforePath="$PROJECT_DIR$/src/view/DiaryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DiaryView.java" afterDir="false" />
-    </list>
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="diary" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +28,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -401,7 +400,47 @@
       <option name="project" value="LOCAL" />
       <updated>1778663728915</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="diary">
+      <option name="closed" value="true" />
+      <created>1778665201514</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1778665201514</updated>
+    </task>
+    <task id="LOCAL-00029" summary="diary">
+      <option name="closed" value="true" />
+      <created>1778665221447</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1778665221447</updated>
+    </task>
+    <task id="LOCAL-00030" summary="diary">
+      <option name="closed" value="true" />
+      <created>1778665274614</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1778665274614</updated>
+    </task>
+    <task id="LOCAL-00031" summary="diary">
+      <option name="closed" value="true" />
+      <created>1778665293812</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1778665293812</updated>
+    </task>
+    <task id="LOCAL-00032" summary="diary">
+      <option name="closed" value="true" />
+      <created>1778665444503</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1778665444503</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,6 +470,7 @@
     <MESSAGE value="klik" />
     <MESSAGE value="klik." />
     <MESSAGE value="idea" />
-    <option name="LAST_COMMIT_MESSAGE" value="idea" />
+    <MESSAGE value="diary" />
+    <option name="LAST_COMMIT_MESSAGE" value="diary" />
   </component>
 </project>
