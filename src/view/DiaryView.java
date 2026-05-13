@@ -3,9 +3,7 @@ package view;
 import controller.DiaryController;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Session;
@@ -20,22 +18,63 @@ public class DiaryView {
         // 1. Opret felter og knapper
         TextField titleField = new TextField();
         TextField contentField = new TextField();
+
+        Label messageLabel = new Label("");
+
+        DatePicker datePicker = new DatePicker();
+        ComboBox<String>moodbox = new ComboBox<>();
+        moodbox.getItems().addAll(
+                "😊 Happy",
+                "😐 Neutral",
+                "😢 Sad",
+                "😰 Anxious",
+                "😴 Tired"
+        );
+        moodbox.setPromptText("How are you feeling?");
+
         Button saveButton = new Button("Save");
+        Button backButton = new Button("Back to dashboard");
 
         // 2. Hvad sker der når knappen klikkes
         saveButton.setOnAction(e -> {
             String title = titleField.getText();
             String content = contentField.getText();
+            LocalDate date = datePicker.getValue();
+
+            if(title.isEmpty()){
+                messageLabel.setText("Title cannot be empty!");
+                return; //Stop her - gem ikke
+            }
+
+            if (content.isEmpty()){
+                messageLabel.setText("Content cannot be empty!");
+                return; //stop her - gem ikke
+            }
+
+            if(date == null){
+                messageLabel.setText("Please select a date!");
+            }
+
+            controller.handleSave(date, title, content);
             controller.handleSave(LocalDate.now(), title, content);
+            messageLabel.setText("Diary not saved");
+        });
+        backButton.setOnAction(e-> {
+            DashboardView dashboardView = new DashboardView();
+            dashboardView.show(stage, Session.getCurrentPatient());
         });
 
         // 3. Layout — bygges op udenfor setOnAction
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(20));
         layout.getChildren().addAll(
+                new Label("Date:"), datePicker,
+                new Label("Title:"), moodbox,
                 new Label("Title:"), titleField,
                 new Label("Content:"), contentField,
-                saveButton
+                saveButton,
+                messageLabel,
+                backButton
         );
 
         // 4. Vis skærmen
