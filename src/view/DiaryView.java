@@ -34,9 +34,24 @@ public class DiaryView {
             String title = titleField.getText();
             String content = contentField.getText();
             LocalDate date = datePicker.getValue();
+
+            if(title.isEmpty()){
+                messageLabel.setText("Title cannot be empty!");
+                return; //Stop her - gem ikke
+            }
+
+            if (content.isEmpty()){
+                messageLabel.setText("Content cannot be empty!");
+                return; //stop her - gem ikke
+            }
+
+            if(date == null){
+                messageLabel.setText("Please select a date!");
+            }
+
             controller.handleSave(date, title, content);
             controller.handleSave(LocalDate.now(), title, content);
-            messageLabel.setText("Note saved");
+            messageLabel.setText("Diary not saved");
         });
         backButton.setOnAction(e-> {
             DashboardView dashboardView = new DashboardView();
