@@ -5,6 +5,8 @@ import javafx.stage.Stage;
 import model.DatabaseConnection;
 import model.DatabaseInitializer;
 import model.Session;
+import model.Patient;
+import view.ProfileView;
 import view.StartSystemView;
 
 public class Main extends Application {
