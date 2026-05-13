@@ -23,41 +23,35 @@ public class StartSystemView {
 
     public void show(Stage stage) {
 
-        // Titel øverst
-        Label titleLabel = new Label("Welcome to Simpl 🌸");
-
-        // Labels og felter
+        // Labels
         Label usernameLabel = new Label("Username:");
-        usernameLabel.getStyleClass().add("field-label"); //css
+        usernameLabel.getStyleClass().add("field-label");
         Label passwordLabel = new Label("Password:");
-        passwordLabel.getStyleClass().add("field-label"); //css
-
-        // messageLabel bruges til at vise fejlbeskeder eller velkomstbeskeder
-        // Den starter tom — der vises ingenting
+        passwordLabel.getStyleClass().add("field-label");
         Label messageLabel = new Label("");
-        TextField usernameField = new TextField();
-        usernameField.getStyleClass().add("modern-field"); //css
-        usernameField.setMaxWidth(Double.MAX_VALUE); //css
 
-        // PasswordField er ligesom TextField men viser stjerner i stedet for bogstaver
+        // Felter
+        TextField usernameField = new TextField();
+        usernameField.getStyleClass().add("modern-field");
+        usernameField.setMaxWidth(Double.MAX_VALUE);
         PasswordField passwordField = new PasswordField();
-        passwordField.getStyleClass().add("modern-field"); //css
-        passwordField.setMaxWidth(Double.MAX_VALUE); //css
+        passwordField.getStyleClass().add("modern-field");
+        passwordField.setMaxWidth(Double.MAX_VALUE);
 
         // Knapper
         Button loginButton = new Button("Log in");
-        loginButton.getStyleClass().add("primary-button"); //css
-        loginButton.setMaxWidth(Double.MAX_VALUE); //css
+        loginButton.getStyleClass().add("primary-button");
+        loginButton.setMaxWidth(Double.MAX_VALUE);
         Button createButton = new Button("Create new profile");
-        createButton.getStyleClass().add("secondary-button"); //css
-        createButton.setMaxWidth(Double.MAX_VALUE); //css
+        createButton.getStyleClass().add("secondary-button");
+        createButton.setMaxWidth(Double.MAX_VALUE);
 
-        // Log in knap
+        // Login knap med validering og hasActiveJourney check
         loginButton.setOnAction(e -> {
             String username = usernameField.getText();
             String password = passwordField.getText();
 
-            // Validering — tjek at felterne ikke er tomme
+            // Validering
             if (username.isEmpty() || password.isEmpty()) {
                 messageLabel.setText("Please fill in all fields!");
                 return;
@@ -68,6 +62,7 @@ public class StartSystemView {
             if (patient != null) {
                 Session.setCurrentPatient(patient);
 
+                // Tjek om patienten har et aktivt forløb
                 if (controller.hasActiveJourney(patient.getId())) {
                     DashboardView dashboard = new DashboardView();
                     dashboard.show(stage, patient);
@@ -90,25 +85,17 @@ public class StartSystemView {
             profileView.show(stage);
         });
 
-        // Layout
-        VBox layout = new VBox(10);
-        // VBox er et lodret layout — elementerne stables oven på hinanden
-        // 12 er afstanden mellem elementerne i pixels
-        VBox layout = new VBox(6);
-        layout.getStyleClass().add("login-card");
-        layout.setMaxWidth(380);
-        layout.setPrefWidth(380);
-
-        //Hjerte icon
+        // Hjertebillede
         ImageView heartIcon = new ImageView(new Image(getClass().getResourceAsStream("/design/heart.png")));
         heartIcon.setFitWidth(200);
         heartIcon.setFitHeight(200);
         heartIcon.setPreserveRatio(true);
-        VBox.setMargin(heartIcon, new Insets(-60, 0, -60, 0)); //top, right, bottom, left
+        VBox.setMargin(heartIcon, new Insets(-60, 0, -60, 0));
         HBox heartBox = new HBox(heartIcon);
         heartBox.setAlignment(Pos.CENTER);
         heartBox.setPrefWidth(Double.MAX_VALUE);
 
+        // Titel og undertitel
         Label titleLabel = new Label("Simpl");
         titleLabel.getStyleClass().add("title-label");
         titleLabel.setMaxWidth(Double.MAX_VALUE);
@@ -119,12 +106,16 @@ public class StartSystemView {
         subtitleLabel.setMaxWidth(Double.MAX_VALUE);
         subtitleLabel.setAlignment(Pos.CENTER);
 
-        // Insets(20) giver 20 pixels luft rundt om alle elementerne
+        // Layout
+        VBox layout = new VBox(6);
+        layout.getStyleClass().add("login-card");
+        layout.setMaxWidth(380);
+        layout.setPrefWidth(380);
         layout.setPadding(new Insets(20));
         layout.getChildren().addAll(
-                titleLabel,
                 heartBox,
-                titleLabel, subtitleLabel,
+                titleLabel,
+                subtitleLabel,
                 usernameLabel, usernameField,
                 passwordLabel, passwordField,
                 loginButton,
@@ -132,22 +123,16 @@ public class StartSystemView {
                 messageLabel
         );
 
-        // Vis skærmen
-        Scene scene = new Scene(layout);
-        // Scene er selve indholdet af vinduet
-        // 500 er bredden og 600 er højden i pixels
+        // StackPane med gradient baggrund
         StackPane root = new StackPane(layout);
-        // baggrundfarven i konsollen med farve-fade
         root.setStyle("-fx-background-color: linear-gradient(to bottom right, #e8f5e9, #e3f2fd);");
         root.setPadding(new Insets(40));
-        Scene scene = new Scene(root, 500, 700);
-        // Henter css dokumentet der laver pretty stuff :D
-        scene.getStylesheets().add(getClass().getResource("/design/styles.css").toExternalForm());
 
-        // Sæt titlen på vinduet — det der vises øverst i vinduesrammen
+        // Vis skærmen
+        Scene scene = new Scene(root, 500, 700);
+        scene.getStylesheets().add(getClass().getResource("/design/styles.css").toExternalForm());
         stage.setTitle("Simpl — Log in");
         stage.setScene(scene);
-        stage.sizeToScene();
         stage.show();
     }
 }
