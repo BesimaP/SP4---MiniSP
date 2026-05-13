@@ -7,7 +7,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Session;
-
 import java.time.LocalDate;
 
 public class MedicationLogView {
