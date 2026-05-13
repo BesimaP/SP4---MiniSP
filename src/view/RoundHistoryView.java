@@ -57,9 +57,10 @@ public class RoundHistoryView {
         );
 
         // Vis skærmen
-        Scene scene = new Scene(layout, 400, 400);
+        Scene scene = new Scene(layout);
         stage.setTitle("Simpl — Round History");
         stage.setScene(scene);
+        stage.sizeToScene();
         stage.show();
     }
 }

@@ -107,9 +107,10 @@ public class AppointmentView {
         );
 
         // Vis skærmen
-        Scene scene = new Scene(layout, 350, 550);
+        Scene scene = new Scene(layout);
         stage.setTitle("Simpl — Add Appointment");
         stage.setScene(scene);
+        stage.sizeToScene();
         stage.show();
     }
 }

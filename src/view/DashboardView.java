@@ -86,9 +86,10 @@ public class DashboardView {
         );
 
         // Vis skærmen
-        Scene scene = new Scene(layout, 300, 400);
+        Scene scene = new Scene(layout);
         stage.setTitle("Simpl — Dashboard");
         stage.setScene(scene);
+        stage.sizeToScene();
         stage.show();
     }
 }

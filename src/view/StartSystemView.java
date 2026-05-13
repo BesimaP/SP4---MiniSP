@@ -83,9 +83,10 @@ public class StartSystemView {
         );
 
         // Vis skærmen
-        Scene scene = new Scene(layout, 300, 320);
+        Scene scene = new Scene(layout);
         stage.setTitle("Simpl — Log in");
         stage.setScene(scene);
+        stage.sizeToScene();
         stage.show();
     }
 }

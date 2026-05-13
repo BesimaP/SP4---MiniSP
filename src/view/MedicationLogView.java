@@ -91,9 +91,9 @@ public class MedicationLogView {
 
         // Vis skærmen
         Scene scene = new Scene(layout);
-        stage.sizeToScene();
         stage.setTitle("Simpl — Log Medication");
         stage.setScene(scene);
+        stage.sizeToScene();
         stage.show();
     }
 }

@@ -62,9 +62,10 @@ public class JourneyTypeView {
         );
 
         // Vis skærmen
-        Scene scene = new Scene(layout, 300, 200);
+        Scene scene = new Scene(layout);
         stage.setTitle("Simpl — Select Journey Type");
         stage.setScene(scene);
+        stage.sizeToScene();
         stage.show();
     }
 }
