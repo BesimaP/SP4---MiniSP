@@ -1,63 +1,78 @@
 package view;
 
-// Vi importerer de JavaFX klasser vi skal bruge
-// Scene er selve indholdet af vinduet
-// Stage er vinduet
-// VBox er et lodret layout
-// Button er en knap
-// Label er tekst
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import model.Session;
 import model.Patient;
+import model.Session;
 
 public class DashboardView {
 
-    // show() metoden viser dashboardet på skærmen
-    // Den tager to ting med sig:
-    // stage = vinduet vi viser skærmen i
-    // patient = den patient der er logget ind
     public void show(Stage stage, Patient patient) {
 
-        model.Session.setCurrentPatient(patient);
-        // Label er bare tekst der vises på skærmen
-        // Vi bruger patient.getName() til at hente patientens navn
-        // Så vises "Welcome Anna!" hvis patienten hedder Anna
+        // Gem patienten i Session
+        Session.setCurrentPatient(patient);
+
+        // Velkomstbesked
         Label welcomeLabel = new Label("Welcome " + patient.getName() + "!");
 
-        // Button er en knap brugeren kan klikke på
-        // Teksten i parentesen er det der står på knappen
+        // Knapper
         Button hormoneButton = new Button("Log hormone value");
-        hormoneButton.setOnAction(e -> {
-            HormoneLogView hormoneLogView = new HormoneLogView();
-            hormoneLogView.show(stage);
-        });
         Button medicationButton = new Button("Log medication");
         Button appointmentButton = new Button("Add appointment");
         Button diaryButton = new Button("Diary");
-        diaryButton.setOnAction(e ->{
-            DiaryView diaryView = new DiaryView();
-            diaryView.show(stage);
-        });
         Button timelineButton = new Button("Timeline");
         Button historyButton = new Button("Round history");
         Button newRoundButton = new Button("Start new round");
         Button endRoundButton = new Button("End round");
 
-        // VBox er et lodret layout — elementerne stables oven på hinanden
-        // 10 er afstanden mellem elementerne i pixels
+        // Kobl knapper til views
+        hormoneButton.setOnAction(e -> {
+            HormoneLogView view = new HormoneLogView();
+            view.show(stage);
+        });
+
+        medicationButton.setOnAction(e -> {
+            MedicationLogView view = new MedicationLogView();
+            view.show(stage);
+        });
+
+        appointmentButton.setOnAction(e -> {
+            AppointmentView view = new AppointmentView();
+            view.show(stage);
+        });
+
+        diaryButton.setOnAction(e -> {
+            DiaryView view = new DiaryView();
+            view.show(stage);
+        });
+
+        timelineButton.setOnAction(e -> {
+            TimelineView view = new TimelineView();
+            view.show(stage);
+        });
+
+        historyButton.setOnAction(e -> {
+            RoundHistoryView view = new RoundHistoryView();
+            view.show(stage);
+        });
+
+        newRoundButton.setOnAction(e -> {
+            NewRoundView view = new NewRoundView();
+            view.show(stage);
+        });
+
+        endRoundButton.setOnAction(e -> {
+            EndRoundView view = new EndRoundView();
+            view.show(stage);
+        });
+
+        // Layout
         VBox layout = new VBox(10);
-
-        // setPadding giver luft rundt om elementerne
-        // Insets(20) betyder 20 pixels luft på alle sider
         layout.setPadding(new Insets(20));
-
-        // getChildren().addAll() tilføjer alle elementer til layoutet
-        // De vises i den rækkefølge vi tilføjer dem
         layout.getChildren().addAll(
                 welcomeLabel,
                 hormoneButton,
@@ -70,17 +85,10 @@ public class DashboardView {
                 endRoundButton
         );
 
-        // Scene er selve indholdet af vinduet
-        // 300 er bredden og 400 er højden i pixels
+        // Vis skærmen
         Scene scene = new Scene(layout, 300, 400);
-
-        // Sæt titlen på vinduet
         stage.setTitle("Simpl — Dashboard");
-
-        // Sæt scenen på vinduet
         stage.setScene(scene);
-
-        // Vis vinduet
         stage.show();
     }
 }
