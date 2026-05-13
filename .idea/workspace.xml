@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="alle view opdateret så layout er automatisk">
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="endround">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -555,14 +555,21 @@
       <option name="project" value="LOCAL" />
       <updated>1778675821503</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="endround">
+      <option name="closed" value="true" />
+      <created>1778677169366</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1778677169366</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test package oprettet" />
     <MESSAGE value="kommentar sat ind i package model" />
     <MESSAGE value="småfejl" />
     <MESSAGE value="sekvensdiagram rettet til engelsk" />
@@ -587,6 +594,7 @@
     <MESSAGE value="dash opdateret" />
     <MESSAGE value="JourneyTypeView opdateret" />
     <MESSAGE value="alle view opdateret så layout er automatisk" />
-    <option name="LAST_COMMIT_MESSAGE" value="alle view opdateret så layout er automatisk" />
+    <MESSAGE value="endround" />
+    <option name="LAST_COMMIT_MESSAGE" value="endround" />
   </component>
 </project>

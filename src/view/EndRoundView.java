@@ -25,7 +25,7 @@ public class EndRoundView {
 
         Label messageLabel = new Label();
 
-        Button endButton = new Button();
+        Button endButton = new Button("End round");
         endButton.setOnAction(e -> {
             String result = resultBox.getValue();
             if (result == null) {
@@ -36,7 +36,7 @@ public class EndRoundView {
             }
         });
 
-        Button backButton = new Button();
+        Button backButton = new Button("Back");
         backButton.setOnAction(e -> {
             new DashboardView().show(stage, Session.getCurrentPatient());
         });
