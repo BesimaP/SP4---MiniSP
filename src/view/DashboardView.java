@@ -1,7 +1,9 @@
 package view;
 
+import controller.AppointmentController;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Separator;
@@ -10,6 +12,7 @@ import javafx.stage.Stage;
 import model.Patient;
 import model.Session;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class DashboardView {
 
@@ -17,6 +20,18 @@ public class DashboardView {
 
         // Gem patienten i Session
         Session.setCurrentPatient(patient);
+
+        // Tjek for kommende aftaler
+        AppointmentController appointmentController = new AppointmentController();
+        ArrayList<String> appointments = appointmentController.getUpcomingAppointments();
+
+        if (!appointments.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Påmindelse");
+            alert.setHeaderText("Du har kommende aftaler!");
+            alert.setContentText(String.join("\n", appointments));
+            alert.show();
+        }
 
         // Info labels
         Label welcomeLabel = new Label("Welcome " + patient.getName() + "!");
