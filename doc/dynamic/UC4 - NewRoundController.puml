@@ -10,22 +10,19 @@ participant "FertilityJourney" as m
 database "SQLite" as db
 
 u -> v : Clicks Start New Round
-v -> c : handleStartRound()
+v --> u : Shows screen for new IVF round
 
-c -> db : SELECT * FROM fertility_journey WHERE status = 'ACTIVE'
-db --> c : ResultSet
+u -> v : Fills in round number
+u -> v : Clicks Start Round
+v -> c : handleStartRound(roundNumber)
 
-alt Round already active
+alt Round number is empty
   c --> v : showError()
-  v --> u : "A round is already active"
+  v --> u : "Please fill in round number"
 else All OK
-  c --> v : showNewRoundScreen()
-  v --> u : Shows screen for new IVF round
-  u -> v : Fills in fields
-  u -> v : Clicks Start Round
-  v -> c : handleSave()
-  c -> m : new FertilityJourney(roundNumber, startDate)
-  c -> db : INSERT INTO fertility_journey VALUES (?, ?, ?)
+  c -> db : INSERT INTO fertility_journey (journey_id, roundNumber, result) VALUES (?, ?, ?)
+  db --> c : OK
+  c -> db : INSERT INTO event (journey_id, date, type, description) VALUES (?, ?, ?, ?)
   db --> c : OK
   c --> v : showDashboard()
   v --> u : Dashboard updated with new round

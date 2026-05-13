@@ -10,20 +10,21 @@ participant "FertilityJourney" as m
 database "SQLite" as db
 
 u -> v : Clicks End Round
-v -> c : handleEndRound()
-c --> v : showEndRoundScreen()
 v --> u : Shows screen with result options
 
-u -> v : Selects result: Positive, Negative or Pending
+u -> v : Selects result: POSITIVE, NEGATIVE or PENDING
 u -> v : Clicks End Round
-v -> c : handleSave()
+v -> c : handleEndRound(journeyId, result)
 
 alt No result selected
   c --> v : showError()
   v --> u : "No result selected"
 else All OK
-  c -> m : setResult(result)
-  c -> db : UPDATE fertility_journey SET result = ? WHERE id = ?
+  c -> db : UPDATE fertility_journey SET result = ? WHERE journey_id = ?
+  db --> c : OK
+  c -> db : UPDATE journey SET status = 'COMPLETED' WHERE id = ?
+  db --> c : OK
+  c -> db : INSERT INTO event (journey_id, date, type, description) VALUES (?, ?, ?, ?)
   db --> c : OK
   c --> v : showDashboard()
   v --> u : Dashboard updated

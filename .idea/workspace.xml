@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="checkupcomingappointments indsat">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DashboardView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/HormoneLogView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HormoneLogView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/HormoneLogView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HormoneLogView.class" afterDir="false" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="dashboard nu med logoutbutton&#10;hormonlogview nu med validering&#10;HormoneLogView ubrugt datefield fjernet">
+      <change beforePath="$PROJECT_DIR$/doc/dynamic/UsecaseDescription.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/dynamic/UsecaseDescription.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/static/Domænemodel1.puml" beforeDir="false" afterPath="$PROJECT_DIR$/doc/static/Domænemodel1.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/static/Klassediagram1.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/static/Klassediagram2.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/static/Klassediagram3.puml" beforeDir="false" afterPath="$PROJECT_DIR$/doc/static/Klassediagram3.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ManageProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ManageProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/ManageProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ManageProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Session.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,15 +197,7 @@
       <workItem from="1778686419866" duration="108000" />
       <workItem from="1778689221217" duration="898000" />
       <workItem from="1778698065738" duration="110000" />
-      <workItem from="1778698310724" duration="413000" />
-    </task>
-    <task id="LOCAL-00004" summary="HormoneLog.java, HormoneLogController, MedicationLog og MedicationLogController indsat">
-      <option name="closed" value="true" />
-      <created>1778512095524</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1778512095525</updated>
+      <workItem from="1778698310724" duration="2252000" />
     </task>
     <task id="LOCAL-00005" summary="HormoneLog.java, HormoneLogController, MedicationLog og MedicationLogController indsat">
       <option name="closed" value="true" />
@@ -586,14 +583,21 @@
       <option name="project" value="LOCAL" />
       <updated>1778682677111</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="dashboard nu med logoutbutton&#10;hormonlogview nu med validering&#10;HormoneLogView ubrugt datefield fjernet">
+      <option name="closed" value="true" />
+      <created>1778698761391</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1778698761392</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sekvensdiagram rettet til engelsk" />
     <MESSAGE value="klassediagram session oprettet" />
     <MESSAGE value="ProfileView,startsystem,dashboard" />
     <MESSAGE value="kristina" />
@@ -618,6 +622,7 @@
     <MESSAGE value="endround" />
     <MESSAGE value="EndRoundController rettet" />
     <MESSAGE value="checkupcomingappointments indsat" />
-    <option name="LAST_COMMIT_MESSAGE" value="checkupcomingappointments indsat" />
+    <MESSAGE value="dashboard nu med logoutbutton&#10;hormonlogview nu med validering&#10;HormoneLogView ubrugt datefield fjernet" />
+    <option name="LAST_COMMIT_MESSAGE" value="dashboard nu med logoutbutton&#10;hormonlogview nu med validering&#10;HormoneLogView ubrugt datefield fjernet" />
   </component>
 </project>

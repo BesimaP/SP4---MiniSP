@@ -30,8 +30,8 @@ else All OK
   c -> m : new Patient(name, dateOfBirth, diagnosis, username, password)
   c -> db : INSERT INTO patient VALUES (?, ?, ?, ?, ?)
   db --> c : OK
-  c --> v : showDashboard()
-  v --> u : Shows dashboard
+  c --> v : showJourneyTypeView()
+  v --> u : Shows journey type selection
 end
 
 @enduml
