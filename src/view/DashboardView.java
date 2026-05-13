@@ -4,10 +4,12 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Separator;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Patient;
 import model.Session;
+import java.time.LocalDate;
 
 public class DashboardView {
 
@@ -16,8 +18,18 @@ public class DashboardView {
         // Gem patienten i Session
         Session.setCurrentPatient(patient);
 
-        // Velkomstbesked
+        // Info labels
         Label welcomeLabel = new Label("Welcome " + patient.getName() + "!");
+        Label dateLabel = new Label("Today: " + LocalDate.now());
+        Label diagnosisLabel = new Label("Diagnosis: " + patient.getDiagnosis());
+
+        // Separator
+        Separator separator1 = new Separator();
+        Separator separator2 = new Separator();
+
+        // Gruppe overskrifter
+        Label loggingLabel = new Label("--- Logging ---");
+        Label historyLabel = new Label("--- History ---");
 
         // Knapper
         Button hormoneButton = new Button("Log hormone value");
@@ -75,10 +87,16 @@ public class DashboardView {
         layout.setPadding(new Insets(20));
         layout.getChildren().addAll(
                 welcomeLabel,
+                dateLabel,
+                diagnosisLabel,
+                separator1,
+                loggingLabel,
                 hormoneButton,
                 medicationButton,
                 appointmentButton,
                 diaryButton,
+                separator2,
+                historyLabel,
                 timelineButton,
                 historyButton,
                 newRoundButton,

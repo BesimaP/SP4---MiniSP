@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="JourneyTypeView opdateret">
-      <change beforePath="$PROJECT_DIR$/target/classes/test/TestControllers.class" beforeDir="false" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="alle view opdateret så layout er automatisk">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +185,7 @@
       <workItem from="1778582281291" duration="3448000" />
       <workItem from="1778587078497" duration="5020000" />
       <workItem from="1778665952794" duration="6974000" />
-      <workItem from="1778674898219" duration="338000" />
+      <workItem from="1778674898219" duration="1007000" />
     </task>
     <task id="LOCAL-00001" summary="Oprettet:&#10;Event.java&#10;DiaryEntry.java&#10;CancerJourney.java&#10;RehabilitationJourney.java&#10;PsychiatryJourney.java&#10;OtherJourney.java&#10;ENUM: EventType">
       <option name="closed" value="true" />
@@ -531,14 +531,37 @@
       <option name="project" value="LOCAL" />
       <updated>1778675212669</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="JourneyTypeView opdateret">
+      <option name="closed" value="true" />
+      <created>1778675403790</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1778675403790</updated>
+    </task>
+    <task id="LOCAL-00045" summary="JourneyTypeView opdateret">
+      <option name="closed" value="true" />
+      <created>1778675409876</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1778675409876</updated>
+    </task>
+    <task id="LOCAL-00046" summary="alle view opdateret så layout er automatisk">
+      <option name="closed" value="true" />
+      <created>1778675821503</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1778675821503</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="MedicationLogController rettet og tilføjet kommentar" />
     <MESSAGE value="test package oprettet" />
     <MESSAGE value="kommentar sat ind i package model" />
     <MESSAGE value="småfejl" />
@@ -563,6 +586,7 @@
     <MESSAGE value="AppointmentView" />
     <MESSAGE value="dash opdateret" />
     <MESSAGE value="JourneyTypeView opdateret" />
-    <option name="LAST_COMMIT_MESSAGE" value="JourneyTypeView opdateret" />
+    <MESSAGE value="alle view opdateret så layout er automatisk" />
+    <option name="LAST_COMMIT_MESSAGE" value="alle view opdateret så layout er automatisk" />
   </component>
 </project>
