@@ -9,13 +9,14 @@ import java.time.LocalDate;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
+import model.Session;
 
 public class HormoneLogView {
     private HormoneLogController controller = new HormoneLogController();
 
 
     public void show(Stage stage){
-        Label dateLabel = new Label("Date:");
+        Label dateLabel = new Label("Date (yyyy-mm-dd):");
         Label hormoneLabel = new Label("Hormone:");
         Label valueLabel = new Label("Value:");
         Label unitLabel = new Label("Unit:");
@@ -36,7 +37,7 @@ public class HormoneLogView {
             // Vi sender brugernavn og adgangskode til controlleren
             // Controlleren tjekker om de findes i databasen
             // Hvis de findes returnerer den et Patient-objekt — ellers null
-            controller.handleSave(Session.getCurrentJourneyID(), date, hormone, value, unit);
+            controller.handleSave(Session.getCurrentJourneyId(), date, hormone, value, unit);
 
 
         });
