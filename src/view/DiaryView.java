@@ -23,6 +23,8 @@ public class DiaryView {
 
         Label messageLabel = new Label("");
 
+        DatePicker datePicker = new DatePicker();
+
         Button saveButton = new Button("Save");
         Button backButton = new Button("Back to dashboard");
 
@@ -30,6 +32,8 @@ public class DiaryView {
         saveButton.setOnAction(e -> {
             String title = titleField.getText();
             String content = contentField.getText();
+            LocalDate date = datePicker.getValue();
+            controller.handleSave(date, title, content);
             controller.handleSave(LocalDate.now(), title, content);
             messageLabel.setText("Note saved");
         });
@@ -46,6 +50,7 @@ public class DiaryView {
                 new Label("Content:"), contentField,
                 backButton,
                 messageLabel,
+                new Label("Date:"), datePicker,
                 saveButton
         );
 
