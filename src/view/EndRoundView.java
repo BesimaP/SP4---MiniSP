@@ -11,10 +11,16 @@ import javafx.stage.Stage;
 import model.Session;
 
 public class EndRoundView {
+
     private EndRoundController controller = new EndRoundController();
 
-    public void show(Stage stage){
+    public void show(Stage stage) {
 
+        // Titel
+        Label titleLabel = new Label("End your current round:");
+
+        // Dropdown til resultat
+        Label resultLabel = new Label("Select result:");
         ComboBox<String> resultBox = new ComboBox<>();
         resultBox.getItems().addAll(
                 "POSITIVE",
@@ -23,40 +29,48 @@ public class EndRoundView {
         );
         resultBox.setPromptText("Choose result:");
 
-        Label messageLabel = new Label();
+        // Besked og knapper
+        Label messageLabel = new Label("");
+        Button endButton = new Button("End Round");
+        Button backButton = new Button("Back to dashboard");
 
-        Button endButton = new Button("End round");
+        // End Round knap
         endButton.setOnAction(e -> {
             String result = resultBox.getValue();
+
+            // Validering
             if (result == null) {
                 messageLabel.setText("Please choose a result!");
-            } else {
-                controller.handleEndRound(Session.getCurrentJourneyId(), result);
-                messageLabel.setText("Round ended!");
+                return;
             }
+
+            // Afslut runden
+            controller.handleEndRound(Session.getCurrentJourneyId(), result);
+            messageLabel.setText("Round ended with result: " + result + " 🎉");
         });
 
-        Button backButton = new Button("Back");
+        // Back knap
         backButton.setOnAction(e -> {
             new DashboardView().show(stage, Session.getCurrentPatient());
         });
 
+        // Layout
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(20));
         layout.getChildren().addAll(
+                titleLabel,
+                resultLabel,
                 resultBox,
                 endButton,
-                backButton,
-                messageLabel
+                messageLabel,
+                backButton
         );
 
+        // Vis skærmen
         Scene scene = new Scene(layout);
+        stage.setTitle("Simpl — End Round");
         stage.setScene(scene);
         stage.sizeToScene();
-        stage.setTitle("Simpl — End Round");
         stage.show();
-
-
     }
-
 }
