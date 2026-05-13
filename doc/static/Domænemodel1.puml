@@ -41,6 +41,7 @@ abstract class Journey {
 }
 
 class Patient {
+  id
   name
   dateOfBirth
   diagnosis
@@ -88,17 +89,21 @@ enum Result {
 enum EventType {
   CONSULTATION
   EXAMINATION
-  TREATMENT
-  TEST
+  STIMULATION
+  EGG_RETRIEVAL
+  FERTILISATION
+  TRANSFER
+  PREGNANCY_TEST
   OTHER
 }
 
 enum AppointmentType {
   SCANNING
   CONSULTATION
-  SURGERY
+  EGG_RETRIEVAL
   TRANSFER
-  BLOODTEST
+  BLOOD_TEST
+  OTHER
 }
 
 ' Inheritance

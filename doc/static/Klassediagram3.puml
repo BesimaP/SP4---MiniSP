@@ -11,11 +11,13 @@ package "model" {
   }
 
   class Patient {
+    - int id
     - String name
     - LocalDate dateOfBirth
     - String diagnosis
     - String username
     - String password
+    + int getId()
     + String getName()
     + LocalDate getDateOfBirth()
     + String getDiagnosis()
@@ -165,11 +167,13 @@ package "view" {
   class DiaryView
   class RoundHistoryView
   class EndRoundView
+  class DashboardView
 }
 
 package "controller" {
   class StartSystemController {
     + Patient handleLogin()
+    + boolean hasActiveJourney()
   }
 
   class ManageProfileController {
@@ -179,7 +183,7 @@ package "controller" {
   }
 
   class JourneyTypeController {
-    + void handleSelectJourney()
+    + int handleSelectJourney()
   }
 
   class NewRoundController {
@@ -190,6 +194,7 @@ package "controller" {
     + void handleAddAppointment()
     + void handleMarkCompleted()
     + void handleSave()
+    + ArrayList<String> getUpcomingAppointments()
   }
 
   class HormoneLogController {
@@ -203,7 +208,7 @@ package "controller" {
   }
 
   class TimelineController {
-    + void initialize()
+    + ArrayList<Event> initialize()
   }
 
   class DiaryController {
@@ -212,7 +217,7 @@ package "controller" {
   }
 
   class RoundHistoryController {
-    + void initialize()
+    + ArrayList<String> initialize()
   }
 
   class EndRoundController {
@@ -232,6 +237,7 @@ TimelineView --> TimelineController
 DiaryView --> DiaryController
 RoundHistoryView --> RoundHistoryController
 EndRoundView --> EndRoundController
+DashboardView --> AppointmentController
 
 ' CONTROLLER -> MODEL
 StartSystemController --> Patient

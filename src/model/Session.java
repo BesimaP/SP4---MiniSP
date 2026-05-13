@@ -14,8 +14,8 @@ public class Session {
         return currentPatient;
     }
 
-    public static void setCurrentJourneyId(int JourneyId) {
-        currentJourneyId = JourneyId;
+    public static void setCurrentJourneyId(int journeyId) {
+        currentJourneyId = journeyId;
     }
 
     public static int getCurrentJourneyId(){
