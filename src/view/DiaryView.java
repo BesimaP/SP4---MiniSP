@@ -17,7 +17,6 @@ public class DiaryView {
     private DiaryController controller = new DiaryController();
     public void show(Stage stage) {
 
-
         // 1. Opret felter og knapper
         TextField titleField = new TextField();
         TextField contentField = new TextField();
