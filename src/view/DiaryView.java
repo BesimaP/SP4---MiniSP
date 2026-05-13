@@ -4,6 +4,7 @@ import controller.DiaryController;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -20,13 +21,16 @@ public class DiaryView {
         // 1. Opret felter og knapper
         TextField titleField = new TextField();
         TextField contentField = new TextField();
+        DatePicker datePicker = new DatePicker();
+
         Button saveButton = new Button("Save");
 
         // 2. Hvad sker der når knappen klikkes
         saveButton.setOnAction(e -> {
             String title = titleField.getText();
             String content = contentField.getText();
-            controller.handleSave(LocalDate.now(), title, content);
+            LocalDate date = datePicker.getValue();
+            controller.handleSave(date, title, content);
         });
 
         // 3. Layout — bygges op udenfor setOnAction
@@ -35,6 +39,7 @@ public class DiaryView {
         layout.getChildren().addAll(
                 new Label("Title:"), titleField,
                 new Label("Content:"), contentField,
+                new Label("Date:"), datePicker,
                 saveButton
         );
 
