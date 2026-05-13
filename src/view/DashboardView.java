@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import model.HormoneLog;
 import model.Patient;
 
 public class DashboardView {
@@ -30,6 +31,10 @@ public class DashboardView {
         // Button er en knap brugeren kan klikke på
         // Teksten i parentesen er det der står på knappen
         Button hormoneButton = new Button("Log hormone value");
+        hormoneButton.setOnAction(e -> {
+            HormoneLogView hormoneLogView = new HormoneLogView();
+            hormoneLogView.show(stage);
+        });
         Button medicationButton = new Button("Log medication");
         Button appointmentButton = new Button("Add appointment");
         Button diaryButton = new Button("Diary");
