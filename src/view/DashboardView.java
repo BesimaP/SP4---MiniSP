@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import model.HormoneLog;
+import model.Session;
 import model.Patient;
 
 public class DashboardView {
@@ -23,6 +23,7 @@ public class DashboardView {
     // patient = den patient der er logget ind
     public void show(Stage stage, Patient patient) {
 
+        model.Session.setCurrentPatient(patient);
         // Label er bare tekst der vises på skærmen
         // Vi bruger patient.getName() til at hente patientens navn
         // Så vises "Welcome Anna!" hvis patienten hedder Anna
