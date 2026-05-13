@@ -4,6 +4,7 @@ import controller.DiaryController;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -46,12 +47,12 @@ public class DiaryView {
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(20));
         layout.getChildren().addAll(
+                new Label("Date:"), datePicker,
                 new Label("Title:"), titleField,
                 new Label("Content:"), contentField,
-                backButton,
+                saveButton,
                 messageLabel,
-                new Label("Date:"), datePicker,
-                saveButton
+                backButton
         );
 
         // 4. Vis skærmen
