@@ -2,7 +2,7 @@
     -fx-background-color: #e8f5e9;
 }
 
-.login-card {
+.card{
     -fx-background-color: white;
     -fx-background-radius: 20;
     -fx-padding: 40;
@@ -21,6 +21,11 @@
 }
 
 .field-label {
+    -fx-text-fill: #888888;
+    -fx-font-size: 11px;
+}
+
+.section-label{
     -fx-text-fill: #888888;
     -fx-font-size: 11px;
 }
@@ -73,3 +78,73 @@
     -fx-border-color: #4caf50;
     -fx-text-fill: #4caf50;
 }
+
+.card-green {
+    -fx-background-color: #f9fbe7;
+    -fx-text-fill: #2e7d32;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 12;
+    -fx-padding: 16;
+    -fx-pref-height: 70px;
+    -fx-cursor: hand;
+}
+
+.card-green:hover{
+    -fx-background-color: #f1f8e9;
+    -fx-border-color: #4caf50;
+}
+
+.card-blue{
+    -fx-background-color: #e3f2fd;
+    -fx-text-fill: #0d47a1;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 12;
+    -fx-padding: 16;
+    -fx-pref-height: 70px;
+    -fx-cursor: hand;
+}
+
+.card-blue:hover {
+    -fx-background-color: #bbdefb;
+    -fx-border-color: #1976d2;
+}
+
+.card-pink {
+    -fx-background-color: #fce4ec;
+    -fx-text-fill: #880e4f;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 12;
+    -fx-padding: 16;
+    -fx-pref-height: 70px;
+    -fx-cursor: hand;
+}
+
+.card-pink:hover {
+    -fx-background-color: #f8bbd0;
+    -fx-border-color: #e91e63;
+}
+
+.card-title-green {
+    -fx-text-fill: #2e7d32;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.card-title-blue {
+    -fx-text-fill: #0d47a1;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.card-title-pink {
+    -fx-text-fill: #880e4f;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
