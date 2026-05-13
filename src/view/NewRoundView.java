@@ -60,9 +60,10 @@ public class NewRoundView {
         );
 
         // Vis skærmen
-        Scene scene = new Scene(layout, 300, 280);
+        Scene scene = new Scene(layout);
         stage.setTitle("Simpl — Start New Round");
         stage.setScene(scene);
+        stage.sizeToScene();
         stage.show();
     }
 }

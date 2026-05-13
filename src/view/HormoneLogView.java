@@ -86,9 +86,9 @@ public class HormoneLogView {
                 backButton);
 
         Scene scene = new Scene(layout);
-        stage.sizeToScene();
         stage.setTitle("Simpl - log hormone values: ");
         stage.setScene(scene);
+        stage.sizeToScene();
         stage.show();
     }
 }

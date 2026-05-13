@@ -72,9 +72,10 @@ public class ProfileView {
         );
 
         // Vis skærmen
-        Scene scene = new Scene(layout, 350, 450);
+        Scene scene = new Scene(layout);
         stage.setTitle("Simpl — Create Profile");
         stage.setScene(scene);
+        stage.sizeToScene();
         stage.show();
     }
 }

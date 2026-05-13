@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="medication view">
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="alle view opdateret så layout er automatisk">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/EndRoundView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/EndRoundView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/EndRoundView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/EndRoundView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/MedicationLogView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MedicationLogView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +184,8 @@
       <workItem from="1778582220361" duration="56000" />
       <workItem from="1778582281291" duration="3448000" />
       <workItem from="1778587078497" duration="5020000" />
-      <workItem from="1778665952794" duration="894000" />
+      <workItem from="1778665952794" duration="6974000" />
+      <workItem from="1778674898219" duration="1007000" />
     </task>
     <task id="LOCAL-00001" summary="Oprettet:&#10;Event.java&#10;DiaryEntry.java&#10;CancerJourney.java&#10;RehabilitationJourney.java&#10;PsychiatryJourney.java&#10;OtherJourney.java&#10;ENUM: EventType">
       <option name="closed" value="true" />
@@ -429,38 +427,141 @@
       <option name="project" value="LOCAL" />
       <updated>1778666453893</updated>
     </task>
-    <task id="LOCAL-00031" summary="medication view">
+    <task id="LOCAL-00031" summary="smileyer i ddiary fikset">
       <option name="closed" value="true" />
-      <created>1778675058334</created>
+      <created>1778666922638</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1778675058334</updated>
+      <updated>1778666922638</updated>
     </task>
-    <task id="LOCAL-00032" summary="medication view">
+    <task id="LOCAL-00032" summary="journeytypeview done">
       <option name="closed" value="true" />
-      <created>1778675087220</created>
+      <created>1778670231110</created>
       <option name="number" value="00032" />
       <option name="presentableId" value="LOCAL-00032" />
       <option name="project" value="LOCAL" />
-      <updated>1778675087221</updated>
+      <updated>1778670231110</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="StartSystemView opdateret med feature">
+      <option name="closed" value="true" />
+      <created>1778670888794</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1778670888794</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Newroundview done">
+      <option name="closed" value="true" />
+      <created>1778672016276</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1778672016276</updated>
+    </task>
+    <task id="LOCAL-00035" summary="TimelineView done">
+      <option name="closed" value="true" />
+      <created>1778672684612</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1778672684612</updated>
+    </task>
+    <task id="LOCAL-00036" summary="RoundHistoryView.java done">
+      <option name="closed" value="true" />
+      <created>1778673341633</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1778673341634</updated>
+    </task>
+    <task id="LOCAL-00037" summary="AppointmentView">
+      <option name="closed" value="true" />
+      <created>1778673895859</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1778673895859</updated>
+    </task>
+    <task id="LOCAL-00038" summary="AppointmentView">
+      <option name="closed" value="true" />
+      <created>1778674004507</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1778674004507</updated>
+    </task>
+    <task id="LOCAL-00039" summary="dash opdateret">
+      <option name="closed" value="true" />
+      <created>1778674130919</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1778674130919</updated>
+    </task>
+    <task id="LOCAL-00040" summary="dash opdateret">
+      <option name="closed" value="true" />
+      <created>1778674983713</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1778674983713</updated>
+    </task>
+    <task id="LOCAL-00041" summary="dash opdateret">
+      <option name="closed" value="true" />
+      <created>1778674988856</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1778674988856</updated>
+    </task>
+    <task id="LOCAL-00042" summary="JourneyTypeView opdateret">
+      <option name="closed" value="true" />
+      <created>1778675198241</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1778675198241</updated>
+    </task>
+    <task id="LOCAL-00043" summary="JourneyTypeView opdateret">
+      <option name="closed" value="true" />
+      <created>1778675212669</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1778675212669</updated>
+    </task>
+    <task id="LOCAL-00044" summary="JourneyTypeView opdateret">
+      <option name="closed" value="true" />
+      <created>1778675403790</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1778675403790</updated>
+    </task>
+    <task id="LOCAL-00045" summary="JourneyTypeView opdateret">
+      <option name="closed" value="true" />
+      <created>1778675409876</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1778675409876</updated>
+    </task>
+    <task id="LOCAL-00046" summary="alle view opdateret så layout er automatisk">
+      <option name="closed" value="true" />
+      <created>1778675821503</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1778675821503</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Oprettet:&#10;Event.java&#10;DiaryEntry.java&#10;CancerJourney.java&#10;RehabilitationJourney.java&#10;PsychiatryJourney.java&#10;OtherJourney.java&#10;ENUM: EventType." />
-    <MESSAGE value="HormoneLog.java, HormoneLogController, MedicationLog og MedicationLogController indsat" />
-    <MESSAGE value="." />
-    <MESSAGE value=".." />
-    <MESSAGE value="ManageProfileController" />
-    <MESSAGE value="HormoneLogController" />
-    <MESSAGE value="startsystemview done" />
-    <MESSAGE value="de sidste klasser i controller er lavet" />
-    <MESSAGE value="MedicationLogController rettet og tilføjet kommentar" />
     <MESSAGE value="test package oprettet" />
     <MESSAGE value="kommentar sat ind i package model" />
     <MESSAGE value="småfejl" />
@@ -476,7 +577,16 @@
     <MESSAGE value="back to dashboardvi" />
     <MESSAGE value="dato på dairyview tilføjet" />
     <MESSAGE value="test" />
-    <MESSAGE value="medication view" />
-    <option name="LAST_COMMIT_MESSAGE" value="medication view" />
+    <MESSAGE value="smileyer i ddiary fikset" />
+    <MESSAGE value="journeytypeview done" />
+    <MESSAGE value="StartSystemView opdateret med feature" />
+    <MESSAGE value="Newroundview done" />
+    <MESSAGE value="TimelineView done" />
+    <MESSAGE value="RoundHistoryView.java done" />
+    <MESSAGE value="AppointmentView" />
+    <MESSAGE value="dash opdateret" />
+    <MESSAGE value="JourneyTypeView opdateret" />
+    <MESSAGE value="alle view opdateret så layout er automatisk" />
+    <option name="LAST_COMMIT_MESSAGE" value="alle view opdateret så layout er automatisk" />
   </component>
 </project>
