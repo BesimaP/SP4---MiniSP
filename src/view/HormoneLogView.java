@@ -5,8 +5,9 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import model.HormoneLog;
-import model.Patient;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 import java.awt.*;
 import java.time.LocalDate;
@@ -37,7 +38,7 @@ public class HormoneLogView {
             // Vi sender brugernavn og adgangskode til controlleren
             // Controlleren tjekker om de findes i databasen
             // Hvis de findes returnerer den et Patient-objekt — ellers null
-            controller.handleSave(Session.getJourneyID(), date, hormone, value, unit);
+            controller.handleSave(Session.getCurrentJourneyID(), date, hormone, value, unit);
 
 
         });
