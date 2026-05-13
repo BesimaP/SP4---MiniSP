@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="RoundHistoryView.java done">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/AppointmentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AppointmentView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/RoundHistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RoundHistoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/TestControllers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/TestControllers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/AppointmentView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/AppointmentView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/RoundHistoryView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/RoundHistoryView.class" afterDir="false" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="dash opdateret">
+      <change beforePath="$PROJECT_DIR$/target/classes/view/DashboardView.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +184,7 @@
       <workItem from="1778582220361" duration="56000" />
       <workItem from="1778582281291" duration="3448000" />
       <workItem from="1778587078497" duration="5020000" />
-      <workItem from="1778665952794" duration="6508000" />
+      <workItem from="1778665952794" duration="6974000" />
     </task>
     <task id="LOCAL-00001" summary="Oprettet:&#10;Event.java&#10;DiaryEntry.java&#10;CancerJourney.java&#10;RehabilitationJourney.java&#10;PsychiatryJourney.java&#10;OtherJourney.java&#10;ENUM: EventType">
       <option name="closed" value="true" />
@@ -479,15 +474,37 @@
       <option name="project" value="LOCAL" />
       <updated>1778673341634</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="AppointmentView">
+      <option name="closed" value="true" />
+      <created>1778673895859</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1778673895859</updated>
+    </task>
+    <task id="LOCAL-00038" summary="AppointmentView">
+      <option name="closed" value="true" />
+      <created>1778674004507</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1778674004507</updated>
+    </task>
+    <task id="LOCAL-00039" summary="dash opdateret">
+      <option name="closed" value="true" />
+      <created>1778674130919</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1778674130919</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="HormoneLogController" />
-    <MESSAGE value="startsystemview done" />
     <MESSAGE value="de sidste klasser i controller er lavet" />
     <MESSAGE value="MedicationLogController rettet og tilføjet kommentar" />
     <MESSAGE value="test package oprettet" />
@@ -511,6 +528,8 @@
     <MESSAGE value="Newroundview done" />
     <MESSAGE value="TimelineView done" />
     <MESSAGE value="RoundHistoryView.java done" />
-    <option name="LAST_COMMIT_MESSAGE" value="RoundHistoryView.java done" />
+    <MESSAGE value="AppointmentView" />
+    <MESSAGE value="dash opdateret" />
+    <option name="LAST_COMMIT_MESSAGE" value="dash opdateret" />
   </component>
 </project>

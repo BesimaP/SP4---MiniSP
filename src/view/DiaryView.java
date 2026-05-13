@@ -13,63 +13,67 @@ public class DiaryView {
 
     // Opretter controller objekt
     private DiaryController controller = new DiaryController();
+
     public void show(Stage stage) {
 
-        // 1. Opret felter og knapper
+        // Felter og knapper
         TextField titleField = new TextField();
         TextField contentField = new TextField();
-
         Label messageLabel = new Label("");
-
         DatePicker datePicker = new DatePicker();
-        ComboBox<String>moodbox = new ComboBox<>();
-        moodbox.getItems().addAll(
+
+        // Mood dropdown
+        ComboBox<String> moodBox = new ComboBox<>();
+        moodBox.getItems().addAll(
                 "😊 Happy",
                 "😐 Neutral",
                 "😢 Sad",
                 "😰 Anxious",
                 "😴 Tired"
         );
-        moodbox.setPromptText("How are you feeling?");
+        moodBox.setPromptText("How are you feeling?");
 
         Button saveButton = new Button("Save");
         Button backButton = new Button("Back to dashboard");
 
-        // 2. Hvad sker der når knappen klikkes
+        // Hvad sker der når knappen klikkes
         saveButton.setOnAction(e -> {
             String title = titleField.getText();
             String content = contentField.getText();
             LocalDate date = datePicker.getValue();
+            String mood = moodBox.getValue();
 
-            if(title.isEmpty()){
+            // Validering
+            if (title.isEmpty()) {
                 messageLabel.setText("Title cannot be empty!");
-                return; //Stop her - gem ikke
+                return;
             }
-
-            if (content.isEmpty()){
+            if (content.isEmpty()) {
                 messageLabel.setText("Content cannot be empty!");
-                return; //stop her - gem ikke
+                return;
             }
-
-            if(date == null){
+            if (date == null) {
                 messageLabel.setText("Please select a date!");
+                return;
             }
 
-            controller.handleSave(date, title, content);
-            controller.handleSave(LocalDate.now(), title, content);
-            messageLabel.setText("Diary not saved");
+            // Gem noten med mood
+            controller.handleSave(date, title, content + "\nMood: " + mood);
+            messageLabel.setText("Diary entry saved!");
         });
-        backButton.setOnAction(e-> {
+
+        // Back knap
+        backButton.setOnAction(e -> {
             DashboardView dashboardView = new DashboardView();
             dashboardView.show(stage, Session.getCurrentPatient());
         });
 
-        // 3. Layout — bygges op udenfor setOnAction
+        // Layout
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(20));
         layout.getChildren().addAll(
                 new Label("Date:"), datePicker,
-                new Label("Title:"), moodbox,
+                new Label("How are you feeling?"), moodBox,
                 new Label("Title:"), titleField,
                 new Label("Content:"), contentField,
                 saveButton,
@@ -77,8 +81,8 @@ public class DiaryView {
                 backButton
         );
 
-        // 4. Vis skærmen
-        Scene scene = new Scene(layout, 350, 300);
+        // Vis skærmen
+        Scene scene = new Scene(layout, 350, 450);
         stage.setTitle("Simpl — Diary");
         stage.setScene(scene);
         stage.show();
