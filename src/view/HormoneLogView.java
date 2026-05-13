@@ -3,6 +3,7 @@ package view;
 import controller.HormoneLogController;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.time.LocalDate;
@@ -20,10 +21,22 @@ public class HormoneLogView {
         Label hormoneLabel = new Label("Hormone:");
         Label valueLabel = new Label("Value:");
         Label unitLabel = new Label("Unit:");
+
+
         TextField dateField = new TextField();
-        TextField hormoneField = new TextField();
+        ComboBox<String> hormoneBox= new ComboBox<>();
+        hormoneBox.getItems().addAll(
+                "Oestradiol",
+                "Progesteron",
+                "AMH",
+                "FSH",
+                "LH",
+                "HCG"
+        );
+        hormoneBox.setPromptText("Choose hormon:");
         TextField valueField = new TextField();
         TextField unitField = new TextField();
+
 
         // Besked der vises efter gem
         Label messageLabel = new Label("");
@@ -36,14 +49,14 @@ public class HormoneLogView {
 
             // getText() henter hvad brugeren har skrevet i feltet
             LocalDate date = LocalDate.parse(dateField.getText());
-            String hormone = hormoneField.getText();
+            String hormone = hormoneBox.getValue();
             Double value = Double.parseDouble(valueField.getText());
             String unit = unitField.getText();
 
             // Vi sender brugernavn og adgangskode til controlleren
             // Controlleren tjekker om de findes i databasen
             // Hvis de findes returnerer den et Patient-objekt — ellers null
-            controller.handleSave(Session.getCurrentJourneyId(), date, hormone, value, unit);
+            controller.handleSave(date, hormone, value, unit);
 
             messageLabel.setText("Hormone value saved!");
 
@@ -60,7 +73,7 @@ public class HormoneLogView {
         layout.setPadding(new Insets(20));
         layout.getChildren().addAll(
                 dateLabel, dateField,
-                hormoneLabel, hormoneField,
+                hormoneLabel, hormoneBox,
                 valueLabel, valueField,
                 unitLabel, unitField,
                 saveButton,
