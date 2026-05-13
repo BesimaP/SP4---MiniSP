@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Patient;
+import model.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import view.ProfileView;
@@ -62,6 +63,7 @@ public class StartSystemView {
 
             // Hvis patient ikke er null betyder det at login var korrekt
             if (patient != null) {
+                Session.setCurrentPatient(patient);
                 // Vi opretter et DashboardView og viser det
                 // Vi sender stage og patient med så dashboardet ved hvem der er logget ind
                 DashboardView dashboard = new DashboardView();
