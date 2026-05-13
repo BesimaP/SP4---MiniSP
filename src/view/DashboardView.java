@@ -38,6 +38,10 @@ public class DashboardView {
         Button medicationButton = new Button("Log medication");
         Button appointmentButton = new Button("Add appointment");
         Button diaryButton = new Button("Diary");
+        diaryButton.setOnAction(e ->{
+            DiaryView diaryView = new DiaryView();
+            diaryView.show(stage);
+        });
         Button timelineButton = new Button("Timeline");
         Button historyButton = new Button("Round history");
         Button newRoundButton = new Button("Start new round");

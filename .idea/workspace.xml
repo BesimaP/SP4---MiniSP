@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="klassediagram session oprettet">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="rettelser">
       <change beforePath="$PROJECT_DIR$/src/view/HormoneLogView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HormoneLogView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/DiaryController.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="ProfileView_Besima" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -347,7 +345,31 @@
       <option name="project" value="LOCAL" />
       <updated>1778611157289</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="rettelser">
+      <option name="closed" value="true" />
+      <created>1778659636684</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1778659636684</updated>
+    </task>
+    <task id="LOCAL-00022" summary="rettelser">
+      <option name="closed" value="true" />
+      <created>1778659832121</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1778659832121</updated>
+    </task>
+    <task id="LOCAL-00023" summary="rettelser">
+      <option name="closed" value="true" />
+      <created>1778659854532</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1778659854532</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,6 +392,7 @@
     <MESSAGE value="sekvensdiagram rettet til engelsk" />
     <MESSAGE value="klassediagram session oprettet" />
     <MESSAGE value="ProfileView,startsystem,dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="ProfileView,startsystem,dashboard" />
+    <MESSAGE value="rettelser" />
+    <option name="LAST_COMMIT_MESSAGE" value="rettelser" />
   </component>
 </project>
