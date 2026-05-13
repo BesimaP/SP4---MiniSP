@@ -14,14 +14,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Patient;
 import model.Session;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import view.ProfileView;
-import view.DashboardView;
 
 public class StartSystemView {
 
-    private static final Logger log = LoggerFactory.getLogger(StartSystemView.class);
     // Vi opretter et controller-objekt som vi bruger til at håndtere login
     // Controller ved hvordan man tjekker brugernavn og adgangskode i databasen
     private StartSystemController controller = new StartSystemController();
@@ -61,19 +56,22 @@ public class StartSystemView {
             // Hvis de findes returnerer den et Patient-objekt — ellers null
             Patient patient = controller.handleLogin(username, password);
 
-            // Hvis patient ikke er null betyder det at login var korrekt
             if (patient != null) {
                 Session.setCurrentPatient(patient);
-                // Vi opretter et DashboardView og viser det
-                // Vi sender stage og patient med så dashboardet ved hvem der er logget ind
-                DashboardView dashboard = new DashboardView();
-                dashboard.show(stage, patient);
+
+                if (controller.hasActiveJourney(patient.getId())) {
+                    // Har aktivt forløb — gå direkte til dashboard
+                    DashboardView dashboard = new DashboardView();
+                    dashboard.show(stage, patient);
+                } else {
+                    // Har ikke aktivt forløb — vælg forløbstype først
+                    JourneyTypeView journeyTypeView = new JourneyTypeView();
+                    journeyTypeView.show(stage);
+                }
             } else {
-                // Hvis patient er null var login forkert
-                // Vi viser en fejlbesked i messageLabel
                 messageLabel.setText("Wrong username or password!");
             }
-        });
+
         usernameField.setOnAction(e -> {
             loginButton.fire();
         });

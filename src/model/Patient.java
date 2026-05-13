@@ -6,6 +6,7 @@ import java.time.LocalDate;
     public class Patient {
 
         // Felter
+        private int id; // unikt id fra databasen
         private String name;
         private LocalDate dateOfBirth;
         private String diagnosis;
@@ -13,12 +14,18 @@ import java.time.LocalDate;
         private String password;
 
         // Konstruktør — bruges når vi opretter en ny patient
-        public Patient(String name, LocalDate dateOfBirth, String diagnosis, String username, String password) {
+        public Patient(int id, String name, LocalDate dateOfBirth, String diagnosis, String username, String password) {
+            this.id = id;
             this.name = name;
             this.dateOfBirth = dateOfBirth;
             this.diagnosis = diagnosis;
             this.username = username;
             this.password = password;
+        }
+
+        // Hent patientens id
+        public int getId() {
+            return id;
         }
 
         // Hent patientens navn
