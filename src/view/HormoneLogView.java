@@ -25,7 +25,13 @@ public class HormoneLogView {
         TextField valueField = new TextField();
         TextField unitField = new TextField();
 
+        // Besked der vises efter gem
+        Label messageLabel = new Label("");
+
+        //Knapper
         Button saveButton = new Button("Save");
+        Button backButton = new Button("Back to dashboard");
+
         saveButton.setOnAction(e -> {
 
             // getText() henter hvad brugeren har skrevet i feltet
@@ -39,7 +45,15 @@ public class HormoneLogView {
             // Hvis de findes returnerer den et Patient-objekt — ellers null
             controller.handleSave(Session.getCurrentJourneyId(), date, hormone, value, unit);
 
+            messageLabel.setText("Hormone value saved!");
 
+        });
+
+        // Hvad sker der når brugeren klikker Back
+        backButton.setOnAction(e -> {
+            // Gå tilbage til dashboard
+            DashboardView dashboard = new DashboardView();
+            dashboard.show(stage, Session.getCurrentPatient());
         });
 
         VBox layout = new VBox(10);
@@ -49,9 +63,11 @@ public class HormoneLogView {
                 hormoneLabel, hormoneField,
                 valueLabel, valueField,
                 unitLabel, unitField,
-                saveButton);
+                saveButton,
+                messageLabel,
+                backButton);
 
-        Scene scene = new Scene(layout, 300,300);
+        Scene scene = new Scene(layout, 350,350);
         stage.setTitle("Simpl - log hormone values: ");
         stage.setScene(scene);
         stage.show();
