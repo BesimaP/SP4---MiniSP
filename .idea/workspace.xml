@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="EndRoundController rettet">
-      <change beforePath="$PROJECT_DIR$/src/view/StartSystemView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/StartSystemView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/StartSystemView.class" beforeDir="false" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="checkupcomingappointments indsat">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DashboardView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/HormoneLogView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HormoneLogView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HormoneLogView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HormoneLogView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,30 +189,10 @@
       <workItem from="1778587078497" duration="5020000" />
       <workItem from="1778665952794" duration="6974000" />
       <workItem from="1778674898219" duration="1007000" />
-    </task>
-    <task id="LOCAL-00001" summary="Oprettet:&#10;Event.java&#10;DiaryEntry.java&#10;CancerJourney.java&#10;RehabilitationJourney.java&#10;PsychiatryJourney.java&#10;OtherJourney.java&#10;ENUM: EventType">
-      <option name="closed" value="true" />
-      <created>1778491726035</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1778491726035</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Oprettet:&#10;Event.java&#10;DiaryEntry.java&#10;CancerJourney.java&#10;RehabilitationJourney.java&#10;PsychiatryJourney.java&#10;OtherJourney.java&#10;ENUM: EventType.">
-      <option name="closed" value="true" />
-      <created>1778491989819</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1778491989819</updated>
-    </task>
-    <task id="LOCAL-00003" summary=".">
-      <option name="closed" value="true" />
-      <created>1778492191851</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1778492191851</updated>
+      <workItem from="1778686419866" duration="108000" />
+      <workItem from="1778689221217" duration="898000" />
+      <workItem from="1778698065738" duration="110000" />
+      <workItem from="1778698310724" duration="413000" />
     </task>
     <task id="LOCAL-00004" summary="HormoneLog.java, HormoneLogController, MedicationLog og MedicationLogController indsat">
       <option name="closed" value="true" />
@@ -582,14 +562,37 @@
       <option name="project" value="LOCAL" />
       <updated>1778678942355</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="EndRoundController rettet">
+      <option name="closed" value="true" />
+      <created>1778679817623</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1778679817623</updated>
+    </task>
+    <task id="LOCAL-00051" summary="EndRoundController rettet">
+      <option name="closed" value="true" />
+      <created>1778680032613</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1778680032613</updated>
+    </task>
+    <task id="LOCAL-00052" summary="checkupcomingappointments indsat">
+      <option name="closed" value="true" />
+      <created>1778682677111</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1778682677111</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="småfejl" />
     <MESSAGE value="sekvensdiagram rettet til engelsk" />
     <MESSAGE value="klassediagram session oprettet" />
     <MESSAGE value="ProfileView,startsystem,dashboard" />
@@ -614,6 +617,7 @@
     <MESSAGE value="alle view opdateret så layout er automatisk" />
     <MESSAGE value="endround" />
     <MESSAGE value="EndRoundController rettet" />
-    <option name="LAST_COMMIT_MESSAGE" value="EndRoundController rettet" />
+    <MESSAGE value="checkupcomingappointments indsat" />
+    <option name="LAST_COMMIT_MESSAGE" value="checkupcomingappointments indsat" />
   </component>
 </project>

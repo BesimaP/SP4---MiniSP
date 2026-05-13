@@ -55,6 +55,7 @@ public class DashboardView {
         Button historyButton = new Button("Round history");
         Button newRoundButton = new Button("Start new round");
         Button endRoundButton = new Button("End round");
+        Button logoutButton = new Button("Log out");
 
         // Kobl knapper til views
         hormoneButton.setOnAction(e -> {
@@ -97,6 +98,13 @@ public class DashboardView {
             view.show(stage);
         });
 
+        logoutButton.setOnAction(e -> {
+            Session.setCurrentPatient(null);
+            Session.setCurrentJourneyId(0);
+            StartSystemView startView = new StartSystemView();
+            startView.show(stage);
+        });
+
         // Layout
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(20));
@@ -115,7 +123,8 @@ public class DashboardView {
                 timelineButton,
                 historyButton,
                 newRoundButton,
-                endRoundButton
+                endRoundButton,
+                logoutButton
         );
 
         // Vis skærmen
