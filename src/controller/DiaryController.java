@@ -9,29 +9,37 @@ import java.time.LocalDate;
 
 public class DiaryController {
 
-    public DiaryController(){} //tom constructor
+    public DiaryController() {}
 
     // Køres når brugeren klikker Tilføj Note
     public void handleAddNote(LocalDate date, String title, String content) {
-        // Kald handleSave med de indtastede oplysninger
         handleSave(date, title, content);
     }
 
     // Gemmer en dagbogsnote i databasen
     public void handleSave(LocalDate date, String title, String content) {
-        int journeyId = Session.getCurrentJourneyId(); //henter fra session
         Connection connection = DatabaseConnection.getConnection();
-
         String sql = "INSERT INTO diary_entry (journey_id, date, title, content) VALUES (?, ?, ?, ?)";
 
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, journeyId);           // hvilket forløb
-            statement.setString(2, date.toString());  // dato
-            statement.setString(3, title);             // titel
-            statement.setString(4, content);           // indhold
+            statement.setInt(1, Session.getCurrentJourneyId());
+            statement.setString(2, date.toString());
+            statement.setString(3, title);
+            statement.setString(4, content);
             statement.executeUpdate();
             System.out.println("Diary entry saved!");
+
+            // Gem event i event tabellen
+            String eventSql = "INSERT INTO event (journey_id, date, type, description) VALUES (?, ?, ?, ?)";
+            PreparedStatement eventStatement = connection.prepareStatement(eventSql);
+            eventStatement.setInt(1, Session.getCurrentJourneyId());
+            eventStatement.setString(2, date.toString());
+            eventStatement.setString(3, "OTHER");
+            eventStatement.setString(4, "Diary entry: " + title);
+            eventStatement.executeUpdate();
+            System.out.println("Event saved!");
+
         } catch (SQLException e) {
             System.out.println("Could not save diary entry: " + e.getMessage());
         }

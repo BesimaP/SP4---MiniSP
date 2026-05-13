@@ -4,11 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="journeytypeview done">
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="Newroundview done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simpl.db" beforeDir="false" afterPath="$PROJECT_DIR$/simpl.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ProfileView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ProfileView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/StartSystemView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/StartSystemView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AppointmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/DiaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DiaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/HormoneLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/HormoneLogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MedicationLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MedicationLogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/NewRoundController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/NewRoundController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/TimelineView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TimelineView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/AppointmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/AppointmentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/DiaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/DiaryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/HormoneLogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/HormoneLogController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MedicationLogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MedicationLogController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/NewRoundController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/NewRoundController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/NewRoundView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/NewRoundView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/TimelineView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/TimelineView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +198,7 @@
       <workItem from="1778582220361" duration="56000" />
       <workItem from="1778582281291" duration="3448000" />
       <workItem from="1778587078497" duration="5020000" />
-      <workItem from="1778665952794" duration="3508000" />
+      <workItem from="1778665952794" duration="5300000" />
     </task>
     <task id="LOCAL-00001" summary="Oprettet:&#10;Event.java&#10;DiaryEntry.java&#10;CancerJourney.java&#10;RehabilitationJourney.java&#10;PsychiatryJourney.java&#10;OtherJourney.java&#10;ENUM: EventType">
       <option name="closed" value="true" />
@@ -445,15 +456,29 @@
       <option name="project" value="LOCAL" />
       <updated>1778670231110</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="StartSystemView opdateret med feature">
+      <option name="closed" value="true" />
+      <created>1778670888794</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1778670888794</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Newroundview done">
+      <option name="closed" value="true" />
+      <created>1778672016276</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1778672016276</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="HormoneLog.java, HormoneLogController, MedicationLog og MedicationLogController indsat" />
-    <MESSAGE value="." />
     <MESSAGE value=".." />
     <MESSAGE value="ManageProfileController" />
     <MESSAGE value="HormoneLogController" />
@@ -477,6 +502,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="smileyer i ddiary fikset" />
     <MESSAGE value="journeytypeview done" />
-    <option name="LAST_COMMIT_MESSAGE" value="journeytypeview done" />
+    <MESSAGE value="StartSystemView opdateret med feature" />
+    <MESSAGE value="Newroundview done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Newroundview done" />
   </component>
 </project>
