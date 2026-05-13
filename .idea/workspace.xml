@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="klassediagram session oprettet">
-      <change beforePath="$PROJECT_DIR$/simpl.db" beforeDir="false" afterPath="$PROJECT_DIR$/simpl.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/HormoneLogView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HormoneLogView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/DiaryController.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,9 +155,8 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.TestControllers" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.TestControllers" />
         <item itemvalue="Application.TestControllers" />
       </list>
@@ -325,7 +323,31 @@
       <option name="project" value="LOCAL" />
       <updated>1778590370222</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="ProfileView,startsystem,dashboard">
+      <option name="closed" value="true" />
+      <created>1778609583567</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1778609583567</updated>
+    </task>
+    <task id="LOCAL-00019" summary="ProfileView,startsystem,dashboard">
+      <option name="closed" value="true" />
+      <created>1778609826360</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1778609826360</updated>
+    </task>
+    <task id="LOCAL-00020" summary="ProfileView,startsystem,dashboard">
+      <option name="closed" value="true" />
+      <created>1778611157289</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1778611157289</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,6 +369,7 @@
     <MESSAGE value="småfejl" />
     <MESSAGE value="sekvensdiagram rettet til engelsk" />
     <MESSAGE value="klassediagram session oprettet" />
-    <option name="LAST_COMMIT_MESSAGE" value="klassediagram session oprettet" />
+    <MESSAGE value="ProfileView,startsystem,dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="ProfileView,startsystem,dashboard" />
   </component>
 </project>
