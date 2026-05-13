@@ -1,0 +1,75 @@
+.root {
+    -fx-background-color: #e8f5e9;
+}
+
+.login-card {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-padding: 40;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 32, 0, 0, 8);
+}
+
+.title-label {
+    -fx-text-fill: #2e7d32;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+}
+
+.subtitle-label {
+    -fx-text-fill: #888888;
+    -fx-font-size: 13px;
+}
+
+.field-label {
+    -fx-text-fill: #888888;
+    -fx-font-size: 11px;
+}
+
+.modern-field {
+    -fx-background-color: #f5f5f5;
+    -fx-text-fill: #333333;
+    -fx-prompt-text-fill: #aaaaaa;
+    -fx-background-radius: 10;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 10;
+    -fx-padding: 11 15;
+    -fx-font-size: 14px;
+    -fx-pref-height: 42px;
+}
+
+.modern-field:focused {
+    -fx-border-color: #4caf50;
+    -fx-border-width: 2;
+}
+
+.primary-button {
+    -fx-background-color: #4caf50;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 13 20;
+    -fx-cursor: hand;
+    -fx-pref-height: 44px;
+}
+
+.primary-button:hover {
+    -fx-background-color: #388e3c;
+}
+
+.secondary-button {
+    -fx-background-color: white;
+    -fx-text-fill: #888888;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 13 20;
+    -fx-cursor: hand;
+    -fx-pref-height: 44px;
+}
+
+.secondary-button:hover {
+    -fx-border-color: #4caf50;
+    -fx-text-fill: #4caf50;
+}
