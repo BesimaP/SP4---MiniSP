@@ -14,6 +14,7 @@ import java.time.LocalDate;
 public class HormoneLogView {
     private HormoneLogController controller = new HormoneLogController();
 
+
     public void show(Stage stage){
         Label dateLabel = new Label("Date:");
         Label hormoneLabel = new Label("Hormone:");
