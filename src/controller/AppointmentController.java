@@ -4,8 +4,10 @@ import model.DatabaseConnection;
 import model.Session;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class AppointmentController {
 
@@ -24,7 +26,6 @@ public class AppointmentController {
             statement.setInt(1, appointmentId);
             statement.executeUpdate();
             System.out.println("Appointment completed!");
-
         } catch (SQLException e) {
             System.out.println("Could not update appointment: " + e.getMessage());
         }
@@ -57,5 +58,31 @@ public class AppointmentController {
         } catch (SQLException e) {
             System.out.println("Could not save appointment: " + e.getMessage());
         }
+    }
+
+    // Henter alle kommende aftaler for det aktive forløb
+    public ArrayList<String> getUpcomingAppointments() {
+        Connection connection = DatabaseConnection.getConnection();
+        String sql = "SELECT * FROM appointment WHERE journey_id = ? AND completed = 0 ORDER BY date ASC";
+
+        ArrayList<String> appointments = new ArrayList<>();
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, Session.getCurrentJourneyId());
+            ResultSet result = statement.executeQuery();
+
+            while (result.next()) {
+                String date = result.getString("date");
+                String type = result.getString("type");
+                String location = result.getString("location");
+                appointments.add(type + " — " + date + " — " + location);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Could not get appointments: " + e.getMessage());
+        }
+
+        return appointments;
     }
 }
