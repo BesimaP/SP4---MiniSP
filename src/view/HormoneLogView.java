@@ -77,7 +77,7 @@ public class HormoneLogView {
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(20));
         layout.getChildren().addAll(
-                dateLabel, dateField,
+                dateLabel, datePicker,
                 hormoneLabel, hormoneBox,
                 valueLabel, valueField,
                 unitLabel, unitBox,
@@ -85,7 +85,8 @@ public class HormoneLogView {
                 messageLabel,
                 backButton);
 
-        Scene scene = new Scene(layout, 350,350);
+        Scene scene = new Scene(layout);
+        stage.sizeToScene();
         stage.setTitle("Simpl - log hormone values: ");
         stage.setScene(scene);
         stage.show();
