@@ -4,9 +4,8 @@ import controller.JourneyTypeController;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -30,20 +29,15 @@ public class JourneyTypeView {
         subtitleLabel.setMaxWidth(Double.MAX_VALUE);
         subtitleLabel.setAlignment(Pos.CENTER);
 
-        // Dropdown
-        Label journeyLabel = new Label("Journey type:");
-        journeyLabel.getStyleClass().add("field-label");
-        ComboBox<String> journeyBox = new ComboBox<>();
-        journeyBox.getItems().addAll(
-                "🌱 Fertility",
-                "🎗 Cancer",
-                "💪 Rehabilitation",
-                "🧠 Psychiatry",
-                "📋 Other"
-        );
-        journeyBox.setPromptText("Choose journey type:");
-        journeyBox.getStyleClass().add("modern-field");
-        journeyBox.setMaxWidth(Double.MAX_VALUE);
+        // ToggleGroup så kun én kan vælges
+        ToggleGroup group = new ToggleGroup();
+
+        // Radioknapper med ikon og tekst
+        ToggleButton fertilityButton = createOptionButton("🌱  Fertility", group);
+        ToggleButton cancerButton = createOptionButton("🎗  Cancer", group);
+        ToggleButton rehabilitationButton = createOptionButton("💪  Rehabilitation", group);
+        ToggleButton psychiatryButton = createOptionButton("🧠  Psychiatry", group);
+        ToggleButton otherButton = createOptionButton("📋  Other", group);
 
         // Besked og knapper
         Label messageLabel = new Label("");
@@ -53,12 +47,15 @@ public class JourneyTypeView {
 
         // Continue knap
         continueButton.setOnAction(e -> {
-            String type = journeyBox.getValue();
-
-            if (type == null) {
+            // Tjek om en knap er valgt
+            ToggleButton selected = (ToggleButton) group.getSelectedToggle();
+            if (selected == null) {
                 messageLabel.setText("Please select a journey type!");
                 return;
             }
+
+            // Hent teksten uden emojis
+            String type = selected.getText().trim().replaceAll("[^a-zA-Z]", "");
 
             // Gem forløbet og hent det nye journey_id
             int journeyId = controller.handleSelectJourney(
@@ -74,7 +71,7 @@ public class JourneyTypeView {
         });
 
         // Layout
-        VBox layout = new VBox(10);
+        VBox layout = new VBox(8);
         layout.getStyleClass().add("login-card");
         layout.setMaxWidth(380);
         layout.setPrefWidth(380);
@@ -82,8 +79,11 @@ public class JourneyTypeView {
         layout.getChildren().addAll(
                 titleLabel,
                 subtitleLabel,
-                journeyLabel,
-                journeyBox,
+                fertilityButton,
+                cancerButton,
+                rehabilitationButton,
+                psychiatryButton,
+                otherButton,
                 continueButton,
                 messageLabel
         );
@@ -94,10 +94,58 @@ public class JourneyTypeView {
         root.setPadding(new Insets(40));
 
         // Vis skærmen
-        Scene scene = new Scene(root, 500, 400);
+        Scene scene = new Scene(root, 500, 600);
         scene.getStylesheets().add(getClass().getClassLoader().getResource("design/styles.css").toExternalForm());
         stage.setTitle("Simpl — Select Journey Type");
         stage.setScene(scene);
         stage.show();
+    }
+
+    // Hjælpemetode der opretter en valgknap med styling
+    private ToggleButton createOptionButton(String text, ToggleGroup group) {
+        ToggleButton button = new ToggleButton(text);
+        button.setToggleGroup(group);
+        button.setMaxWidth(Double.MAX_VALUE);
+        button.setStyle(
+                "-fx-background-color: white;" +
+                        "-fx-text-fill: #333333;" +
+                        "-fx-font-size: 13px;" +
+                        "-fx-padding: 12 16;" +
+                        "-fx-background-radius: 10;" +
+                        "-fx-border-color: #e0e0e0;" +
+                        "-fx-border-radius: 10;" +
+                        "-fx-alignment: center-left;"
+        );
+
+        // Skift farve når knappen er valgt
+        button.selectedProperty().addListener((obs, wasSelected, isSelected) -> {
+            if (isSelected) {
+                button.setStyle(
+                        "-fx-background-color: #f1f8e9;" +
+                                "-fx-text-fill: #2e7d32;" +
+                                "-fx-font-size: 13px;" +
+                                "-fx-font-weight: bold;" +
+                                "-fx-padding: 12 16;" +
+                                "-fx-background-radius: 10;" +
+                                "-fx-border-color: #4caf50;" +
+                                "-fx-border-width: 1.5;" +
+                                "-fx-border-radius: 10;" +
+                                "-fx-alignment: center-left;"
+                );
+            } else {
+                button.setStyle(
+                        "-fx-background-color: white;" +
+                                "-fx-text-fill: #333333;" +
+                                "-fx-font-size: 13px;" +
+                                "-fx-padding: 12 16;" +
+                                "-fx-background-radius: 10;" +
+                                "-fx-border-color: #e0e0e0;" +
+                                "-fx-border-radius: 10;" +
+                                "-fx-alignment: center-left;"
+                );
+            }
+        });
+
+        return button;
     }
 }
