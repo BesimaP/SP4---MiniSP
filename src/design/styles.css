@@ -175,3 +175,115 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
 }
 
+/* DatePicker — samme stil som modern-field */
+.modern-datepicker {
+    -fx-background-color: #f5f5f5;
+    -fx-background-radius: 10;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 10;
+    -fx-pref-height: 42px;
+    -fx-font-size: 14px;
+}
+
+.modern-datepicker:focused {
+    -fx-border-color: #4caf50;
+    -fx-border-width: 2;
+}
+
+.modern-datepicker .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: #333333;
+    -fx-prompt-text-fill: #aaaaaa;
+    -fx-padding: 11 15;
+}
+
+.modern-datepicker .arrow-button {
+    -fx-background-color: transparent;
+    -fx-padding: 8;
+}
+
+/* ComboBox — samme stil som modern-field */
+.modern-combo {
+    -fx-background-color: #f5f5f5;
+    -fx-background-radius: 10;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 10;
+    -fx-pref-height: 42px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+.modern-combo:focused {
+    -fx-border-color: #4caf50;
+    -fx-border-width: 2;
+}
+
+.modern-combo .list-cell {
+    -fx-text-fill: #333333;
+    -fx-padding: 4 10;
+}
+
+.modern-combo .arrow-button {
+    -fx-background-color: transparent;
+}
+
+/* TextArea — samme stil som modern-field, men højere */
+.modern-textarea {
+    -fx-background-color: #f5f5f5;
+    -fx-text-fill: #333333;
+    -fx-prompt-text-fill: #aaaaaa;
+    -fx-background-radius: 10;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 10;
+    -fx-font-size: 14px;
+    -fx-pref-height: 100px;
+}
+
+.modern-textarea:focused {
+    -fx-border-color: #4caf50;
+    -fx-border-width: 2;
+}
+
+.modern-textarea .content {
+    -fx-background-color: #f5f5f5;
+    -fx-background-radius: 10;
+}
+
+/* ListView — pænt hvidt look med grøn hover */
+.modern-list {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 10;
+    -fx-padding: 4;
+}
+
+.modern-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #333333;
+    -fx-padding: 10 14;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+}
+
+.modern-list .list-cell:filled:hover {
+    -fx-background-color: #f1f8e9;
+}
+
+.modern-list .list-cell:filled:selected {
+    -fx-background-color: #e8f5e9;
+    -fx-text-fill: #2e7d32;
+}
+
+/* Besked labels — success (grøn) og error (rød) */
+.message-success {
+    -fx-text-fill: #2e7d32;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.message-error {
+    -fx-text-fill: #c62828;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
