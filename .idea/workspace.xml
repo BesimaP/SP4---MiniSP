@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="rettelse i dahsboard med statisk kortene øverst design">
-      <change beforePath="$PROJECT_DIR$/src/view/ProfileView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ProfileView.java" afterDir="false" />
-    </list>
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="nu med radioknapper / toggleBUtton">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JourneyTypeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JourneyTypeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/RoundHistoryController 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/FertilityJourney 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/DashboardView$7 3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/JourneyTypeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/JourneyTypeView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/JourneyTypeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/JourneyTypeView.java" afterDir="false" />
-    </list>
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="rettelse i dahsboard med statisk kortene øverst design" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Profileview-design-besima" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -78,8 +67,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "Profileview-design-besima",
-    "git-widget-placeholder": "journeytype-design-besima",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
@@ -202,14 +190,6 @@
       <workItem from="1778698065738" duration="110000" />
       <workItem from="1778698310724" duration="2563000" />
       <workItem from="1778740763654" duration="4222000" />
-    </task>
-    <task id="LOCAL-00021" summary="kristina">
-      <option name="closed" value="true" />
-      <created>1778661158936</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1778661158936</updated>
     </task>
     <task id="LOCAL-00022" summary="rullemenu">
       <option name="closed" value="true" />
@@ -595,14 +575,21 @@
       <option name="project" value="LOCAL" />
       <updated>1778747099116</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="journeytypeview design merget">
+      <option name="closed" value="true" />
+      <created>1778749268787</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1778749268787</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="klik." />
     <MESSAGE value="back to dashboardvi" />
     <MESSAGE value="dato på dairyview tilføjet" />
     <MESSAGE value="test" />
@@ -627,6 +614,7 @@
     <MESSAGE value="rettelser i hormoncontroller" />
     <MESSAGE value="joruneyview design" />
     <MESSAGE value="nu med radioknapper / toggleBUtton" />
-    <option name="LAST_COMMIT_MESSAGE" value="nu med radioknapper / toggleBUtton" />
+    <MESSAGE value="journeytypeview design merget" />
+    <option name="LAST_COMMIT_MESSAGE" value="journeytypeview design merget" />
   </component>
 </project>
