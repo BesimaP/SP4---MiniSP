@@ -4,6 +4,9 @@ import controller.HormoneLogController;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.time.LocalDate;
@@ -18,11 +21,26 @@ public class HormoneLogView {
     // show() metoden viser hormonlog skærmen
     public void show(Stage stage) {
 
-        // Labels og felter
-        Label dateLabel = new Label("Date:");
-        DatePicker datePicker = new DatePicker();
+        //Header
+        Label titleLabel = new Label("Log hormonevalue");
+        titleLabel.setStyle("-fx-text-fill: #2e7d32; -fx-font-size: 18px; -fx-font-weight: bold;");
 
-        Label hormoneLabel = new Label("Hormone:");
+        Label subtitleLabel = new Label("Fill out all fields");
+        subtitleLabel.getStyleClass().add("subtitle-label");
+
+        VBox header = new VBox(4, titleLabel, subtitleLabel);
+        header.setPadding(new Insets(0, 0, 16, 0));
+        header.setStyle("-fx-border-color: transparent transparent #e0e0e0 transparent; -fx-border-width: 1;");
+
+        // Labels og felter
+        Label dateLabel = new Label("DATE");
+        dateLabel.getStyleClass().add("field-label"); //css
+        DatePicker datePicker = new DatePicker();
+        datePicker.getStyleClass().add("modern-label"); //css
+        datePicker.setMaxWidth(Double.MAX_VALUE); //css
+
+        Label hormoneLabel = new Label("HORMONE");
+        hormoneLabel.getStyleClass().add("field-label"); //css
         // Dropdown med standard hormoner brugt i IVF forløb
         ComboBox<String> hormoneBox = new ComboBox<>();
         hormoneBox.getItems().addAll(
@@ -34,12 +52,19 @@ public class HormoneLogView {
                 "hCG"
         );
         hormoneBox.setPromptText("Choose hormone:");
+        hormoneBox.setStyle("-fx-font-size: 10px;");
+        hormoneBox.getStyleClass().add("modern-field"); //css
+        hormoneBox.setMaxWidth(Double.MAX_VALUE); //css
 
-        Label valueLabel = new Label("Value:");
+        Label valueLabel = new Label("VALUE");
+        valueLabel.getStyleClass().add("field-label"); //css
         // Felt til den målte hormonværdi
         TextField valueField = new TextField();
+        valueField.getStyleClass().add("modern-field"); //css
+        valueField.setMaxWidth(Double.MAX_VALUE); //css
 
-        Label unitLabel = new Label("Unit:");
+        Label unitLabel = new Label("UNIT");
+        unitLabel.getStyleClass().add("field-label"); //css
         // Dropdown med standard enheder
         ComboBox<String> unitBox = new ComboBox<>();
         unitBox.getItems().addAll(
@@ -48,13 +73,32 @@ public class HormoneLogView {
                 "nmol/L"
         );
         unitBox.setPromptText("Choose unit:");
+        unitBox.setStyle("-fx-font-size: 10px;");
+        unitBox.getStyleClass().add("modern-field"); //css
+        unitBox.setMaxWidth(Double.MAX_VALUE); //css
+
+        //Værdi og enhed side om side
+        VBox valueBox = new VBox(4, valueLabel, valueField);
+        VBox unitBoxContainer = new VBox(4, unitLabel, unitBox);
+        GridPane valueGrid = new GridPane();
+        valueGrid.setHgap(12);
+        ColumnConstraints col = new ColumnConstraints();
+        col.setPercentWidth(50);
+        valueGrid.getColumnConstraints().addAll(col, col);
+        valueGrid.add(valueBox, 0, 0);
+        valueGrid.add(unitBoxContainer, 1, 0);
 
         // Besked der vises efter gem eller ved fejl
         Label messageLabel = new Label("");
+        messageLabel.getStyleClass().add("subtitle-label"); //css
 
         // Knapper
         Button saveButton = new Button("Save");
+        saveButton.getStyleClass().add("primary-button"); //css
+        saveButton.setMaxWidth(Double.MAX_VALUE);//css
         Button backButton = new Button("Back to dashboard");
+        backButton.getStyleClass().add("secondary-button"); //css
+        backButton.setMaxWidth(Double.MAX_VALUE); //css
 
         // Hvad sker der når brugeren klikker Save
         saveButton.setOnAction(e -> {
@@ -95,24 +139,33 @@ public class HormoneLogView {
             dashboard.show(stage, Session.getCurrentPatient());
         });
 
+        //Layout
         // VBox — lodret layout med 10 pixels mellem elementer
-        VBox layout = new VBox(10);
-        layout.setPadding(new Insets(20));
+        VBox layout = new VBox(12);
+        layout.getStyleClass().add("card");
+        layout.setMaxWidth(400);
+        layout.setPrefWidth(400);
+        layout.setPadding(new Insets(28));
         layout.getChildren().addAll(
+                header,
                 dateLabel, datePicker,
                 hormoneLabel, hormoneBox,
-                valueLabel, valueField,
-                unitLabel, unitBox,
+                valueGrid,
                 saveButton,
                 messageLabel,
                 backButton
         );
 
         // Opret og vis skærmen
-        Scene scene = new Scene(layout);
+        StackPane root = new StackPane(layout);
+        root.setStyle("-fx-background-color: linear-gradient(to bottom right, #e8f5e9, #e3f2fd);");
+        root.setPadding(new Insets(40));
+
+        Scene scene = new Scene(root, 500, 600);
+        scene.getStylesheets().add(getClass().getResource("/design/styles.css").toExternalForm());
+
         stage.setTitle("Simpl — Log Hormone Value");
         stage.setScene(scene);
-        stage.sizeToScene();
         stage.show();
     }
 }
