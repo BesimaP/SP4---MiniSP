@@ -68,7 +68,7 @@ public class DashboardView {
         medicationButton.setContentDisplay(ContentDisplay.TOP);
 
         // Knapper til PLANNING sektionen
-        Button appointmentButton = new Button("Appointments");
+        Button appointmentButton = new Button("Appoint.");
         appointmentButton.getStyleClass().add("card-blue");
         appointmentButton.setMaxWidth(Double.MAX_VALUE);
         appointmentButton.setGraphic(createIcon("design/appointments.png"));
@@ -87,7 +87,7 @@ public class DashboardView {
         timelineButton.setContentDisplay(ContentDisplay.TOP);
 
         // Knapper til ROUND sektionen
-        Button historyButton = new Button("Round history");
+        Button historyButton = new Button("History");
         historyButton.getStyleClass().add("card-pink");
         historyButton.setMaxWidth(Double.MAX_VALUE);
         historyButton.setGraphic(createIcon("design/roundHistory.png"));
