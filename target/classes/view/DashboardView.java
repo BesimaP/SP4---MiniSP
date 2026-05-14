@@ -1,6 +1,9 @@
 package view;
 
 import controller.AppointmentController;
+import controller.DiaryController;
+import controller.HormoneLogController;
+import controller.RoundHistoryController;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -15,6 +18,7 @@ import model.Patient;
 import model.Session;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
 
 public class DashboardView {
 
@@ -42,6 +46,49 @@ public class DashboardView {
         dateLabel.getStyleClass().add("subtitle-label");
         Label diagnosisLabel = new Label("Diagnosis: " + patient.getDiagnosis());
         diagnosisLabel.getStyleClass().add("subtitle-label");
+
+        // Hent statistik data fra databasen
+        HormoneLogController hormoneController = new HormoneLogController();
+        DiaryController diaryController = new DiaryController();
+        RoundHistoryController roundController = new RoundHistoryController();
+
+        String latestHormone = hormoneController.getLatestHormoneValue();
+        int diaryCount = diaryController.countDiaryEntries();
+        int roundCount = roundController.initialize().size();
+
+        // Statistik kort — tre bokse side om side
+        VBox hormoneBox = new VBox(4);
+        hormoneBox.setStyle("-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 12; -fx-border-color: #e0e0e0; -fx-border-radius: 12;");
+        hormoneBox.getChildren().addAll(
+                new Label("Latest hormone") {{ setStyle("-fx-font-size: 11px; -fx-text-fill: #888;"); }},
+                new Label(latestHormone) {{ setStyle("-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }}
+        );
+
+        VBox diaryBox = new VBox(4);
+        diaryBox.setStyle("-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 12; -fx-border-color: #e0e0e0; -fx-border-radius: 12;");
+        diaryBox.getChildren().addAll(
+                new Label(diaryCount + "") {{ setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }},
+                new Label("Diary entries") {{ setStyle("-fx-font-size: 11px; -fx-text-fill: #888;"); }}
+        );
+
+        VBox roundBox = new VBox(4);
+        roundBox.setStyle("-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 12; -fx-border-color: #e0e0e0; -fx-border-radius: 12;");
+        roundBox.getChildren().addAll(
+                new Label(roundCount + "") {{ setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }},
+                new Label("Total rounds") {{ setStyle("-fx-font-size: 11px; -fx-text-fill: #888;"); }}
+        );
+
+        // Grid med statistik kort — 3 kolonner
+        GridPane statsGrid = new GridPane();
+        statsGrid.setHgap(10);
+        ColumnConstraints statCol = new ColumnConstraints();
+        statCol.setPercentWidth(33.33);
+        statsGrid.getColumnConstraints().addAll(statCol, statCol, statCol);
+        statsGrid.add(hormoneBox, 0, 0);
+        statsGrid.add(diaryBox, 1, 0);
+        statsGrid.add(roundBox, 2, 0);
+
+
 
         // Separator er en vandret linje der adskiller sektioner
         Separator separator1 = new Separator();

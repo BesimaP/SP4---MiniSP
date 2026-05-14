@@ -4,6 +4,7 @@ import model.DatabaseConnection;
 import model.Session;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
@@ -42,5 +43,25 @@ public class HormoneLogController {
         } catch (SQLException e) {
             System.out.println("Could not save hormone value: " + e.getMessage());
         }
+    }
+
+    // Henter den seneste hormonværdi for det aktive forløb
+    public String getLatestHormoneValue() {
+        Connection connection = DatabaseConnection.getConnection();
+        String sql = "SELECT hormone, value, unit FROM hormone_log WHERE journey_id = ? ORDER BY date DESC LIMIT 1";
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, Session.getCurrentJourneyId());
+            ResultSet result = statement.executeQuery();
+
+            if (result.next()) {
+                // Returner fx "Oestradiol: 450 pmol/L"
+                return result.getString("hormone") + ": " + result.getDouble("value") + " " + result.getString("unit");
+            }
+        } catch (SQLException e) {
+            System.out.println("Could not get hormone value: " + e.getMessage());
+        }
+        return "No data"; // hvis ingen hormonværdi findes
     }
 }
