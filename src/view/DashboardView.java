@@ -70,7 +70,7 @@ public class DashboardView {
         VBox apptBox = new VBox(4);
         apptBox.setStyle("-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 12; -fx-border-color: #e0e0e0; -fx-border-radius: 12;");
         apptBox.getChildren().addAll(
-                new Label(nextAppt) {{ setStyle("-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }},
+                new Label(nextAppt) {{ setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }},
                 new Label("Next appointment") {{ setStyle("-fx-font-size: 11px; -fx-text-fill: #888;"); }}
         );
 
