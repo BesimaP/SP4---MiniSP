@@ -77,14 +77,14 @@ public class DashboardView {
         VBox roundBox = new VBox(4);
         roundBox.setStyle("-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 12; -fx-border-color: #e0e0e0; -fx-border-radius: 12;");
         roundBox.getChildren().addAll(
-                new Label(roundCount + "") {{ setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }},
+                new Label(roundCount == 0 ? "-" : roundCount + "") {{ setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }},
                 new Label("Total rounds") {{ setStyle("-fx-font-size: 11px; -fx-text-fill: #888;"); }}
         );
 
         VBox diaryBox = new VBox(4);
         diaryBox.setStyle("-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 12; -fx-border-color: #e0e0e0; -fx-border-radius: 12;");
         diaryBox.getChildren().addAll(
-                new Label(diaryCount + "") {{ setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }},
+                new Label(diaryCount == 0 ? "-" : diaryCount + "") {{ setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }},
                 new Label("Diary entries") {{ setStyle("-fx-font-size: 11px; -fx-text-fill: #888;"); }}
         );
 

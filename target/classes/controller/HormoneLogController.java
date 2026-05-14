@@ -62,6 +62,6 @@ public class HormoneLogController {
         } catch (SQLException e) {
             System.out.println("Could not get hormone value: " + e.getMessage());
         }
-        return "No data"; // hvis ingen hormonværdi findes
+        return "-"; // hvis ingen hormonværdi findes
     }
 }
