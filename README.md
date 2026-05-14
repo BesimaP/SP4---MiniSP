@@ -118,7 +118,3 @@ Simpl uses a calm, supportive green colour palette to fit its purpose as a healt
 ## Authors
 
 Built by 3 students as part of the SP4 project, 1st semester Datamatiker.
-
-## License
-
-This project was developed for educational purposes as part of a school assignment.
