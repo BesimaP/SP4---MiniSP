@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="rettelse af appointment og hisotry design">
-      <change beforePath="$PROJECT_DIR$/src/controller/DiaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DiaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/HormoneLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/HormoneLogController.java" afterDir="false" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="rettelse i dahsboard med statisk kortene øverst design">
       <change beforePath="$PROJECT_DIR$/src/view/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DashboardView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/DiaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/DiaryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/DiaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/DiaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/HormoneLogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/HormoneLogController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/HormoneLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/HormoneLogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/DashboardView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/DashboardView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/DashboardView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,23 +191,7 @@
       <workItem from="1778689221217" duration="898000" />
       <workItem from="1778698065738" duration="110000" />
       <workItem from="1778698310724" duration="2563000" />
-      <workItem from="1778740763654" duration="3120000" />
-    </task>
-    <task id="LOCAL-00010" summary="startsystemview done">
-      <option name="closed" value="true" />
-      <created>1778581607515</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1778581607515</updated>
-    </task>
-    <task id="LOCAL-00011" summary="de sidste klasser i controller er lavet">
-      <option name="closed" value="true" />
-      <created>1778587022928</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1778587022928</updated>
+      <workItem from="1778740763654" duration="3451000" />
     </task>
     <task id="LOCAL-00012" summary="MedicationLogController rettet og tilføjet kommentar">
       <option name="closed" value="true" />
@@ -592,14 +569,29 @@
       <option name="project" value="LOCAL" />
       <updated>1778743403356</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="rettelse af appointment og hisotry design">
+      <option name="closed" value="true" />
+      <created>1778743923469</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1778743923469</updated>
+    </task>
+    <task id="LOCAL-00060" summary="rettelse i dahsboard med statisk kortene øverst design">
+      <option name="closed" value="true" />
+      <created>1778744015176</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1778744015176</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="rullemenu" />
     <MESSAGE value="rullekalender" />
     <MESSAGE value="scene" />
     <MESSAGE value="klik" />
@@ -624,6 +616,18 @@
     <MESSAGE value="stave fejl" />
     <MESSAGE value="merge med style og DET VIRKER" />
     <MESSAGE value="rettelse af appointment og hisotry design" />
-    <option name="LAST_COMMIT_MESSAGE" value="rettelse af appointment og hisotry design" />
+    <MESSAGE value="rettelse i dahsboard med statisk kortene øverst design" />
+    <option name="LAST_COMMIT_MESSAGE" value="rettelse i dahsboard med statisk kortene øverst design" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/view/DashboardView.java</url>
+          <line>226</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
