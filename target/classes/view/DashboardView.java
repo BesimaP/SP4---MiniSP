@@ -213,6 +213,7 @@ public class DashboardView {
         layout.setPadding(new Insets(24));
         layout.getChildren().addAll(
                 welcomeLabel, dateLabel, diagnosisLabel,
+                statsGrid, // ← er den der?
                 separator1,
                 loggingLabel, logGrid,
                 planningLabel, planGrid,
