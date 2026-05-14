@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="stave fejl">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DashboardView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/StartSystemView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/StartSystemView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/design/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/design/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpl.db" beforeDir="false" afterPath="$PROJECT_DIR$/simpl.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,8 +153,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.TestControllers" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.TestControllers" />
         <item itemvalue="Application.TestControllers" />
       </list>
