@@ -86,7 +86,7 @@ public class StartSystemView {
         });
 
         // Hjertebillede
-        ImageView heartIcon = new ImageView(new Image(getClass().getResourceAsStream("/design/heart.png")));
+        ImageView heartIcon = new ImageView(new Image(getClass().getClassLoader().getResourceAsStream("design/heart.png")));
         heartIcon.setFitWidth(200);
         heartIcon.setFitHeight(200);
         heartIcon.setPreserveRatio(true);
@@ -130,7 +130,7 @@ public class StartSystemView {
 
         // Vis skærmen
         Scene scene = new Scene(root, 500, 700);
-        scene.getStylesheets().add(getClass().getResource("/design/styles.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getClassLoader().getResource("design/styles.css").toExternalForm());
         stage.setTitle("Simpl — Log in");
         stage.setScene(scene);
         stage.show();

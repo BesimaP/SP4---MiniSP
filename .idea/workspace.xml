@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="dashboard nu med logoutbutton&#10;hormonlogview nu med validering&#10;HormoneLogView ubrugt datefield fjernet">
-      <change beforePath="$PROJECT_DIR$/doc/dynamic/UsecaseDescription.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/dynamic/UsecaseDescription.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/static/Domænemodel1.puml" beforeDir="false" afterPath="$PROJECT_DIR$/doc/static/Domænemodel1.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/static/Klassediagram1.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/static/Klassediagram2.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/static/Klassediagram3.puml" beforeDir="false" afterPath="$PROJECT_DIR$/doc/static/Klassediagram3.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ManageProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ManageProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ManageProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ManageProfileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Session.class" afterDir="false" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="stave fejl">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DashboardView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/StartSystemView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/StartSystemView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/design/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/design/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,23 +194,8 @@
       <workItem from="1778686419866" duration="108000" />
       <workItem from="1778689221217" duration="898000" />
       <workItem from="1778698065738" duration="110000" />
-      <workItem from="1778698310724" duration="2252000" />
-    </task>
-    <task id="LOCAL-00005" summary="HormoneLog.java, HormoneLogController, MedicationLog og MedicationLogController indsat">
-      <option name="closed" value="true" />
-      <created>1778512396905</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1778512396905</updated>
-    </task>
-    <task id="LOCAL-00006" summary=".">
-      <option name="closed" value="true" />
-      <created>1778572490302</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1778572490302</updated>
+      <workItem from="1778698310724" duration="2563000" />
+      <workItem from="1778740763654" duration="1927000" />
     </task>
     <task id="LOCAL-00007" summary="..">
       <option name="closed" value="true" />
@@ -591,14 +573,29 @@
       <option name="project" value="LOCAL" />
       <updated>1778698761392</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="stave fejl">
+      <option name="closed" value="true" />
+      <created>1778701001216</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1778701001216</updated>
+    </task>
+    <task id="LOCAL-00055" summary="stave fejl">
+      <option name="closed" value="true" />
+      <created>1778701186030</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1778701186030</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="klassediagram session oprettet" />
     <MESSAGE value="ProfileView,startsystem,dashboard" />
     <MESSAGE value="kristina" />
     <MESSAGE value="rullemenu" />
@@ -623,6 +620,7 @@
     <MESSAGE value="EndRoundController rettet" />
     <MESSAGE value="checkupcomingappointments indsat" />
     <MESSAGE value="dashboard nu med logoutbutton&#10;hormonlogview nu med validering&#10;HormoneLogView ubrugt datefield fjernet" />
-    <option name="LAST_COMMIT_MESSAGE" value="dashboard nu med logoutbutton&#10;hormonlogview nu med validering&#10;HormoneLogView ubrugt datefield fjernet" />
+    <MESSAGE value="stave fejl" />
+    <option name="LAST_COMMIT_MESSAGE" value="stave fejl" />
   </component>
 </project>

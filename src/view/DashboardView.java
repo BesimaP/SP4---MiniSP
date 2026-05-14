@@ -20,10 +20,10 @@ public class DashboardView {
 
     public void show(Stage stage, Patient patient) {
 
-        // Gem patienten i Session
+        // Gem patienten i Session så andre views kan hente den
         Session.setCurrentPatient(patient);
 
-        // Tjek for kommende aftaler
+        // Tjek om patienten har kommende aftaler og vis en popup
         AppointmentController appointmentController = new AppointmentController();
         ArrayList<String> appointments = appointmentController.getUpcomingAppointments();
 
@@ -35,117 +35,100 @@ public class DashboardView {
             alert.show();
         }
 
-        // Info labels
+        // Labels der viser patientens information
         Label welcomeLabel = new Label("Welcome " + patient.getName() + "!");
-        welcomeLabel.setStyle("-fx-text-fill: #2e7d32; -fx-font-size: 20px; -fx-font-weight: bold;"); //css
+        welcomeLabel.setStyle("-fx-text-fill: #2e7d32; -fx-font-size: 20px; -fx-font-weight: bold;");
         Label dateLabel = new Label("Today: " + LocalDate.now());
-        dateLabel.getStyleClass().add("subtitle-label"); //css
+        dateLabel.getStyleClass().add("subtitle-label");
         Label diagnosisLabel = new Label("Diagnosis: " + patient.getDiagnosis());
         diagnosisLabel.getStyleClass().add("subtitle-label");
 
-        // Separator
+        // Separator er en vandret linje der adskiller sektioner
         Separator separator1 = new Separator();
-        // Separator separator2 = new Separator();
 
-        // Gruppe overskrifter
+        // Overskrifter til de tre sektioner
         Label loggingLabel = new Label("LOG DATA");
-        loggingLabel.getStyleClass().add("section-label"); //css
+        loggingLabel.getStyleClass().add("section-label");
         Label planningLabel = new Label("PLANNING");
-        planningLabel.getStyleClass().add("section-label"); //css
+        planningLabel.getStyleClass().add("section-label");
         Label historyLabel = new Label("ROUND");
-        historyLabel.getStyleClass().add("section-label"); //css
+        historyLabel.getStyleClass().add("section-label");
 
-        // Knapper med styling
+        // Knapper til LOG DATA sektionen — uden / foran design
         Button hormoneButton = new Button("Log hormone value");
-        hormoneButton.getStyleClass().add("card-green"); //css
-        hormoneButton.setMaxWidth(Double.MAX_VALUE); //css
-        hormoneButton.setGraphic(createIcon("/design/appointments.png")); //css Tilføj ikon
+        hormoneButton.getStyleClass().add("card-green");
+        hormoneButton.setMaxWidth(Double.MAX_VALUE);
+        hormoneButton.setGraphic(createIcon("design/appointments.png"));
         hormoneButton.setContentDisplay(ContentDisplay.TOP);
 
         Button medicationButton = new Button("Log medication");
-        medicationButton.getStyleClass().add("card-green"); //css
-        medicationButton.setMaxWidth(Double.MAX_VALUE); //css
-        medicationButton.setGraphic(createIcon("/design/medication.png")); //css Tilføj ikon
+        medicationButton.getStyleClass().add("card-green");
+        medicationButton.setMaxWidth(Double.MAX_VALUE);
+        medicationButton.setGraphic(createIcon("design/medication.png"));
         medicationButton.setContentDisplay(ContentDisplay.TOP);
 
+        // Knapper til PLANNING sektionen
         Button appointmentButton = new Button("Appointments");
-        appointmentButton.getStyleClass().add("card-blue"); //css
-        appointmentButton.setMaxWidth(Double.MAX_VALUE); //css
-        appointmentButton.setGraphic(createIcon("/design/appointments.png")); //css Tilføj ikon
+        appointmentButton.getStyleClass().add("card-blue");
+        appointmentButton.setMaxWidth(Double.MAX_VALUE);
+        appointmentButton.setGraphic(createIcon("design/appointments.png"));
         appointmentButton.setContentDisplay(ContentDisplay.TOP);
 
         Button diaryButton = new Button("Diary");
-        diaryButton.getStyleClass().add("card-blue"); //css
-        diaryButton.setMaxWidth(Double.MAX_VALUE); //css
-        diaryButton.setGraphic(createIcon("/design/diary.png")); //css Tilføj ikon
+        diaryButton.getStyleClass().add("card-blue");
+        diaryButton.setMaxWidth(Double.MAX_VALUE);
+        diaryButton.setGraphic(createIcon("design/diary.png"));
         diaryButton.setContentDisplay(ContentDisplay.TOP);
 
         Button timelineButton = new Button("Timeline");
         timelineButton.getStyleClass().add("card-blue");
         timelineButton.setMaxWidth(Double.MAX_VALUE);
-        timelineButton.setGraphic(createIcon("/design/timeline.png")); //css Tilføj ikon
+        timelineButton.setGraphic(createIcon("design/timeline.png"));
         timelineButton.setContentDisplay(ContentDisplay.TOP);
 
+        // Knapper til ROUND sektionen
         Button historyButton = new Button("Round history");
         historyButton.getStyleClass().add("card-pink");
         historyButton.setMaxWidth(Double.MAX_VALUE);
-        historyButton.setGraphic(createIcon("/design/roundHistory.png")); //css Tilføj ikon
+        historyButton.setGraphic(createIcon("design/roundHistory.png"));
         historyButton.setContentDisplay(ContentDisplay.TOP);
 
+        // start.png mangler — bruger stop.png i stedet
         Button newRoundButton = new Button("New round");
         newRoundButton.getStyleClass().add("card-pink");
         newRoundButton.setMaxWidth(Double.MAX_VALUE);
-        newRoundButton.setGraphic(createIcon("/design/start.png")); //css Tilføj ikon
+        newRoundButton.setGraphic(createIcon("design/stop.png"));
         newRoundButton.setContentDisplay(ContentDisplay.TOP);
 
         Button endRoundButton = new Button("End round");
         endRoundButton.getStyleClass().add("card-pink");
         endRoundButton.setMaxWidth(Double.MAX_VALUE);
-        endRoundButton.setGraphic(createIcon("/design/stop.png")); //css Tilføj ikon
+        endRoundButton.setGraphic(createIcon("design/stop.png"));
         endRoundButton.setContentDisplay(ContentDisplay.TOP);
 
-        // Kobl knapper til views
-        hormoneButton.setOnAction(e -> {
-            HormoneLogView view = new HormoneLogView();
-            view.show(stage);
+        // Log ud knap
+        Button logoutButton = new Button("Log out");
+        logoutButton.getStyleClass().add("secondary-button");
+        logoutButton.setMaxWidth(Double.MAX_VALUE);
+
+        // Kobl knapper til de rigtige views
+        hormoneButton.setOnAction(e -> new HormoneLogView().show(stage));
+        medicationButton.setOnAction(e -> new MedicationLogView().show(stage));
+        appointmentButton.setOnAction(e -> new AppointmentView().show(stage));
+        diaryButton.setOnAction(e -> new DiaryView().show(stage));
+        timelineButton.setOnAction(e -> new TimelineView().show(stage));
+        historyButton.setOnAction(e -> new RoundHistoryView().show(stage));
+        newRoundButton.setOnAction(e -> new NewRoundView().show(stage));
+        endRoundButton.setOnAction(e -> new EndRoundView().show(stage));
+
+        // Log ud — ryd Session og gå tilbage til login
+        logoutButton.setOnAction(e -> {
+            Session.setCurrentPatient(null);
+            Session.setCurrentJourneyId(0);
+            new StartSystemView().show(stage);
         });
 
-        medicationButton.setOnAction(e -> {
-            MedicationLogView view = new MedicationLogView();
-            view.show(stage);
-        });
-
-        appointmentButton.setOnAction(e -> {
-            AppointmentView view = new AppointmentView();
-            view.show(stage);
-        });
-
-        diaryButton.setOnAction(e -> {
-            DiaryView view = new DiaryView();
-            view.show(stage);
-        });
-
-        timelineButton.setOnAction(e -> {
-            TimelineView view = new TimelineView();
-            view.show(stage);
-        });
-
-        historyButton.setOnAction(e -> {
-            RoundHistoryView view = new RoundHistoryView();
-            view.show(stage);
-        });
-
-        newRoundButton.setOnAction(e -> {
-            NewRoundView view = new NewRoundView();
-            view.show(stage);
-        });
-
-        endRoundButton.setOnAction(e -> {
-            EndRoundView view = new EndRoundView();
-            view.show(stage);
-        });
-
-        // LOG DATA grid - 2 kolonner
+        // LOG DATA grid — 2 kolonner side om side
         GridPane logGrid = new GridPane();
         logGrid.setHgap(10);
         logGrid.setVgap(10);
@@ -155,7 +138,7 @@ public class DashboardView {
         logGrid.add(hormoneButton, 0, 0);
         logGrid.add(medicationButton, 1, 0);
 
-        // PLANLÆGNING grid - 3 kolonner
+        // PLANNING grid — 3 kolonner side om side
         GridPane planGrid = new GridPane();
         planGrid.setHgap(10);
         planGrid.setVgap(10);
@@ -166,7 +149,7 @@ public class DashboardView {
         planGrid.add(diaryButton, 1, 0);
         planGrid.add(timelineButton, 2, 0);
 
-        // RUNDE grid - 3 kolonner
+        // ROUND grid — 3 kolonner side om side
         GridPane roundGrid = new GridPane();
         roundGrid.setHgap(10);
         roundGrid.setVgap(10);
@@ -175,14 +158,7 @@ public class DashboardView {
         roundGrid.add(newRoundButton, 1, 0);
         roundGrid.add(endRoundButton, 2, 0);
 
-        logoutButton.setOnAction(e -> {
-            Session.setCurrentPatient(null);
-            Session.setCurrentJourneyId(0);
-            StartSystemView startView = new StartSystemView();
-            startView.show(stage);
-        });
-
-        // Layout
+        // VBox — lodret layout der samler alle elementer
         VBox layout = new VBox(10);
         layout.getStyleClass().add("card");
         layout.setMaxWidth(460);
@@ -191,47 +167,31 @@ public class DashboardView {
         layout.getChildren().addAll(
                 welcomeLabel, dateLabel, diagnosisLabel,
                 separator1,
-                loggingLabel,
-                hormoneButton,
-                medicationButton,
-                appointmentButton,
-                diaryButton,
-                separator2,
-                historyLabel,
-                timelineButton,
-                historyButton,
-                newRoundButton,
-                endRoundButton,
-                logoutButton
                 loggingLabel, logGrid,
                 planningLabel, planGrid,
-               // separator2,
-                historyLabel, roundGrid
+                historyLabel, roundGrid,
+                logoutButton
         );
 
-        // Vis skærmen
-
+        // StackPane centrerer layoutet på skærmen med gradient baggrund
         StackPane root = new StackPane(layout);
         root.setStyle("-fx-background-color: linear-gradient(to bottom right, #e8f5e9, #e3f2fd);");
         root.setPadding(new Insets(40));
 
+        // Opret og vis skærmen — styles.css uden / foran design
         Scene scene = new Scene(root, 500, 700);
-        scene.getStylesheets().add(getClass().getResource("/design/styles.css").toExternalForm());
-
+        scene.getStylesheets().add(getClass().getClassLoader().getResource("design/styles.css").toExternalForm());
         stage.setTitle("Simpl — Dashboard");
         stage.setScene(scene);
         stage.show();
     }
-    //Hjælpemetode til ikoner
+
+    // Hjælpemetode der opretter et ikon fra en billedfil
     private ImageView createIcon(String path) {
-        ImageView icon = new ImageView(new Image(getClass().getResourceAsStream(path)));
+        ImageView icon = new ImageView(new Image(getClass().getClassLoader().getResourceAsStream(path)));
         icon.setFitWidth(24);
         icon.setFitHeight(24);
         icon.setPreserveRatio(true);
         return icon;
-    }
-    private void styleButton(Button button, String imagePath) {
-        button.setGraphic(createIcon(imagePath));
-        button.setContentDisplay(ContentDisplay.TOP);
     }
 }
