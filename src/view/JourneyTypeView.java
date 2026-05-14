@@ -35,11 +35,11 @@ public class JourneyTypeView {
         journeyLabel.getStyleClass().add("field-label");
         ComboBox<String> journeyBox = new ComboBox<>();
         journeyBox.getItems().addAll(
-                "Fertility",
-                "Cancer",
-                "Rehabilitation",
-                "Psychiatry",
-                "Other"
+                "🌱 Fertility",
+                "🎗 Cancer",
+                "💪 Rehabilitation",
+                "🧠 Psychiatry",
+                "📋 Other"
         );
         journeyBox.setPromptText("Choose journey type:");
         journeyBox.getStyleClass().add("modern-field");

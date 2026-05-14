@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="rettelse i dahsboard med statisk kortene øverst design" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="rettelser i hormoncontroller">
+      <change beforePath="$PROJECT_DIR$/src/view/JourneyTypeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JourneyTypeView.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="design-Besima" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,7 +69,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "journeytype-design-besima",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
@@ -189,14 +191,6 @@
       <workItem from="1778698065738" duration="110000" />
       <workItem from="1778698310724" duration="2563000" />
       <workItem from="1778740763654" duration="4222000" />
-    </task>
-    <task id="LOCAL-00016" summary="sekvensdiagram rettet til engelsk">
-      <option name="closed" value="true" />
-      <created>1778589846478</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1778589846478</updated>
     </task>
     <task id="LOCAL-00017" summary="klassediagram session oprettet">
       <option name="closed" value="true" />
@@ -582,14 +576,21 @@
       <option name="project" value="LOCAL" />
       <updated>1778744778039</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="rettelser i hormoncontroller">
+      <option name="closed" value="true" />
+      <created>1778746100177</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1778746100177</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="rullekalender" />
     <MESSAGE value="scene" />
     <MESSAGE value="klik" />
     <MESSAGE value="klik." />
@@ -614,6 +615,7 @@
     <MESSAGE value="merge med style og DET VIRKER" />
     <MESSAGE value="rettelse af appointment og hisotry design" />
     <MESSAGE value="rettelse i dahsboard med statisk kortene øverst design" />
-    <option name="LAST_COMMIT_MESSAGE" value="rettelse i dahsboard med statisk kortene øverst design" />
+    <MESSAGE value="rettelser i hormoncontroller" />
+    <option name="LAST_COMMIT_MESSAGE" value="rettelser i hormoncontroller" />
   </component>
 </project>
