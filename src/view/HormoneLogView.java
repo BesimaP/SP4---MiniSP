@@ -97,6 +97,7 @@ public class HormoneLogView {
         saveButton.getStyleClass().add("primary-button"); //css
         saveButton.setMaxWidth(Double.MAX_VALUE);//css
         Button backButton = new Button("Back to dashboard");
+        backButton.setStyle("-fx-text-fill: #2e7d32; -fx-font-size: 13px; -fx-font-weight: bold;");
         backButton.getStyleClass().add("secondary-button"); //css
         backButton.setMaxWidth(Double.MAX_VALUE); //css
 
