@@ -4,6 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="rettelse i dahsboard med statisk kortene øverst design">
+      <change beforePath="$PROJECT_DIR$/src/view/ProfileView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ProfileView.java" afterDir="false" />
+    </list>
     <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="nu med radioknapper / toggleBUtton">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/JourneyTypeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JourneyTypeView.java" afterDir="false" />
@@ -75,6 +78,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "Profileview-design-besima",
     "git-widget-placeholder": "journeytype-design-besima",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
@@ -159,10 +163,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestControllers" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.TestControllers" />
-        <item itemvalue="Application.TestControllers" />
-        <item itemvalue="Application.TestControllers" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
