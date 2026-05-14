@@ -60,8 +60,8 @@ public class DashboardView {
         VBox hormoneBox = new VBox(4);
         hormoneBox.setStyle("-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 12; -fx-border-color: #e0e0e0; -fx-border-radius: 12;");
         hormoneBox.getChildren().addAll(
-                new Label("Latest hormone") {{ setStyle("-fx-font-size: 11px; -fx-text-fill: #888;"); }},
-                new Label(latestHormone) {{ setStyle("-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }}
+                new Label(latestHormone) {{ setStyle("-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }},
+                new Label("Latest hormone") {{ setStyle("-fx-font-size: 11px; -fx-text-fill: #888;"); }}
         );
 
         VBox diaryBox = new VBox(4);
