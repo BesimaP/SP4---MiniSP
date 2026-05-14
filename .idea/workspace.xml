@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="rettelse i dahsboard med statisk kortene øverst design">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="tilføjet hvid baggrund i JourneyTypeView og i ProfileView">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simpl.db" beforeDir="false" afterPath="$PROJECT_DIR$/simpl.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JourneyTypeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JourneyTypeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ProfileView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ProfileView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/MedicationLog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/DashboardView 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/JourneyTypeView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/JourneyTypeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/JourneyTypeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,12 +39,12 @@
     &quot;assignee&quot;: &quot;KristinaBengtsson&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/BesimaP/SP4---MiniSP.git",
-    "accountId": "324040d9-25b2-424e-be3b-9dd204bde96a"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/BesimaP/SP4---MiniSP.git&quot;,
+    &quot;accountId&quot;: &quot;148c5a47-96a7-4752-8d99-687e50c6a048&quot;
   }
-}]]></component>
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -79,7 +71,7 @@
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -174,8 +166,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-IU-252.26199.169" />
       </set>
     </attachedChunks>
   </component>
@@ -202,23 +194,6 @@
       <workItem from="1778698065738" duration="110000" />
       <workItem from="1778698310724" duration="2563000" />
       <workItem from="1778740763654" duration="4222000" />
-      <workItem from="1778755631707" duration="1003000" />
-    </task>
-    <task id="LOCAL-00022" summary="rullemenu">
-      <option name="closed" value="true" />
-      <created>1778661983874</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1778661983874</updated>
-    </task>
-    <task id="LOCAL-00023" summary="rullekalender">
-      <option name="closed" value="true" />
-      <created>1778662358328</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1778662358328</updated>
     </task>
     <task id="LOCAL-00024" summary="scene">
       <option name="closed" value="true" />
@@ -596,14 +571,29 @@
       <option name="project" value="LOCAL" />
       <updated>1778749268787</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="journeytypeview design merget">
+      <option name="closed" value="true" />
+      <created>1778754897533</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1778754897533</updated>
+    </task>
+    <task id="LOCAL-00072" summary="hormonview med design">
+      <option name="closed" value="true" />
+      <created>1778755072381</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1778755072381</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="back to dashboardvi" />
     <MESSAGE value="dato på dairyview tilføjet" />
     <MESSAGE value="test" />
     <MESSAGE value="smileyer i ddiary fikset" />
@@ -628,6 +618,7 @@
     <MESSAGE value="joruneyview design" />
     <MESSAGE value="nu med radioknapper / toggleBUtton" />
     <MESSAGE value="journeytypeview design merget" />
-    <option name="LAST_COMMIT_MESSAGE" value="journeytypeview design merget" />
+    <MESSAGE value="hormonview med design" />
+    <option name="LAST_COMMIT_MESSAGE" value="hormonview med design" />
   </component>
 </project>
