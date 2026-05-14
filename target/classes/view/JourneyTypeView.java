@@ -79,7 +79,7 @@ public class JourneyTypeView {
 
         // Layout
         VBox layout = new VBox(8);
-        layout.getStyleClass().add("login-card");
+        layout.getStyleClass().add("card");
         layout.setMaxWidth(380);
         layout.setPrefWidth(380);
         layout.setPadding(new Insets(40));

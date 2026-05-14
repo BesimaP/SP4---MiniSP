@@ -119,7 +119,7 @@ public class ProfileView {
         // 8 er afstanden i pixels mellem hvert element
         // login-card er defineret i styles.css — hvid baggrund med skygge og afrundede hjørner
         VBox layout = new VBox(8);
-        layout.getStyleClass().add("login-card");
+        layout.getStyleClass().add("card");
         layout.setMaxWidth(380); // maksimal bredde på kortet
         layout.setPrefWidth(380); // foretrukken bredde på kortet
         layout.setPadding(new Insets(40)); // 40 pixels luft indeni kortet
