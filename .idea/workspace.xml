@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="rettelser i hormoncontroller">
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="nu med radioknapper / toggleBUtton">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/JourneyTypeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JourneyTypeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/RoundHistoryController 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/FertilityJourney 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/DashboardView$7 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/JourneyTypeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/JourneyTypeView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/JourneyTypeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/JourneyTypeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,38 +197,6 @@
       <workItem from="1778698065738" duration="110000" />
       <workItem from="1778698310724" duration="2563000" />
       <workItem from="1778740763654" duration="4222000" />
-    </task>
-    <task id="LOCAL-00017" summary="klassediagram session oprettet">
-      <option name="closed" value="true" />
-      <created>1778590370222</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1778590370222</updated>
-    </task>
-    <task id="LOCAL-00018" summary="ProfileView,startsystem,dashboard">
-      <option name="closed" value="true" />
-      <created>1778609583567</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1778609583567</updated>
-    </task>
-    <task id="LOCAL-00019" summary="ProfileView,startsystem,dashboard">
-      <option name="closed" value="true" />
-      <created>1778609826360</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1778609826360</updated>
-    </task>
-    <task id="LOCAL-00020" summary="ProfileView,startsystem,dashboard">
-      <option name="closed" value="true" />
-      <created>1778611157289</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1778611157289</updated>
     </task>
     <task id="LOCAL-00021" summary="kristina">
       <option name="closed" value="true" />
@@ -584,15 +558,45 @@
       <option name="project" value="LOCAL" />
       <updated>1778746100177</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="joruneyview design">
+      <option name="closed" value="true" />
+      <created>1778746711106</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1778746711106</updated>
+    </task>
+    <task id="LOCAL-00067" summary="joruneyview design">
+      <option name="closed" value="true" />
+      <created>1778746854488</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1778746854488</updated>
+    </task>
+    <task id="LOCAL-00068" summary="nu med radioknapper / toggleBUtton">
+      <option name="closed" value="true" />
+      <created>1778747094823</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1778747094823</updated>
+    </task>
+    <task id="LOCAL-00069" summary="nu med radioknapper / toggleBUtton">
+      <option name="closed" value="true" />
+      <created>1778747099116</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1778747099116</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="scene" />
-    <MESSAGE value="klik" />
     <MESSAGE value="klik." />
     <MESSAGE value="back to dashboardvi" />
     <MESSAGE value="dato på dairyview tilføjet" />
@@ -616,6 +620,8 @@
     <MESSAGE value="rettelse af appointment og hisotry design" />
     <MESSAGE value="rettelse i dahsboard med statisk kortene øverst design" />
     <MESSAGE value="rettelser i hormoncontroller" />
-    <option name="LAST_COMMIT_MESSAGE" value="rettelser i hormoncontroller" />
+    <MESSAGE value="joruneyview design" />
+    <MESSAGE value="nu med radioknapper / toggleBUtton" />
+    <option name="LAST_COMMIT_MESSAGE" value="nu med radioknapper / toggleBUtton" />
   </component>
 </project>

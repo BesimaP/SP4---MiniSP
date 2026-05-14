@@ -5,7 +5,6 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -24,7 +23,7 @@ public class JourneyTypeView {
         titleLabel.setAlignment(Pos.CENTER);
 
         // Undertitel
-        Label subtitleLabel = new Label("Choose your treatment path");
+        Label subtitleLabel = new Label("Select your journey");
         subtitleLabel.getStyleClass().add("subtitle-label");
         subtitleLabel.setMaxWidth(Double.MAX_VALUE);
         subtitleLabel.setAlignment(Pos.CENTER);
@@ -44,6 +43,14 @@ public class JourneyTypeView {
         Button continueButton = new Button("Continue");
         continueButton.getStyleClass().add("primary-button");
         continueButton.setMaxWidth(Double.MAX_VALUE);
+
+        Button backButton = new Button("Back to login");
+        backButton.getStyleClass().add("secondary-button");
+        backButton.setMaxWidth(Double.MAX_VALUE);
+
+        backButton.setOnAction(e -> {
+            new StartSystemView().show(stage);
+        });
 
         // Continue knap
         continueButton.setOnAction(e -> {
@@ -85,6 +92,7 @@ public class JourneyTypeView {
                 psychiatryButton,
                 otherButton,
                 continueButton,
+                backButton,
                 messageLabel
         );
 
