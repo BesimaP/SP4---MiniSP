@@ -163,6 +163,7 @@ public class DashboardView {
 
         // Log ud knap
         Button logoutButton = new Button("Log out");
+        logoutButton.setStyle("-fx-text-fill: #2e7d32; -fx-font-size: 13px; -fx-font-weight: bold;");
         logoutButton.getStyleClass().add("secondary-button");
         logoutButton.setMaxWidth(Double.MAX_VALUE);
 
