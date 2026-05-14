@@ -148,3 +148,30 @@
     -fx-font-weight: bold;
 }
 
+
+.section-label {
+    -fx-text-fill: #888888;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
+    -fx-padding: 8 0 4 0;
+}
+
+.card-green:hover {
+    -fx-background-color: #f1f8e9;
+    -fx-border-color: #4caf50;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
+}
+
+.card-blue:hover {
+    -fx-background-color: #bbdefb;
+    -fx-border-color: #1976d2;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
+}
+
+.card-pink:hover {
+    -fx-background-color: #f8bbd0;
+    -fx-border-color: #e91e63;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
+}
+

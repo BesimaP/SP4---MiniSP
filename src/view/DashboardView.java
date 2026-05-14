@@ -1,6 +1,9 @@
 package view;
 
 import controller.AppointmentController;
+import controller.DiaryController;
+import controller.HormoneLogController;
+import controller.RoundHistoryController;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -43,6 +46,59 @@ public class DashboardView {
         Label diagnosisLabel = new Label("Diagnosis: " + patient.getDiagnosis());
         diagnosisLabel.getStyleClass().add("subtitle-label");
 
+        // Hent statistik data fra databasen
+        HormoneLogController hormoneController = new HormoneLogController();
+        DiaryController diaryController = new DiaryController();
+        RoundHistoryController roundController = new RoundHistoryController();
+        AppointmentController statsApptController = new AppointmentController();
+
+        String latestHormone = hormoneController.getLatestHormoneValue();
+        int diaryCount = diaryController.countDiaryEntries();
+        int roundCount = roundController.initialize().size();
+        String nextAppt = statsApptController.getUpcomingAppointments().isEmpty()
+                ? "-"
+                : statsApptController.getUpcomingAppointments().get(0);
+
+        // Statistik kort — fire bokse side om side
+        VBox hormoneBox = new VBox(4);
+        hormoneBox.setStyle("-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 12; -fx-border-color: #e0e0e0; -fx-border-radius: 12;");
+        hormoneBox.getChildren().addAll(
+                new Label(latestHormone) {{ setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }},
+                new Label("Latest hormone") {{ setStyle("-fx-font-size: 11px; -fx-text-fill: #888;"); }}
+        );
+
+        VBox apptBox = new VBox(4);
+        apptBox.setStyle("-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 12; -fx-border-color: #e0e0e0; -fx-border-radius: 12;");
+        apptBox.getChildren().addAll(
+                new Label(nextAppt) {{ setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }},
+                new Label("Next appointment") {{ setStyle("-fx-font-size: 11px; -fx-text-fill: #888;"); }}
+        );
+
+        VBox roundBox = new VBox(4);
+        roundBox.setStyle("-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 12; -fx-border-color: #e0e0e0; -fx-border-radius: 12;");
+        roundBox.getChildren().addAll(
+                new Label(roundCount == 0 ? "-" : roundCount + "") {{ setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }},
+                new Label("Total rounds") {{ setStyle("-fx-font-size: 11px; -fx-text-fill: #888;"); }}
+        );
+
+        VBox diaryBox = new VBox(4);
+        diaryBox.setStyle("-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 12; -fx-border-color: #e0e0e0; -fx-border-radius: 12;");
+        diaryBox.getChildren().addAll(
+                new Label(diaryCount == 0 ? "-" : diaryCount + "") {{ setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }},
+                new Label("Diary entries") {{ setStyle("-fx-font-size: 11px; -fx-text-fill: #888;"); }}
+        );
+
+        // Grid med 4 statistik kort
+        GridPane statsGrid = new GridPane();
+        statsGrid.setHgap(10);
+        ColumnConstraints statCol = new ColumnConstraints();
+        statCol.setPercentWidth(25);
+        statsGrid.getColumnConstraints().addAll(statCol, statCol, statCol, statCol);
+        statsGrid.add(hormoneBox, 0, 0);
+        statsGrid.add(apptBox, 1, 0);
+        statsGrid.add(roundBox, 2, 0);
+        statsGrid.add(diaryBox, 3, 0);
+
         // Separator er en vandret linje der adskiller sektioner
         Separator separator1 = new Separator();
 
@@ -54,7 +110,7 @@ public class DashboardView {
         Label historyLabel = new Label("ROUND");
         historyLabel.getStyleClass().add("section-label");
 
-        // Knapper til LOG DATA sektionen — uden / foran design
+        // Knapper til LOG DATA sektionen
         Button hormoneButton = new Button("Log hormone value");
         hormoneButton.getStyleClass().add("card-green");
         hormoneButton.setMaxWidth(Double.MAX_VALUE);
@@ -68,7 +124,7 @@ public class DashboardView {
         medicationButton.setContentDisplay(ContentDisplay.TOP);
 
         // Knapper til PLANNING sektionen
-        Button appointmentButton = new Button("Appointments");
+        Button appointmentButton = new Button("Appoint.");
         appointmentButton.getStyleClass().add("card-blue");
         appointmentButton.setMaxWidth(Double.MAX_VALUE);
         appointmentButton.setGraphic(createIcon("design/appointments.png"));
@@ -87,13 +143,12 @@ public class DashboardView {
         timelineButton.setContentDisplay(ContentDisplay.TOP);
 
         // Knapper til ROUND sektionen
-        Button historyButton = new Button("Round history");
+        Button historyButton = new Button("History");
         historyButton.getStyleClass().add("card-pink");
         historyButton.setMaxWidth(Double.MAX_VALUE);
         historyButton.setGraphic(createIcon("design/roundHistory.png"));
         historyButton.setContentDisplay(ContentDisplay.TOP);
 
-        // start.png mangler — bruger stop.png i stedet
         Button newRoundButton = new Button("New round");
         newRoundButton.getStyleClass().add("card-pink");
         newRoundButton.setMaxWidth(Double.MAX_VALUE);
@@ -161,11 +216,12 @@ public class DashboardView {
         // VBox — lodret layout der samler alle elementer
         VBox layout = new VBox(10);
         layout.getStyleClass().add("card");
-        layout.setMaxWidth(460);
-        layout.setPrefWidth(460);
+        layout.setMaxWidth(600);
+        layout.setPrefWidth(600);
         layout.setPadding(new Insets(24));
         layout.getChildren().addAll(
                 welcomeLabel, dateLabel, diagnosisLabel,
+                statsGrid,
                 separator1,
                 loggingLabel, logGrid,
                 planningLabel, planGrid,
@@ -178,8 +234,8 @@ public class DashboardView {
         root.setStyle("-fx-background-color: linear-gradient(to bottom right, #e8f5e9, #e3f2fd);");
         root.setPadding(new Insets(40));
 
-        // Opret og vis skærmen — styles.css uden / foran design
-        Scene scene = new Scene(root, 500, 700);
+        // Opret og vis skærmen
+        Scene scene = new Scene(root, 650, 750);
         scene.getStylesheets().add(getClass().getClassLoader().getResource("design/styles.css").toExternalForm());
         stage.setTitle("Simpl — Dashboard");
         stage.setScene(scene);
