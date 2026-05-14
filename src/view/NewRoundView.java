@@ -42,6 +42,15 @@ public class NewRoundView {
             messageLabel.setText("Round started!");
         });
 
+        // Tjek at det er et tal
+        try {
+            int roundNumber = Integer.parseInt(roundNumberField.getText());
+            controller.handleStartRound(roundNumber);
+            messageLabel.setText("Round started!");
+        } catch (NumberFormatException ex) {
+            messageLabel.setText("Round number must be a number!");
+        }
+
         // Back knap
         backButton.setOnAction(e -> {
             DashboardView dashboard = new DashboardView();
