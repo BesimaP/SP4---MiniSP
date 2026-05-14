@@ -56,7 +56,7 @@ public class DashboardView {
         int diaryCount = diaryController.countDiaryEntries();
         int roundCount = roundController.initialize().size();
         String nextAppt = statsApptController.getUpcomingAppointments().isEmpty()
-                ? "None"
+                ? "-"
                 : statsApptController.getUpcomingAppointments().get(0);
 
         // Statistik kort — fire bokse side om side
