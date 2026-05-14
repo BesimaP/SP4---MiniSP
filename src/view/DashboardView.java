@@ -216,8 +216,8 @@ public class DashboardView {
         // VBox — lodret layout der samler alle elementer
         VBox layout = new VBox(10);
         layout.getStyleClass().add("card");
-        layout.setMaxWidth(460);
-        layout.setPrefWidth(460);
+        layout.setMaxWidth(600);
+        layout.setPrefWidth(600);
         layout.setPadding(new Insets(24));
         layout.getChildren().addAll(
                 welcomeLabel, dateLabel, diagnosisLabel,
@@ -235,7 +235,7 @@ public class DashboardView {
         root.setPadding(new Insets(40));
 
         // Opret og vis skærmen
-        Scene scene = new Scene(root, 500, 700);
+        Scene scene = new Scene(root, 650, 750);
         scene.getStylesheets().add(getClass().getClassLoader().getResource("design/styles.css").toExternalForm());
         stage.setTitle("Simpl — Dashboard");
         stage.setScene(scene);
