@@ -17,14 +17,14 @@ public class AppointmentView {
 
     public void show(Stage stage) {
 
-        //Header
+        // Header
         Label titleLabel = new Label("Add appointment");
         titleLabel.setStyle("-fx-text-fill: #2e7d32; -fx-font-size: 18px; -fx-font-weight: bold;");
-        Label subtitleLabel = new Label ("Fill out all fields");
+        Label subtitleLabel = new Label("Fill out all fields");
         subtitleLabel.getStyleClass().add("subtitle-label");
 
         VBox header = new VBox(4, titleLabel, subtitleLabel);
-        header.setPadding(new Insets(0,0,16,0));
+        header.setPadding(new Insets(0, 0, 16, 0));
         header.setStyle("-fx-border-color: transparent transparent #e0e0e0 transparent; -fx-border-width: 1;");
 
         // Felter
@@ -36,7 +36,6 @@ public class AppointmentView {
 
         Label typeLabel = new Label("TYPE");
         typeLabel.getStyleClass().add("field-label");
-        //Dropdown med aftaletyper
         ComboBox<String> typeBox = new ComboBox<>();
         typeBox.getItems().addAll(
                 "Scanning",
@@ -58,9 +57,14 @@ public class AppointmentView {
         locationField.getStyleClass().add("modern-field");
         locationField.setMaxWidth(Double.MAX_VALUE);
 
-        //Besked label
+        // Besked
         Label messageLabel = new Label("");
         messageLabel.getStyleClass().add("subtitle-label");
+
+        // Ryd beskeden når brugeren ændrer noget
+        datePicker.valueProperty().addListener((obs, oldVal, newVal) -> messageLabel.setText(""));
+        typeBox.valueProperty().addListener((obs, oldVal, newVal) -> messageLabel.setText(""));
+        locationField.textProperty().addListener((obs, oldVal, newVal) -> messageLabel.setText(""));
 
         // Knapper
         Button saveButton = new Button("Save");
@@ -82,17 +86,17 @@ public class AppointmentView {
 
         ArrayList<String> appointments = controller.getUpcomingAppointments();
 
+        // Venlig tom-skærm besked
         if (appointments.isEmpty()) {
-            appointmentList.getItems().add("No upcoming appointments");
+            appointmentList.getItems().add("No appointments yet — add one above to get started! 📅");
         } else {
             for (String appointment : appointments) {
                 appointmentList.getItems().add(appointment);
             }
         }
 
-        // Gem knap
+        // Save
         saveButton.setOnAction(e -> {
-            // Validering
             if (datePicker.getValue() == null) {
                 messageLabel.setText("Please select a date!");
                 return;
@@ -117,7 +121,7 @@ public class AppointmentView {
             appointmentList.getItems().clear();
             ArrayList<String> updatedAppointments = controller.getUpcomingAppointments();
             if (updatedAppointments.isEmpty()) {
-                appointmentList.getItems().add("No upcoming appointments");
+                appointmentList.getItems().add("No appointments yet — add one above to get started! 📅");
             } else {
                 for (String appointment : updatedAppointments) {
                     appointmentList.getItems().add(appointment);
@@ -125,10 +129,9 @@ public class AppointmentView {
             }
         });
 
-        // Back knap
+        // Back
         backButton.setOnAction(e -> {
-            DashboardView dashboard = new DashboardView();
-            dashboard.show(stage, Session.getCurrentPatient());
+            new DashboardView().show(stage, Session.getCurrentPatient());
         });
 
         // Layout
@@ -148,12 +151,12 @@ public class AppointmentView {
                 backButton
         );
 
-        // Opret og vis skærmen
         StackPane root = new StackPane(layout);
-        root.setStyle("-fx-background-color: linear-gradient(to bottom right, #e8f5e9, #e3f2fd)");
+        root.setStyle("-fx-background-color: linear-gradient(to bottom right, #e8f5e9, #e3f2fd);");
         root.setPadding(new Insets(40));
 
-        Scene scene = new Scene(root, 500, 740);
+        // Samme størrelse som dashboard
+        Scene scene = new Scene(root, 650, 750);
         scene.getStylesheets().add(getClass().getClassLoader().getResource("design/styles.css").toExternalForm());
 
         stage.setTitle("Simpl — Add Appointment");

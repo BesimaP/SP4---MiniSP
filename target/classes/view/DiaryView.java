@@ -13,7 +13,6 @@ import java.time.LocalDate;
 // DiaryView viser skærmen hvor patienten kan skrive en dagbogsnotat
 public class DiaryView {
 
-    // Opretter controller objekt som håndterer gemning i databasen
     private DiaryController controller = new DiaryController();
 
     public void show(Stage stage) {
@@ -29,7 +28,7 @@ public class DiaryView {
         header.setPadding(new Insets(0, 0, 16, 0));
         header.setStyle("-fx-border-color: transparent transparent #e0e0e0 transparent; -fx-border-width: 1;");
 
-        // Labels og felter
+        // Felter
         Label dateLabel = new Label("DATE");
         dateLabel.getStyleClass().add("field-label");
         DatePicker datePicker = new DatePicker();
@@ -38,7 +37,6 @@ public class DiaryView {
 
         Label moodLabel = new Label("MOOD");
         moodLabel.getStyleClass().add("field-label");
-        // Dropdown med mood
         ComboBox<String> moodBox = new ComboBox<>();
         moodBox.getItems().addAll(
                 "😊 Happy",
@@ -54,7 +52,6 @@ public class DiaryView {
 
         Label titleFieldLabel = new Label("TITLE");
         titleFieldLabel.getStyleClass().add("field-label");
-        // Felt til titel
         TextField titleField = new TextField();
         titleField.setPromptText("Title of your entry");
         titleField.getStyleClass().add("modern-field");
@@ -62,16 +59,21 @@ public class DiaryView {
 
         Label contentLabel = new Label("CONTENT");
         contentLabel.getStyleClass().add("field-label");
-        // Felt til indhold
         TextArea contentField = new TextArea();
         contentField.setPromptText("Write your thoughts here...");
         contentField.getStyleClass().add("modern-textarea");
         contentField.setWrapText(true);
         contentField.setMaxWidth(Double.MAX_VALUE);
 
-        // Besked der vises efter gem eller ved fejl
+        // Besked
         Label messageLabel = new Label("");
         messageLabel.getStyleClass().add("subtitle-label");
+
+        // Ryd beskeden når brugeren ændrer noget
+        datePicker.valueProperty().addListener((obs, oldVal, newVal) -> messageLabel.setText(""));
+        moodBox.valueProperty().addListener((obs, oldVal, newVal) -> messageLabel.setText(""));
+        titleField.textProperty().addListener((obs, oldVal, newVal) -> messageLabel.setText(""));
+        contentField.textProperty().addListener((obs, oldVal, newVal) -> messageLabel.setText(""));
 
         // Knapper
         Button saveButton = new Button("Save");
@@ -83,14 +85,13 @@ public class DiaryView {
         backButton.getStyleClass().add("secondary-button");
         backButton.setMaxWidth(Double.MAX_VALUE);
 
-        // Hvad sker der når brugeren klikker Save
+        // Save
         saveButton.setOnAction(e -> {
             String title = titleField.getText();
             String content = contentField.getText();
             LocalDate date = datePicker.getValue();
             String mood = moodBox.getValue();
 
-            // Validering — tjek at alle felter er udfyldt
             if (title.isEmpty()) {
                 messageLabel.setText("Title cannot be empty!");
                 return;
@@ -104,18 +105,16 @@ public class DiaryView {
                 return;
             }
 
-            // Gem noten med mood
             controller.handleSave(date, title, content + "\nMood: " + mood);
             messageLabel.setText("Diary entry saved!");
         });
 
-        // Hvad sker der når brugeren klikker Back
+        // Back
         backButton.setOnAction(e -> {
-            DashboardView dashboard = new DashboardView();
-            dashboard.show(stage, Session.getCurrentPatient());
+            new DashboardView().show(stage, Session.getCurrentPatient());
         });
 
-        // Layout — VBox med 12 pixels mellem elementer
+        // Layout
         VBox layout = new VBox(12);
         layout.getStyleClass().add("card");
         layout.setMaxWidth(400);
@@ -132,12 +131,12 @@ public class DiaryView {
                 backButton
         );
 
-        // Opret og vis skærmen med gradient baggrund
         StackPane root = new StackPane(layout);
         root.setStyle("-fx-background-color: linear-gradient(to bottom right, #e8f5e9, #e3f2fd);");
         root.setPadding(new Insets(40));
 
-        Scene scene = new Scene(root, 500, 720);
+        // Samme størrelse som dashboard
+        Scene scene = new Scene(root, 650, 750);
         scene.getStylesheets().add(getClass().getClassLoader().getResource("design/styles.css").toExternalForm());
 
         stage.setTitle("Simpl — Diary");

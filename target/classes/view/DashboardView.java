@@ -32,8 +32,8 @@ public class DashboardView {
 
         if (!appointments.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Påmindelse");
-            alert.setHeaderText("Du har kommende aftaler!");
+            alert.setTitle("Reminder");
+            alert.setHeaderText("You have upcoming appointments!");
             alert.setContentText(String.join("\n", appointments));
             alert.show();
         }
@@ -177,11 +177,20 @@ public class DashboardView {
         newRoundButton.setOnAction(e -> new NewRoundView().show(stage));
         endRoundButton.setOnAction(e -> new EndRoundView().show(stage));
 
-        // Log ud — ryd Session og gå tilbage til login
+        // Log ud — ryd Session og gå tilbage til login (med bekræftelse)
         logoutButton.setOnAction(e -> {
-            Session.setCurrentPatient(null);
-            Session.setCurrentJourneyId(0);
-            new StartSystemView().show(stage);
+            Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
+            confirm.setTitle("Confirm");
+            confirm.setHeaderText("Log out?");
+            confirm.setContentText("You will need to log in again.");
+
+            confirm.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.OK) {
+                    Session.setCurrentPatient(null);
+                    Session.setCurrentJourneyId(0);
+                    new StartSystemView().show(stage);
+                }
+            });
         });
 
         // LOG DATA grid — 2 kolonner side om side
