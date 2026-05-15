@@ -1,6 +1,7 @@
 package view;
 
 import controller.ManageProfileController;
+import controller.StartSystemController;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -107,7 +108,17 @@ public class ProfileView {
 
             // Gem patienten i databasen
             controller.handleCreatePatient(name, dateOfBirth, diagnosis, username, password);
-            messageLabel.setText("Profile created! You can now log in.");
+
+            // Auto-login: hent den nyoprettede patient og send videre til journey type
+            StartSystemController loginController = new StartSystemController();
+            model.Patient newPatient = loginController.handleLogin(username, password);
+
+            if (newPatient != null) {
+                model.Session.setCurrentPatient(newPatient);
+                new JourneyTypeView().show(stage);
+            } else {
+                messageLabel.setText("Profile created! Please log in.");
+            }
         });
 
         // Hvad sker der når brugeren klikker Tilbage

@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="nyt billede play knap">
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/AppointmentController 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enums/Result 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/HormoneLog 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/OtherJourney 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/PsychiatryJourney 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Session 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/TestControllers 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/AppointmentView 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/AppointmentView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/AppointmentView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/AppointmentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/AppointmentView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/DiaryView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/DiaryView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/DiaryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/DiaryView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/StartSystemView 2.class" beforeDir="false" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="readme rettet og velkommenskærmen">
+      <change beforePath="$PROJECT_DIR$/simpl.db" beforeDir="false" afterPath="$PROJECT_DIR$/simpl.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,15 +197,7 @@
       <workItem from="1778698310724" duration="2563000" />
       <workItem from="1778740763654" duration="4222000" />
       <workItem from="1778756306997" duration="309000" />
-      <workItem from="1778757236099" duration="8290000" />
-    </task>
-    <task id="LOCAL-00046" summary="alle view opdateret så layout er automatisk">
-      <option name="closed" value="true" />
-      <created>1778675821503</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1778675821503</updated>
+      <workItem from="1778757236099" duration="8645000" />
     </task>
     <task id="LOCAL-00047" summary="endround">
       <option name="closed" value="true" />
@@ -603,14 +583,21 @@
       <option name="project" value="LOCAL" />
       <updated>1778835082732</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="readme rettet og velkommenskærmen">
+      <option name="closed" value="true" />
+      <created>1778835520070</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1778835520070</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dash opdateret" />
     <MESSAGE value="JourneyTypeView opdateret" />
     <MESSAGE value="alle view opdateret så layout er automatisk" />
     <MESSAGE value="endround" />
@@ -635,6 +622,7 @@
     <MESSAGE value="rettelse fra dansk til engelsk i de froskellige views" />
     <MESSAGE value="rettelser" />
     <MESSAGE value="nyt billede play knap" />
-    <option name="LAST_COMMIT_MESSAGE" value="nyt billede play knap" />
+    <MESSAGE value="readme rettet og velkommenskærmen" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme rettet og velkommenskærmen" />
   </component>
 </project>
