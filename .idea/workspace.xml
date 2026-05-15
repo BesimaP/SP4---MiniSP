@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="rettelse fra dansk til engelsk i de froskellige views">
-      <change beforePath="$PROJECT_DIR$/src/view/EndRoundView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/EndRoundView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/NewRoundView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/NewRoundView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/RoundHistoryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RoundHistoryView.java" afterDir="false" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="nyt billede play knap">
+      <change beforePath="$PROJECT_DIR$/src/view/DiaryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DiaryView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,31 +197,7 @@
       <workItem from="1778698310724" duration="2563000" />
       <workItem from="1778740763654" duration="4222000" />
       <workItem from="1778756306997" duration="309000" />
-      <workItem from="1778757236099" duration="7520000" />
-    </task>
-    <task id="LOCAL-00042" summary="JourneyTypeView opdateret">
-      <option name="closed" value="true" />
-      <created>1778675198241</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1778675198241</updated>
-    </task>
-    <task id="LOCAL-00043" summary="JourneyTypeView opdateret">
-      <option name="closed" value="true" />
-      <created>1778675212669</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1778675212669</updated>
-    </task>
-    <task id="LOCAL-00044" summary="JourneyTypeView opdateret">
-      <option name="closed" value="true" />
-      <created>1778675403790</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1778675403790</updated>
+      <workItem from="1778757236099" duration="7915000" />
     </task>
     <task id="LOCAL-00045" summary="JourneyTypeView opdateret">
       <option name="closed" value="true" />
@@ -593,15 +567,37 @@
       <option name="project" value="LOCAL" />
       <updated>1778834329312</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="rettelser">
+      <option name="closed" value="true" />
+      <created>1778834676427</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1778834676427</updated>
+    </task>
+    <task id="LOCAL-00092" summary="nyt billede play knap">
+      <option name="closed" value="true" />
+      <created>1778834782951</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1778834782951</updated>
+    </task>
+    <task id="LOCAL-00093" summary="nyt billede play knap.">
+      <option name="closed" value="true" />
+      <created>1778834795868</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1778834795868</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="RoundHistoryView.java done" />
-    <MESSAGE value="AppointmentView" />
     <MESSAGE value="dash opdateret" />
     <MESSAGE value="JourneyTypeView opdateret" />
     <MESSAGE value="alle view opdateret så layout er automatisk" />
@@ -625,6 +621,8 @@
     <MESSAGE value="nyt billede til new round" />
     <MESSAGE value="nyt billede playknap" />
     <MESSAGE value="rettelse fra dansk til engelsk i de froskellige views" />
-    <option name="LAST_COMMIT_MESSAGE" value="rettelse fra dansk til engelsk i de froskellige views" />
+    <MESSAGE value="rettelser" />
+    <MESSAGE value="nyt billede play knap" />
+    <option name="LAST_COMMIT_MESSAGE" value="nyt billede play knap" />
   </component>
 </project>

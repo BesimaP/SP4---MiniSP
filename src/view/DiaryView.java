@@ -40,10 +40,10 @@ public class DiaryView {
         ComboBox<String> moodBox = new ComboBox<>();
         moodBox.getItems().addAll(
                 "😊 Happy",
-                "😐 Neutral",
-                "😢 Sad",
-                "😰 Anxious",
-                "😴 Tired"
+                "Neutral",
+                "Sad",
+                "Anxious",
+                "Tired"
         );
         moodBox.setPromptText("How are you feeling?");
         moodBox.setStyle("-fx-font-size: 10px;");

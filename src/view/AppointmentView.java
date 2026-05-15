@@ -88,7 +88,7 @@ public class AppointmentView {
 
         // Venlig tom-skærm besked
         if (appointments.isEmpty()) {
-            appointmentList.getItems().add("No appointments yet — add one above to get started! 📅");
+            appointmentList.getItems().add("No appointments yet — add one above to get started");
         } else {
             for (String appointment : appointments) {
                 appointmentList.getItems().add(appointment);
@@ -121,7 +121,7 @@ public class AppointmentView {
             appointmentList.getItems().clear();
             ArrayList<String> updatedAppointments = controller.getUpcomingAppointments();
             if (updatedAppointments.isEmpty()) {
-                appointmentList.getItems().add("No appointments yet — add one above to get started! 📅");
+                appointmentList.getItems().add("No appointments yet — add one above to get started");
             } else {
                 for (String appointment : updatedAppointments) {
                     appointmentList.getItems().add(appointment);
