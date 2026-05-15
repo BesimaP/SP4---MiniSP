@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="readme rettet og velkommenskærmen">
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="patienten skal kunne komme fra createprofil til jourenytype. Det burde kunne lade sig gøre nu">
       <change beforePath="$PROJECT_DIR$/simpl.db" beforeDir="false" afterPath="$PROJECT_DIR$/simpl.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,15 +199,7 @@
       <workItem from="1778698310724" duration="2563000" />
       <workItem from="1778740763654" duration="4222000" />
       <workItem from="1778756306997" duration="309000" />
-      <workItem from="1778757236099" duration="8645000" />
-    </task>
-    <task id="LOCAL-00047" summary="endround">
-      <option name="closed" value="true" />
-      <created>1778677169366</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1778677169366</updated>
+      <workItem from="1778757236099" duration="8950000" />
     </task>
     <task id="LOCAL-00048" summary="EndRoundController rettet">
       <option name="closed" value="true" />
@@ -591,14 +585,21 @@
       <option name="project" value="LOCAL" />
       <updated>1778835520070</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="patienten skal kunne komme fra createprofil til jourenytype. Det burde kunne lade sig gøre nu">
+      <option name="closed" value="true" />
+      <created>1778835837089</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1778835837089</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="JourneyTypeView opdateret" />
     <MESSAGE value="alle view opdateret så layout er automatisk" />
     <MESSAGE value="endround" />
     <MESSAGE value="EndRoundController rettet" />
@@ -623,6 +624,7 @@
     <MESSAGE value="rettelser" />
     <MESSAGE value="nyt billede play knap" />
     <MESSAGE value="readme rettet og velkommenskærmen" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme rettet og velkommenskærmen" />
+    <MESSAGE value="patienten skal kunne komme fra createprofil til jourenytype. Det burde kunne lade sig gøre nu" />
+    <option name="LAST_COMMIT_MESSAGE" value="patienten skal kunne komme fra createprofil til jourenytype. Det burde kunne lade sig gøre nu" />
   </component>
 </project>
