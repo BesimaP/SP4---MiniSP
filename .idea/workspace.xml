@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="patienten skal kunne komme fra createprofil til jourenytype. Det burde kunne lade sig gøre nu">
-      <change beforePath="$PROJECT_DIR$/simpl.db" beforeDir="false" afterPath="$PROJECT_DIR$/simpl.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileView.java" afterDir="false" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="skarpere billede af hjertet">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/StartSystemView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/StartSystemView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/StartSystemView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/StartSystemView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,15 +199,7 @@
       <workItem from="1778698310724" duration="2563000" />
       <workItem from="1778740763654" duration="4222000" />
       <workItem from="1778756306997" duration="309000" />
-      <workItem from="1778757236099" duration="8950000" />
-    </task>
-    <task id="LOCAL-00048" summary="EndRoundController rettet">
-      <option name="closed" value="true" />
-      <created>1778678934327</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1778678934327</updated>
+      <workItem from="1778757236099" duration="11564000" />
     </task>
     <task id="LOCAL-00049" summary="EndRoundController rettet">
       <option name="closed" value="true" />
@@ -593,14 +585,21 @@
       <option name="project" value="LOCAL" />
       <updated>1778835837089</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="skarpere billede af hjertet">
+      <option name="closed" value="true" />
+      <created>1778836184147</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1778836184147</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="alle view opdateret så layout er automatisk" />
     <MESSAGE value="endround" />
     <MESSAGE value="EndRoundController rettet" />
     <MESSAGE value="checkupcomingappointments indsat" />
@@ -625,6 +624,7 @@
     <MESSAGE value="nyt billede play knap" />
     <MESSAGE value="readme rettet og velkommenskærmen" />
     <MESSAGE value="patienten skal kunne komme fra createprofil til jourenytype. Det burde kunne lade sig gøre nu" />
-    <option name="LAST_COMMIT_MESSAGE" value="patienten skal kunne komme fra createprofil til jourenytype. Det burde kunne lade sig gøre nu" />
+    <MESSAGE value="skarpere billede af hjertet" />
+    <option name="LAST_COMMIT_MESSAGE" value="skarpere billede af hjertet" />
   </component>
 </project>

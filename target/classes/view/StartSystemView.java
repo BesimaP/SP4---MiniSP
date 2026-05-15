@@ -86,7 +86,11 @@ public class StartSystemView {
         });
 
         // Hjertebillede
-        ImageView heartIcon = new ImageView(new Image(getClass().getClassLoader().getResourceAsStream("design/heart.png")));
+        Image heartImage = new Image(
+                getClass().getClassLoader().getResourceAsStream("design/heart.png"),
+                200, 200, true, true
+        );
+        ImageView heartIcon = new ImageView(heartImage);
         heartIcon.setFitWidth(200);
         heartIcon.setFitHeight(200);
         heartIcon.setPreserveRatio(true);
