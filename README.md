@@ -1,12 +1,14 @@
 # Simpl
 
-A JavaFX desktop application designed to support IVF patients through their fertility journey. Simpl helps patients log hormone values, track medication, manage appointments, write diary entries, and view their complete treatment timeline — all in one place.
+Simpl is a JavaFX desktop application designed to support patients through any type of treatment journey. Whether the journey involves fertility treatment, cancer, psychiatric care, rehabilitation, or something else entirely, Simpl helps patients stay organised — logging hormone values, tracking medication, managing appointments, writing diary entries, and viewing their complete treatment timeline in one place.
 
 ## About the project
 
 Simpl was built as a 1st semester Computer Science (Datamatiker) project (SP4). The goal was to design and develop a real desktop application using the MVC architecture, a SQLite database, and a clean, accessible user interface.
 
-The application supports patients across different journey types (fertility, cancer, psychiatry, rehabilitation, and other) but is primarily designed around the IVF fertility journey, which includes multiple treatment rounds with detailed tracking.
+The application is designed to support multiple treatment journey types — fertility, cancer, psychiatry, rehabilitation, and other. For this version, we have gone in-depth with the **IVF fertility journey** as a concrete example of how a complete treatment flow can look. The IVF journey demonstrates the full feature set: multiple treatment rounds, hormone tracking, appointment management, diary entries, and a chronological timeline.
+
+This approach shows two things: the architecture is flexible enough to support **any patient group**, and we have built a working, polished experience for one specific group. The model can be extended to reach many more patient groups beyond the ones currently included.
 
 ## Features
 
@@ -98,6 +100,7 @@ SP4---MiniSP/
 │   │   ├── medication.png
 │   │   ├── timeline.png
 │   │   ├── roundHistory.png
+│   │   ├── start.png
 │   │   └── stop.png
 │   └── test/
 ├── simpl.db                # SQLite database (created on first run)
@@ -118,3 +121,7 @@ Simpl uses a calm, supportive green colour palette to fit its purpose as a healt
 ## Authors
 
 Built by 3 students as part of the SP4 project, 1st semester Datamatiker.
+
+## License
+
+This project was developed for educational purposes as part of a school assignment.

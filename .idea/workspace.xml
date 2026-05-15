@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="nyt billede play knap">
-      <change beforePath="$PROJECT_DIR$/src/view/DiaryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DiaryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/AppointmentController 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/enums/Result 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/HormoneLog 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/OtherJourney 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/PsychiatryJourney 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Session 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/TestControllers 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/AppointmentView 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/AppointmentView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/AppointmentView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/AppointmentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/AppointmentView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/DiaryView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/DiaryView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/DiaryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/DiaryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/StartSystemView 2.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,15 +209,7 @@
       <workItem from="1778698310724" duration="2563000" />
       <workItem from="1778740763654" duration="4222000" />
       <workItem from="1778756306997" duration="309000" />
-      <workItem from="1778757236099" duration="7915000" />
-    </task>
-    <task id="LOCAL-00045" summary="JourneyTypeView opdateret">
-      <option name="closed" value="true" />
-      <created>1778675409876</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1778675409876</updated>
+      <workItem from="1778757236099" duration="8290000" />
     </task>
     <task id="LOCAL-00046" summary="alle view opdateret så layout er automatisk">
       <option name="closed" value="true" />
@@ -591,7 +595,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778834795868</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="nyt billede play knap">
+      <option name="closed" value="true" />
+      <created>1778835082731</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1778835082732</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

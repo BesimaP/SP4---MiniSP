@@ -101,7 +101,7 @@ public class StartSystemView {
         titleLabel.setMaxWidth(Double.MAX_VALUE);
         titleLabel.setAlignment(Pos.CENTER);
 
-        Label subtitleLabel = new Label("Din sundhedsplatform");
+        Label subtitleLabel = new Label("Your health companion");
         subtitleLabel.getStyleClass().add("subtitle-label");
         subtitleLabel.setMaxWidth(Double.MAX_VALUE);
         subtitleLabel.setAlignment(Pos.CENTER);
