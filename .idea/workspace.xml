@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="appointmentview design done + billede på new round ændret">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/TimelineView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TimelineView.java" afterDir="false" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="nyt billede til new round">
+      <change beforePath="$PROJECT_DIR$/target/classes/design/start.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/design/start.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/TimelineView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/TimelineView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +74,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/besimaplavotic/Documents/Development/SP4---MiniSP/src/design",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -85,6 +86,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/design" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="enums" />
       <recent name="model" />
@@ -194,31 +198,7 @@
       <workItem from="1778698310724" duration="2563000" />
       <workItem from="1778740763654" duration="4222000" />
       <workItem from="1778756306997" duration="309000" />
-      <workItem from="1778757236099" duration="5546000" />
-    </task>
-    <task id="LOCAL-00033" summary="StartSystemView opdateret med feature">
-      <option name="closed" value="true" />
-      <created>1778670888794</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1778670888794</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Newroundview done">
-      <option name="closed" value="true" />
-      <created>1778672016276</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1778672016276</updated>
-    </task>
-    <task id="LOCAL-00035" summary="TimelineView done">
-      <option name="closed" value="true" />
-      <created>1778672684612</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1778672684612</updated>
+      <workItem from="1778757236099" duration="6065000" />
     </task>
     <task id="LOCAL-00036" summary="RoundHistoryView.java done">
       <option name="closed" value="true" />
@@ -588,15 +568,37 @@
       <option name="project" value="LOCAL" />
       <updated>1778831999448</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Timelineview grafisk done">
+      <option name="closed" value="true" />
+      <created>1778832703885</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1778832703885</updated>
+    </task>
+    <task id="LOCAL-00083" summary="nyt billede til new round">
+      <option name="closed" value="true" />
+      <created>1778832913611</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1778832913611</updated>
+    </task>
+    <task id="LOCAL-00084" summary="nyt billede til new round">
+      <option name="closed" value="true" />
+      <created>1778832926205</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1778832926205</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="journeytypeview done" />
-    <MESSAGE value="StartSystemView opdateret med feature" />
     <MESSAGE value="Newroundview done" />
     <MESSAGE value="TimelineView done" />
     <MESSAGE value="RoundHistoryView.java done" />
@@ -620,6 +622,8 @@
     <MESSAGE value="readme sat ind" />
     <MESSAGE value="dairy done" />
     <MESSAGE value="appointmentview design done + billede på new round ændret" />
-    <option name="LAST_COMMIT_MESSAGE" value="appointmentview design done + billede på new round ændret" />
+    <MESSAGE value="Timelineview grafisk done" />
+    <MESSAGE value="nyt billede til new round" />
+    <option name="LAST_COMMIT_MESSAGE" value="nyt billede til new round" />
   </component>
 </project>
