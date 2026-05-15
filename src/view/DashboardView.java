@@ -152,7 +152,7 @@ public class DashboardView {
         Button newRoundButton = new Button("New round");
         newRoundButton.getStyleClass().add("card-pink");
         newRoundButton.setMaxWidth(Double.MAX_VALUE);
-        newRoundButton.setGraphic(createIcon("design/stop.png"));
+        newRoundButton.setGraphic(createIcon("design/start.png"));
         newRoundButton.setContentDisplay(ContentDisplay.TOP);
 
         Button endRoundButton = new Button("End round");
