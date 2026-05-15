@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Session;
@@ -18,69 +17,50 @@ public class RoundHistoryView {
 
     public void show(Stage stage) {
 
-        // Header
-        Label titleLabel = new Label("Round history");
-        titleLabel.setStyle("-fx-text-fill: #2e7d32; -fx-font-size: 18px; -fx-font-weight: bold;");
-        Label subtitleLabel = new Label("Your previous treatment rounds");
-        subtitleLabel.getStyleClass().add("subtitle-label");
+        // Titel
+        Label roundHistoryLabel = new Label("Your round history:");
 
-        VBox header = new VBox(4, titleLabel, subtitleLabel);
-        header.setPadding(new Insets(0, 0, 16, 0));
-        header.setStyle("-fx-border-color: transparent transparent #e0e0e0 transparent; -fx-border-width: 1;");
+        // Liste der viser runder
+        ListView<String> roundList = new ListView<>();
 
-        // Hent data
+        // Hent data fra controller
         ArrayList<String> rounds = controller.initialize();
 
-        Label totalLabel = new Label("TOTAL ROUNDS: " + rounds.size());
-        totalLabel.getStyleClass().add("section-label");
+        // Vis antal runder ← tilføjet her efter rounds er hentet
+        Label totalLabel = new Label("Total rounds: " + rounds.size());
 
-        // Liste
-        ListView<String> roundList = new ListView<>();
-        roundList.getStyleClass().add("modern-list");
-        roundList.setPrefHeight(300);
-
+        // Tilføj runder til listen
         for (String round : rounds) {
             roundList.getItems().add(round);
         }
 
-        // Venlig tom-skærm besked
+        // Hvis ingen runder
         if (rounds.isEmpty()) {
-            roundList.getItems().add("No rounds yet — start your first round from the dashboard! 🌱");
+            roundList.getItems().add("No rounds found");
         }
 
-        // Back
-        Button backButton = new Button("Back to dashboard");
-        backButton.setStyle("-fx-text-fill: #2e7d32; -fx-font-size: 13px; -fx-font-weight: bold;");
-        backButton.getStyleClass().add("secondary-button");
-        backButton.setMaxWidth(Double.MAX_VALUE);
-
+        // Back knap
+        Button backButton = new Button("Back to Dashboard");
         backButton.setOnAction(e -> {
-            new DashboardView().show(stage, Session.getCurrentPatient());
+            DashboardView dashboard = new DashboardView();
+            dashboard.show(stage, Session.getCurrentPatient());
         });
 
         // Layout
-        VBox layout = new VBox(12);
-        layout.getStyleClass().add("card");
-        layout.setMaxWidth(450);
-        layout.setPrefWidth(450);
-        layout.setPadding(new Insets(28));
+        VBox layout = new VBox(10);
+        layout.setPadding(new Insets(20));
         layout.getChildren().addAll(
-                header,
-                totalLabel,
+                roundHistoryLabel,
+                totalLabel, // ← tilføjet her
                 roundList,
                 backButton
         );
 
-        StackPane root = new StackPane(layout);
-        root.setStyle("-fx-background-color: linear-gradient(to bottom right, #e8f5e9, #e3f2fd);");
-        root.setPadding(new Insets(40));
-
-        // Samme størrelse som dashboard
-        Scene scene = new Scene(root, 650, 750);
-        scene.getStylesheets().add(getClass().getClassLoader().getResource("design/styles.css").toExternalForm());
-
+        // Vis skærmen
+        Scene scene = new Scene(layout);
         stage.setTitle("Simpl — Round History");
         stage.setScene(scene);
+        stage.sizeToScene();
         stage.show();
     }
 }

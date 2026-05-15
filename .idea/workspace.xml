@@ -4,29 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="nyt billede playknap">
-      <change beforePath="$PROJECT_DIR$/src/view/AppointmentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AppointmentView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DashboardView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/DiaryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DiaryView.java" afterDir="false" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="rettelse fra dansk til engelsk i de froskellige views">
       <change beforePath="$PROJECT_DIR$/src/view/EndRoundView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/EndRoundView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/NewRoundView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/NewRoundView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/RoundHistoryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RoundHistoryView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/TimelineView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TimelineView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/design/start.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/design/start.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/AppointmentView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/AppointmentView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/AppointmentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/AppointmentView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/DashboardView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/DashboardView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/DashboardView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/DiaryView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/DiaryView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/DiaryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/DiaryView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/EndRoundView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/EndRoundView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/EndRoundView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/EndRoundView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/NewRoundView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/NewRoundView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/NewRoundView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/NewRoundView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/RoundHistoryView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/RoundHistoryView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/RoundHistoryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/RoundHistoryView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/TimelineView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/TimelineView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/TimelineView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/TimelineView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,31 +199,7 @@
       <workItem from="1778698310724" duration="2563000" />
       <workItem from="1778740763654" duration="4222000" />
       <workItem from="1778756306997" duration="309000" />
-      <workItem from="1778757236099" duration="7135000" />
-    </task>
-    <task id="LOCAL-00039" summary="dash opdateret">
-      <option name="closed" value="true" />
-      <created>1778674130919</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1778674130919</updated>
-    </task>
-    <task id="LOCAL-00040" summary="dash opdateret">
-      <option name="closed" value="true" />
-      <created>1778674983713</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1778674983713</updated>
-    </task>
-    <task id="LOCAL-00041" summary="dash opdateret">
-      <option name="closed" value="true" />
-      <created>1778674988856</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1778674988856</updated>
+      <workItem from="1778757236099" duration="7520000" />
     </task>
     <task id="LOCAL-00042" summary="JourneyTypeView opdateret">
       <option name="closed" value="true" />
@@ -612,14 +569,37 @@
       <option name="project" value="LOCAL" />
       <updated>1778833974953</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="rettelse fra dansk til engelsk i de froskellige views">
+      <option name="closed" value="true" />
+      <created>1778834297417</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1778834297417</updated>
+    </task>
+    <task id="LOCAL-00089" summary="rettelse fra dansk til engelsk i de froskellige views">
+      <option name="closed" value="true" />
+      <created>1778834322681</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1778834322681</updated>
+    </task>
+    <task id="LOCAL-00090" summary="rettelse fra dansk til engelsk i de froskellige views">
+      <option name="closed" value="true" />
+      <created>1778834329312</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1778834329312</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="TimelineView done" />
     <MESSAGE value="RoundHistoryView.java done" />
     <MESSAGE value="AppointmentView" />
     <MESSAGE value="dash opdateret" />
@@ -644,6 +624,7 @@
     <MESSAGE value="Timelineview grafisk done" />
     <MESSAGE value="nyt billede til new round" />
     <MESSAGE value="nyt billede playknap" />
-    <option name="LAST_COMMIT_MESSAGE" value="nyt billede playknap" />
+    <MESSAGE value="rettelse fra dansk til engelsk i de froskellige views" />
+    <option name="LAST_COMMIT_MESSAGE" value="rettelse fra dansk til engelsk i de froskellige views" />
   </component>
 </project>
