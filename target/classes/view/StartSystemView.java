@@ -17,126 +17,144 @@ import javafx.stage.Stage;
 import model.Patient;
 import model.Session;
 
-public class StartSystemView {
+    // StartSystemView viser login skærmen — den første skærm brugeren ser
+    public class StartSystemView {
 
-    private StartSystemController controller = new StartSystemController();
+        // Controller der håndterer login og tjek af aktivt forløb
+        private StartSystemController controller = new StartSystemController();
 
-    public void show(Stage stage) {
+        public void show(Stage stage) {
 
-        // Labels
-        Label usernameLabel = new Label("Username:");
-        usernameLabel.getStyleClass().add("field-label");
-        Label passwordLabel = new Label("Password:");
-        passwordLabel.getStyleClass().add("field-label");
-        Label messageLabel = new Label("");
+            // Labels over inputfelterne
+            Label usernameLabel = new Label("Username:");
+            usernameLabel.getStyleClass().add("field-label");
+            Label passwordLabel = new Label("Password:");
+            passwordLabel.getStyleClass().add("field-label");
 
-        // Felter
-        TextField usernameField = new TextField();
-        usernameField.getStyleClass().add("modern-field");
-        usernameField.setMaxWidth(Double.MAX_VALUE);
-        PasswordField passwordField = new PasswordField();
-        passwordField.getStyleClass().add("modern-field");
-        passwordField.setMaxWidth(Double.MAX_VALUE);
+            // Beskedlabel — viser fejl ved forkert login
+            Label messageLabel = new Label("");
 
-        // Knapper
-        Button loginButton = new Button("Log in");
-        loginButton.getStyleClass().add("primary-button");
-        loginButton.setMaxWidth(Double.MAX_VALUE);
-        Button createButton = new Button("Create new profile");
-        createButton.getStyleClass().add("secondary-button");
-        createButton.setMaxWidth(Double.MAX_VALUE);
+            // Inputfelt til brugernavn
+            TextField usernameField = new TextField();
+            usernameField.getStyleClass().add("modern-field");
+            usernameField.setMaxWidth(Double.MAX_VALUE);
 
-        // Login knap med validering og hasActiveJourney check
-        loginButton.setOnAction(e -> {
-            String username = usernameField.getText();
-            String password = passwordField.getText();
+            // PasswordField viser stjerner i stedet for bogstaver
+            PasswordField passwordField = new PasswordField();
+            passwordField.getStyleClass().add("modern-field");
+            passwordField.setMaxWidth(Double.MAX_VALUE);
 
-            // Validering
-            if (username.isEmpty() || password.isEmpty()) {
-                messageLabel.setText("Please fill in all fields!");
-                return;
-            }
+            // Log ind knap — primary-button er grøn med hvid tekst
+            Button loginButton = new Button("Log in");
+            loginButton.getStyleClass().add("primary-button");
+            loginButton.setMaxWidth(Double.MAX_VALUE);
 
-            Patient patient = controller.handleLogin(username, password);
+            // Opret profil knap — secondary-button er hvid med grå kant
+            Button createButton = new Button("Create new profile");
+            createButton.getStyleClass().add("secondary-button");
+            createButton.setMaxWidth(Double.MAX_VALUE);
 
-            if (patient != null) {
-                Session.setCurrentPatient(patient);
+            // Hvad sker der når brugeren klikker Log ind
+            loginButton.setOnAction(e -> {
+                String username = usernameField.getText();
+                String password = passwordField.getText();
 
-                // Tjek om patienten har et aktivt forløb
-                if (controller.hasActiveJourney(patient.getId())) {
-                    DashboardView dashboard = new DashboardView();
-                    dashboard.show(stage, patient);
-                } else {
-                    JourneyTypeView journeyTypeView = new JourneyTypeView();
-                    journeyTypeView.show(stage);
+                // Validering — tjek at begge felter er udfyldt
+                if (username.isEmpty() || password.isEmpty()) {
+                    messageLabel.setText("Please fill in all fields!");
+                    return;
                 }
-            } else {
-                messageLabel.setText("Wrong username or password!");
-            }
-        });
 
-        // Enter i felterne logger ind
-        usernameField.setOnAction(e -> loginButton.fire());
-        passwordField.setOnAction(e -> loginButton.fire());
+                // Forsøg login via controller — returnerer Patient eller null
+                Patient patient = controller.handleLogin(username, password);
 
-        // Create new profile knap
-        createButton.setOnAction(e -> {
-            ProfileView profileView = new ProfileView();
-            profileView.show(stage);
-        });
+                if (patient != null) {
+                    // Gem patienten i Session
+                    Session.setCurrentPatient(patient);
 
-        // Hjertebillede
-        Image heartImage = new Image(
-                getClass().getClassLoader().getResourceAsStream("design/heart.png"),
-                200, 200, true, true
-        );
-        ImageView heartIcon = new ImageView(heartImage);
-        heartIcon.setFitWidth(200);
-        heartIcon.setFitHeight(200);
-        heartIcon.setPreserveRatio(true);
-        VBox.setMargin(heartIcon, new Insets(-60, 0, -60, 0));
-        HBox heartBox = new HBox(heartIcon);
-        heartBox.setAlignment(Pos.CENTER);
-        heartBox.setPrefWidth(Double.MAX_VALUE);
+                    // Tjek om patienten allerede har et aktivt forløb
+                    if (controller.hasActiveJourney(patient.getId())) {
+                        // Aktivt forløb fundet — gå direkte til dashboard
+                        DashboardView dashboard = new DashboardView();
+                        dashboard.show(stage, patient);
+                    } else {
+                        // Ingen aktivt forløb — send til valg af forløbstype
+                        JourneyTypeView journeyTypeView = new JourneyTypeView();
+                        journeyTypeView.show(stage);
+                    }
+                } else {
+                    // Forkert brugernavn eller adgangskode
+                    messageLabel.setText("Wrong username or password!");
+                }
+            });
 
-        // Titel og undertitel
-        Label titleLabel = new Label("Simpl");
-        titleLabel.getStyleClass().add("title-label");
-        titleLabel.setMaxWidth(Double.MAX_VALUE);
-        titleLabel.setAlignment(Pos.CENTER);
+            // Enter i felterne fungerer som at klikke Log ind
+            usernameField.setOnAction(e -> loginButton.fire());
+            passwordField.setOnAction(e -> loginButton.fire());
 
-        Label subtitleLabel = new Label("Your health companion");
-        subtitleLabel.getStyleClass().add("subtitle-label");
-        subtitleLabel.setMaxWidth(Double.MAX_VALUE);
-        subtitleLabel.setAlignment(Pos.CENTER);
+            // Hvad sker der når brugeren klikker Opret profil
+            createButton.setOnAction(e -> {
+                ProfileView profileView = new ProfileView();
+                profileView.show(stage);
+            });
 
-        // Layout
-        VBox layout = new VBox(6);
-        layout.getStyleClass().add("card");
-        layout.setMaxWidth(380);
-        layout.setPrefWidth(380);
-        layout.setPadding(new Insets(20));
-        layout.getChildren().addAll(
-                heartBox,
-                titleLabel,
-                subtitleLabel,
-                usernameLabel, usernameField,
-                passwordLabel, passwordField,
-                loginButton,
-                createButton,
-                messageLabel
-        );
+            // Hjertebillede øverst — hentes fra design mappen
+            Image heartImage = new Image(
+                    getClass().getClassLoader().getResourceAsStream("design/heart.png"),
+                    200, 200, true, true
+            );
+            ImageView heartIcon = new ImageView(heartImage);
+            heartIcon.setFitWidth(200);
+            heartIcon.setFitHeight(200);
+            heartIcon.setPreserveRatio(true);
 
-        // StackPane med gradient baggrund
-        StackPane root = new StackPane(layout);
-        root.setStyle("-fx-background-color: linear-gradient(to bottom right, #e8f5e9, #e3f2fd);");
-        root.setPadding(new Insets(40));
+            // Negativt margin trækker billedet tættere på titlen
+            VBox.setMargin(heartIcon, new Insets(-60, 0, -60, 0));
 
-        // Vis skærmen
-        Scene scene = new Scene(root, 500, 700);
-        scene.getStylesheets().add(getClass().getClassLoader().getResource("design/styles.css").toExternalForm());
-        stage.setTitle("Simpl — Log in");
-        stage.setScene(scene);
-        stage.show();
+            // HBox centrerer hjertet vandret
+            HBox heartBox = new HBox(heartIcon);
+            heartBox.setAlignment(Pos.CENTER);
+            heartBox.setPrefWidth(Double.MAX_VALUE);
+
+            // Titel og undertitel — begge centrerede
+            Label titleLabel = new Label("Simpl");
+            titleLabel.getStyleClass().add("title-label");
+            titleLabel.setMaxWidth(Double.MAX_VALUE);
+            titleLabel.setAlignment(Pos.CENTER);
+
+            Label subtitleLabel = new Label("Your health companion");
+            subtitleLabel.getStyleClass().add("subtitle-label");
+            subtitleLabel.setMaxWidth(Double.MAX_VALUE);
+            subtitleLabel.setAlignment(Pos.CENTER);
+
+            // VBox — lodret layout der samler alle elementer
+            // card er defineret i styles.css — hvid baggrund med skygge og afrundede hjørner
+            VBox layout = new VBox(6);
+            layout.getStyleClass().add("card");
+            layout.setMaxWidth(380);
+            layout.setPrefWidth(380);
+            layout.setPadding(new Insets(20));
+            layout.getChildren().addAll(
+                    heartBox,
+                    titleLabel,
+                    subtitleLabel,
+                    usernameLabel, usernameField,
+                    passwordLabel, passwordField,
+                    loginButton,
+                    createButton,
+                    messageLabel
+            );
+
+            // StackPane centrerer kortet på skærmen med gradient baggrund
+            StackPane root = new StackPane(layout);
+            root.setStyle("-fx-background-color: linear-gradient(to bottom right, #e8f5e9, #e3f2fd);");
+            root.setPadding(new Insets(40));
+
+            // Opret og vis skærmen
+            Scene scene = new Scene(root, 500, 700);
+            scene.getStylesheets().add(getClass().getClassLoader().getResource("design/styles.css").toExternalForm());
+            stage.setTitle("Simpl — Log in");
+            stage.setScene(scene);
+            stage.show();
+        }
     }
-}

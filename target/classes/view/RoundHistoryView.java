@@ -11,56 +11,58 @@ import javafx.stage.Stage;
 import model.Session;
 import java.util.ArrayList;
 
-public class RoundHistoryView {
+    // RoundHistoryView viser skærmen med historik over alle IVF-runder
+    public class RoundHistoryView {
 
-    private RoundHistoryController controller = new RoundHistoryController();
+        // Controller der henter rundehistorik fra databasen
+        private RoundHistoryController controller = new RoundHistoryController();
 
-    public void show(Stage stage) {
+        public void show(Stage stage) {
 
-        // Titel
-        Label roundHistoryLabel = new Label("Your round history:");
+            // Titel øverst på skærmen
+            Label roundHistoryLabel = new Label("Your round history:");
 
-        // Liste der viser runder
-        ListView<String> roundList = new ListView<>();
+            // Liste der viser alle runder — én linje per runde
+            ListView<String> roundList = new ListView<>();
 
-        // Hent data fra controller
-        ArrayList<String> rounds = controller.initialize();
+            // Hent alle runder fra databasen via controller
+            ArrayList<String> rounds = controller.initialize();
 
-        // Vis antal runder ← tilføjet her efter rounds er hentet
-        Label totalLabel = new Label("Total rounds: " + rounds.size());
+            // Vis det samlede antal runder under titlen
+            Label totalLabel = new Label("Total rounds: " + rounds.size());
 
-        // Tilføj runder til listen
-        for (String round : rounds) {
-            roundList.getItems().add(round);
+            // Tilføj hver runde til listen
+            for (String round : rounds) {
+                roundList.getItems().add(round);
+            }
+
+            // Vis en venlig besked hvis ingen runder findes endnu
+            if (rounds.isEmpty()) {
+                roundList.getItems().add("No rounds found");
+            }
+
+            // Tilbage knap
+            Button backButton = new Button("Back to Dashboard");
+            backButton.setOnAction(e -> {
+                DashboardView dashboard = new DashboardView();
+                dashboard.show(stage, Session.getCurrentPatient());
+            });
+
+            // VBox — lodret layout der samler alle elementer
+            VBox layout = new VBox(10);
+            layout.setPadding(new Insets(20));
+            layout.getChildren().addAll(
+                    roundHistoryLabel,
+                    totalLabel,
+                    roundList,
+                    backButton
+            );
+
+            // Opret og vis skærmen — sizeToScene tilpasser vinduet til indholdet
+            Scene scene = new Scene(layout);
+            stage.setTitle("Simpl — Round History");
+            stage.setScene(scene);
+            stage.sizeToScene();
+            stage.show();
         }
-
-        // Hvis ingen runder
-        if (rounds.isEmpty()) {
-            roundList.getItems().add("No rounds found");
-        }
-
-        // Back knap
-        Button backButton = new Button("Back to Dashboard");
-        backButton.setOnAction(e -> {
-            DashboardView dashboard = new DashboardView();
-            dashboard.show(stage, Session.getCurrentPatient());
-        });
-
-        // Layout
-        VBox layout = new VBox(10);
-        layout.setPadding(new Insets(20));
-        layout.getChildren().addAll(
-                roundHistoryLabel,
-                totalLabel, // ← tilføjet her
-                roundList,
-                backButton
-        );
-
-        // Vis skærmen
-        Scene scene = new Scene(layout);
-        stage.setTitle("Simpl — Round History");
-        stage.setScene(scene);
-        stage.sizeToScene();
-        stage.show();
     }
-}

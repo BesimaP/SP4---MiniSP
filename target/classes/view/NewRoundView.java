@@ -11,59 +11,65 @@ import javafx.stage.Stage;
 import model.Session;
 import java.time.LocalDate;
 
-public class NewRoundView {
+    // NewRoundView viser skærmen hvor patienten kan starte en ny IVF-runde
+    public class NewRoundView {
 
-    private NewRoundController controller = new NewRoundController();
+        // Controller der håndterer oprettelse af ny runde i databasen
+        private NewRoundController controller = new NewRoundController();
 
-    public void show(Stage stage) {
+        public void show(Stage stage) {
 
-        // Felt til rundenummer
-        TextField roundNumberField = new TextField();
+            // Felt til rundenummer — brugeren skriver fx 1, 2 eller 3
+            Label roundNumberLabel = new Label("Round number:");
+            TextField roundNumberField = new TextField();
 
-        // Startdato vises automatisk
-        Label dateLabel = new Label("Start date: " + LocalDate.now());
+            // Startdato vises automatisk — altid dagens dato
+            Label dateLabel = new Label("Start date: " + LocalDate.now());
 
-        // Besked og knapper
-        Label messageLabel = new Label("");
-        Button saveButton = new Button("Start Round");
-        Button backButton = new Button("Back to Dashboard");
+            // Beskedlabel — viser fejl eller bekræftelse
+            Label messageLabel = new Label("");
 
-        // Gem knap
-        saveButton.setOnAction(e -> {
-            // Validering FØRST
-            if (roundNumberField.getText().isEmpty()) {
-                messageLabel.setText("Please fill in round number!");
-                return;
-            }
+            // Knapper
+            Button saveButton = new Button("Start Round");
+            Button backButton = new Button("Back to Dashboard");
 
-            // Derefter parse og gem
-            int roundNumber = Integer.parseInt(roundNumberField.getText());
-            controller.handleStartRound(roundNumber);
-            messageLabel.setText("Round started!");
-        });
+            // Hvad sker der når brugeren klikker Start Round
+            saveButton.setOnAction(e -> {
 
-        // Back knap
-        backButton.setOnAction(e -> {
-            DashboardView dashboard = new DashboardView();
-            dashboard.show(stage, Session.getCurrentPatient());
-        });
+                // Validering — tjek at rundenummer er udfyldt
+                if (roundNumberField.getText().isEmpty()) {
+                    messageLabel.setText("Please fill in round number!");
+                    return;
+                }
 
-        // Layout
-        VBox layout = new VBox(10);
-        layout.setPadding(new Insets(20));
-        layout.getChildren().addAll(
-                new Label("Round number:"), roundNumberField,
-                dateLabel,
-                saveButton,
-                messageLabel,
-                backButton
-        );
+                // Konverter tekst til heltal og gem runden i databasen
+                int roundNumber = Integer.parseInt(roundNumberField.getText());
+                controller.handleStartRound(roundNumber);
+                messageLabel.setText("Round started!");
+            });
 
-        // Vis skærmen
-        Scene scene = new Scene(layout);
-        stage.setTitle("Simpl — Start New Round");
-        stage.setScene(scene);
-        stage.sizeToScene();
-        stage.show();
+            // Hvad sker der når brugeren klikker Back
+            backButton.setOnAction(e -> {
+                DashboardView dashboard = new DashboardView();
+                dashboard.show(stage, Session.getCurrentPatient());
+            });
+
+            // VBox — lodret layout der samler alle elementer
+            VBox layout = new VBox(10);
+            layout.setPadding(new Insets(20));
+            layout.getChildren().addAll(
+                    roundNumberLabel, roundNumberField,
+                    dateLabel,
+                    saveButton,
+                    messageLabel,
+                    backButton
+            );
+
+            // Opret og vis skærmen — sizeToScene tilpasser vinduet til indholdet
+            Scene scene = new Scene(layout);
+            stage.setTitle("Simpl — Start New Round");
+            stage.setScene(scene);
+            stage.sizeToScene();
+            stage.show();
+        }
     }
-}

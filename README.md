@@ -45,11 +45,11 @@ src/
 └── test/                  # Tests
 ```
 
-A `Session` class holds the currently logged-in patient and active journey ID, so any view can access this data without passing it around.
+A `Session` class acts as a shared memory for the application — it remembers which patient is logged in and which journey they have selected, so all controllers can access this information without it needing to be passed manually between classes.
 
 ## Database
 
-The SQLite database (`simpl.db`) is created automatically on first run from `data/schema.sql`. It contains the following tables:
+The SQLite database (`simpl.db`) is created automatically in the project root folder the first time the application runs. The database structure is defined in `data/schema.sql` and initialised at startup by `DatabaseInitializer.java`, which runs `CREATE TABLE IF NOT EXISTS` for each table. It contains the following tables:
 
 - `patient` — user accounts
 - `journey` — a patient's overall treatment journey
@@ -103,7 +103,7 @@ SP4---MiniSP/
 │   │   ├── start.png
 │   │   └── stop.png
 │   └── test/
-├── simpl.db                # SQLite database (created on first run)
+├── simpl.db                # SQLite database (created automatically on first run)
 ├── pom.xml
 └── README.md
 ```
@@ -120,7 +120,7 @@ Simpl uses a calm, supportive green colour palette to fit its purpose as a healt
 
 ## Authors
 
-Built by 3 students as part of the SP4 project, 1st semester Datamatiker.
+Built by **Kristina, Louise & Besima** — Group B, 1st semester Datamatiker, SP4.
 
 ## License
 
