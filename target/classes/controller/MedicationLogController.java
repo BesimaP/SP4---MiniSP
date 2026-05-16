@@ -7,30 +7,40 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-// Håndterer tilføjelse og gemning af medicinindtastninger
+// MedicationLogController håndterer tilføjelse og gemning af medicinindtastninger
 public class MedicationLogController {
 
     // Køres når brugeren klikker Tilføj Medicin
+    // Videresender til handleSave med de samme parametre
     public void handleAddMedication(LocalDate date, String medication, String dose, boolean taken) {
         handleSave(date, medication, dose, taken);
     }
 
     // Gemmer en medicinindtastning i databasen
     public void handleSave(LocalDate date, String medication, String dose, boolean taken) {
+
+        // Hent forbindelsen til SQLite databasen
         Connection connection = DatabaseConnection.getConnection();
+
+        // SQL der indsætter en ny medicinindtastning i medication_log tabellen
         String sql = "INSERT INTO medication_log (journey_id, date, medication, dose, taken) VALUES (?, ?, ?, ?, ?)";
 
         try {
+            // Gør SQL klar med PreparedStatement
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, Session.getCurrentJourneyId());
-            statement.setString(2, date.toString());
-            statement.setString(3, medication);
-            statement.setString(4, dose);
-            statement.setBoolean(5, taken);
+
+            // Udfyld de fem ?
+            statement.setInt(1, Session.getCurrentJourneyId()); // aktivt forløb
+            statement.setString(2, date.toString());            // dato som tekst
+            statement.setString(3, medication);                 // medicinens navn fx Gonal-F
+            statement.setString(4, dose);                       // dosis fx 150 IU
+            statement.setBoolean(5, taken);                     // true hvis medicinen er taget
+
+            // Gem i databasen
             statement.executeUpdate();
             System.out.println("Medication saved!");
 
-            // Gem event i event tabellen
+            // Gem også en hændelse i event tabellen så tidslinjen opdateres
             String eventSql = "INSERT INTO event (journey_id, date, type, description) VALUES (?, ?, ?, ?)";
             PreparedStatement eventStatement = connection.prepareStatement(eventSql);
             eventStatement.setInt(1, Session.getCurrentJourneyId());
@@ -41,6 +51,7 @@ public class MedicationLogController {
             System.out.println("Event saved!");
 
         } catch (SQLException e) {
+            // Udskriv fejlbesked hvis noget gik galt
             System.out.println("Could not save medication: " + e.getMessage());
         }
     }

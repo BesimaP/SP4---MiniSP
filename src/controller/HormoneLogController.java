@@ -8,29 +8,40 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
+// HormoneLogController håndterer gemning og hentning af hormonværdier
 public class HormoneLogController {
 
     // Køres når brugeren klikker Tilføj Værdi
+    // Videresender til handleSave med de samme parametre
     public void handleAddValue(LocalDate date, String hormone, double value, String unit) {
         handleSave(date, hormone, value, unit);
     }
 
     // Gemmer en hormonværdi i databasen
     public void handleSave(LocalDate date, String hormone, double value, String unit) {
+
+        // Hent forbindelsen til SQLite databasen
         Connection connection = DatabaseConnection.getConnection();
+
+        // SQL der indsætter en ny hormonværdi i hormone_log tabellen
         String sql = "INSERT INTO hormone_log (journey_id, date, hormone, value, unit) VALUES (?, ?, ?, ?, ?)";
 
         try {
+            // Gør SQL klar med PreparedStatement
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, Session.getCurrentJourneyId());
-            statement.setString(2, date.toString());
-            statement.setString(3, hormone);
-            statement.setDouble(4, value);
-            statement.setString(5, unit);
+
+            // Udfyld de fem ?
+            statement.setInt(1, Session.getCurrentJourneyId()); // aktivt forløb
+            statement.setString(2, date.toString());            // dato som tekst
+            statement.setString(3, hormone);                    // hormontype fx Oestradiol
+            statement.setDouble(4, value);                      // målt værdi fx 450.0
+            statement.setString(5, unit);                       // enhed fx pmol/L
+
+            // Gem i databasen
             statement.executeUpdate();
             System.out.println("Hormone value saved!");
 
-            // Gem event i event tabellen
+            // Gem også en hændelse i event tabellen så tidslinjen opdateres
             String eventSql = "INSERT INTO event (journey_id, date, type, description) VALUES (?, ?, ?, ?)";
             PreparedStatement eventStatement = connection.prepareStatement(eventSql);
             eventStatement.setInt(1, Session.getCurrentJourneyId());
@@ -41,13 +52,20 @@ public class HormoneLogController {
             System.out.println("Event saved!");
 
         } catch (SQLException e) {
+            // Udskriv fejlbesked hvis noget gik galt
             System.out.println("Could not save hormone value: " + e.getMessage());
         }
     }
 
     // Henter den seneste hormonværdi for det aktive forløb
+    // Bruges til at vise statistik på dashboardet
     public String getLatestHormoneValue() {
+
+        // Hent forbindelsen til SQLite databasen
         Connection connection = DatabaseConnection.getConnection();
+
+        // ORDER BY date DESC sorterer nyeste dato først
+        // LIMIT 1 henter kun den allerseneste række
         String sql = "SELECT hormone, value, unit FROM hormone_log WHERE journey_id = ? ORDER BY date DESC LIMIT 1";
 
         try {
@@ -55,13 +73,16 @@ public class HormoneLogController {
             statement.setInt(1, Session.getCurrentJourneyId());
             ResultSet result = statement.executeQuery();
 
+            // Hvis der findes en hormonværdi — returner den som tekst
             if (result.next()) {
-                // Returner fx "Oestradiol: 450 pmol/L"
+                // Returner fx "Oestradiol: 450.0 pmol/L"
                 return result.getString("hormone") + ": " + result.getDouble("value") + " " + result.getString("unit");
             }
         } catch (SQLException e) {
             System.out.println("Could not get hormone value: " + e.getMessage());
         }
-        return "-"; // hvis ingen hormonværdi findes
+
+        // Returner — hvis ingen hormonværdi er logget endnu
+        return "-";
     }
 }

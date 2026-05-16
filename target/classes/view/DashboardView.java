@@ -59,34 +59,85 @@ public class DashboardView {
                 ? "-"
                 : statsApptController.getUpcomingAppointments().get(0);
 
-        // Statistik kort — fire bokse side om side
-        VBox hormoneBox = new VBox(4);
+        // Statistik kort — fire bokse med 3 linjer hver (titel, værdi, kontekst)
+
+        // ---- KORT 1: Hormone ----
+        String hormoneTitle = "Latest hormone";
+        String hormoneValueStr = "-";
+        String hormoneContext = "No data yet";
+
+        if (!latestHormone.equals("-") && latestHormone.contains(":")) {
+            String[] parts = latestHormone.split(":");
+            hormoneTitle = parts[0].trim();
+            String rest = parts[1].trim();
+            int spaceIdx = rest.indexOf(" ");
+            if (spaceIdx > 0) {
+                hormoneValueStr = rest.substring(0, spaceIdx);
+                hormoneContext = rest.substring(spaceIdx + 1);
+            } else {
+                hormoneValueStr = rest;
+                hormoneContext = "";
+            }
+        }
+
+        Label hormoneTitleLbl = new Label(hormoneTitle);
+        hormoneTitleLbl.setStyle("-fx-font-size: 11px; -fx-text-fill: #888;");
+        Label hormoneValueLbl = new Label(hormoneValueStr);
+        hormoneValueLbl.setStyle("-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;");
+        Label hormoneContextLbl = new Label(hormoneContext);
+        hormoneContextLbl.setStyle("-fx-font-size: 10px; -fx-text-fill: #888;");
+        VBox hormoneBox = new VBox(2, hormoneTitleLbl, hormoneValueLbl, hormoneContextLbl);
         hormoneBox.setStyle("-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 12; -fx-border-color: #e0e0e0; -fx-border-radius: 12;");
-        hormoneBox.getChildren().addAll(
-                new Label(latestHormone) {{ setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }},
-                new Label("Latest hormone") {{ setStyle("-fx-font-size: 11px; -fx-text-fill: #888;"); }}
-        );
 
-        VBox apptBox = new VBox(4);
+        // ---- KORT 2: Næste aftale ----
+        String apptTitle = "Next appointment";
+        String apptValueStr = "-";
+        String apptContext = "No appointments";
+
+        if (!nextAppt.equals("-") && nextAppt.contains("—")) {
+            String[] parts = nextAppt.split("—");
+            if (parts.length >= 2) {
+                String type = parts[0].trim();
+                String date = parts[1].trim();
+                apptContext = type;
+                try {
+                    LocalDate apptDate = LocalDate.parse(date);
+                    String[] months = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+                    apptValueStr = apptDate.getDayOfMonth() + ". " + months[apptDate.getMonthValue() - 1];
+                } catch (Exception ex) {
+                    apptValueStr = date;
+                }
+            }
+        }
+
+        Label apptTitleLbl = new Label(apptTitle);
+        apptTitleLbl.setStyle("-fx-font-size: 11px; -fx-text-fill: #888;");
+        Label apptValueLbl = new Label(apptValueStr);
+        apptValueLbl.setStyle("-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;");
+        Label apptContextLbl = new Label(apptContext);
+        apptContextLbl.setStyle("-fx-font-size: 10px; -fx-text-fill: #888;");
+        VBox apptBox = new VBox(2, apptTitleLbl, apptValueLbl, apptContextLbl);
         apptBox.setStyle("-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 12; -fx-border-color: #e0e0e0; -fx-border-radius: 12;");
-        apptBox.getChildren().addAll(
-                new Label(nextAppt) {{ setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }},
-                new Label("Next appointment") {{ setStyle("-fx-font-size: 11px; -fx-text-fill: #888;"); }}
-        );
 
-        VBox roundBox = new VBox(4);
+        // ---- KORT 3: Total rounds ----
+        Label roundTitleLbl = new Label("Total rounds");
+        roundTitleLbl.setStyle("-fx-font-size: 11px; -fx-text-fill: #888;");
+        Label roundValueLbl = new Label(roundCount == 0 ? "-" : String.valueOf(roundCount));
+        roundValueLbl.setStyle("-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;");
+        Label roundContextLbl = new Label("Fertility");
+        roundContextLbl.setStyle("-fx-font-size: 10px; -fx-text-fill: #888;");
+        VBox roundBox = new VBox(2, roundTitleLbl, roundValueLbl, roundContextLbl);
         roundBox.setStyle("-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 12; -fx-border-color: #e0e0e0; -fx-border-radius: 12;");
-        roundBox.getChildren().addAll(
-                new Label(roundCount == 0 ? "-" : roundCount + "") {{ setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }},
-                new Label("Total rounds") {{ setStyle("-fx-font-size: 11px; -fx-text-fill: #888;"); }}
-        );
 
-        VBox diaryBox = new VBox(4);
+        // ---- KORT 4: Diary entries ----
+        Label diaryTitleLbl = new Label("Diary entries");
+        diaryTitleLbl.setStyle("-fx-font-size: 11px; -fx-text-fill: #888;");
+        Label diaryValueLbl = new Label(diaryCount == 0 ? "-" : String.valueOf(diaryCount));
+        diaryValueLbl.setStyle("-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;");
+        Label diaryContextLbl = new Label("This round");
+        diaryContextLbl.setStyle("-fx-font-size: 10px; -fx-text-fill: #888;");
+        VBox diaryBox = new VBox(2, diaryTitleLbl, diaryValueLbl, diaryContextLbl);
         diaryBox.setStyle("-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 12; -fx-border-color: #e0e0e0; -fx-border-radius: 12;");
-        diaryBox.getChildren().addAll(
-                new Label(diaryCount == 0 ? "-" : diaryCount + "") {{ setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"); }},
-                new Label("Diary entries") {{ setStyle("-fx-font-size: 11px; -fx-text-fill: #888;"); }}
-        );
 
         // Grid med 4 statistik kort
         GridPane statsGrid = new GridPane();

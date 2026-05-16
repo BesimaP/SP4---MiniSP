@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+// AppointmentController håndterer oprettelse og hentning af aftaler
 public class AppointmentController {
 
     // Køres når brugeren klikker Tilføj Aftale
@@ -16,14 +17,16 @@ public class AppointmentController {
         handleSave(date, type, location);
     }
 
-    // Køres når brugeren markerer en aftale som gennemført
+    // Markerer en aftale som gennemført i databasen
     public void handleMarkCompleted(int appointmentId) {
         Connection connection = DatabaseConnection.getConnection();
+
+        // Sæt completed til 1 (true) for den valgte aftale
         String sql = "UPDATE appointment SET completed = 1 WHERE id = ?";
 
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, appointmentId);
+            statement.setInt(1, appointmentId); // hvilken aftale
             statement.executeUpdate();
             System.out.println("Appointment completed!");
         } catch (SQLException e) {
@@ -31,21 +34,23 @@ public class AppointmentController {
         }
     }
 
-    // Gemmer en aftale i databasen
+    // Gemmer en ny aftale i databasen
     public void handleSave(LocalDate date, String type, String location) {
         Connection connection = DatabaseConnection.getConnection();
+
+        // Indsæt aftalen i appointment tabellen
         String sql = "INSERT INTO appointment (journey_id, date, type, location) VALUES (?, ?, ?, ?)";
 
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, Session.getCurrentJourneyId());
-            statement.setString(2, date.toString());
-            statement.setString(3, type);
-            statement.setString(4, location);
+            statement.setInt(1, Session.getCurrentJourneyId()); // aktivt forløb
+            statement.setString(2, date.toString());            // dato som tekst
+            statement.setString(3, type);                       // aftaletype
+            statement.setString(4, location);                   // sted
             statement.executeUpdate();
             System.out.println("Appointment saved!");
 
-            // Gem event i event tabellen
+            // Gem også en hændelse i event tabellen så tidslinjen opdateres
             String eventSql = "INSERT INTO event (journey_id, date, type, description) VALUES (?, ?, ?, ?)";
             PreparedStatement eventStatement = connection.prepareStatement(eventSql);
             eventStatement.setInt(1, Session.getCurrentJourneyId());
@@ -61,8 +66,12 @@ public class AppointmentController {
     }
 
     // Henter alle kommende aftaler for det aktive forløb
+    // Returnerer en liste af tekstrækker — én per aftale
     public ArrayList<String> getUpcomingAppointments() {
         Connection connection = DatabaseConnection.getConnection();
+
+        // Hent kun aftaler der ikke er gennemført (completed = 0)
+        // Sorteret efter dato så den nærmeste aftale kommer først
         String sql = "SELECT * FROM appointment WHERE journey_id = ? AND completed = 0 ORDER BY date ASC";
 
         ArrayList<String> appointments = new ArrayList<>();
@@ -72,6 +81,7 @@ public class AppointmentController {
             statement.setInt(1, Session.getCurrentJourneyId());
             ResultSet result = statement.executeQuery();
 
+            // Løb igennem alle aftaler og tilføj dem til listen
             while (result.next()) {
                 String date = result.getString("date");
                 String type = result.getString("type");
