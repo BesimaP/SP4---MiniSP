@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="skarpere billede af hjertet">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpl.db" beforeDir="false" afterPath="$PROJECT_DIR$/simpl.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DashboardView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/AppointmentController 4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/JourneyTypeController 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/ManageProfileController 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Appointment 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Journey 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Session 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/TestControllers 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/DashboardView 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/DashboardView$1 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/DashboardView$3 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/DashboardView$6 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/StartSystemView 3.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,31 +210,7 @@
       <workItem from="1778698310724" duration="2563000" />
       <workItem from="1778740763654" duration="4222000" />
       <workItem from="1778756306997" duration="309000" />
-      <workItem from="1778757236099" duration="14813000" />
-    </task>
-    <task id="LOCAL-00050" summary="EndRoundController rettet">
-      <option name="closed" value="true" />
-      <created>1778679817623</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1778679817623</updated>
-    </task>
-    <task id="LOCAL-00051" summary="EndRoundController rettet">
-      <option name="closed" value="true" />
-      <created>1778680032613</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1778680032613</updated>
-    </task>
-    <task id="LOCAL-00052" summary="checkupcomingappointments indsat">
-      <option name="closed" value="true" />
-      <created>1778682677111</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1778682677111</updated>
+      <workItem from="1778757236099" duration="15843000" />
     </task>
     <task id="LOCAL-00053" summary="dashboard nu med logoutbutton&#10;hormonlogview nu med validering&#10;HormoneLogView ubrugt datefield fjernet">
       <option name="closed" value="true" />
@@ -591,7 +580,31 @@
       <option name="project" value="LOCAL" />
       <updated>1778842606902</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="skarpere billede af hjertet">
+      <option name="closed" value="true" />
+      <created>1778946237961</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1778946237961</updated>
+    </task>
+    <task id="LOCAL-00100" summary="skarpere billede af hjertet">
+      <option name="closed" value="true" />
+      <created>1778946410128</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1778946410128</updated>
+    </task>
+    <task id="LOCAL-00101" summary="skarpere billede af hjertet">
+      <option name="closed" value="true" />
+      <created>1778946418335</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1778946418335</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
