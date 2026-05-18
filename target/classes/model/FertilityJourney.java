@@ -32,16 +32,6 @@ import java.time.LocalDate;
             return roundNumber;
         }
 
-        // Hent antal udtagne æg
-        public int getEggsRetrieved() {
-            return eggsRetrieved;
-        }
-
-        // Hent antal befrugtede æg
-        public int getEggsFertilised() {
-            return eggsFertilised;
-        }
-
         // Hent resultatet af runden
         public Result getResult() {
             return result;

@@ -11,12 +11,6 @@ import java.time.LocalDate;
     // HormoneLogController håndterer gemning og hentning af hormonværdier
     public class HormoneLogController {
 
-        // Køres når brugeren klikker Tilføj Værdi
-        // Videresender til handleSave med de samme parametre
-        public void handleAddValue(LocalDate date, String hormone, double value, String unit) {
-            handleSave(date, hormone, value, unit);
-        }
-
         // Gemmer en hormonværdi i databasen
         public void handleSave(LocalDate date, String hormone, double value, String unit) {
 

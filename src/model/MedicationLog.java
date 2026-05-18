@@ -19,11 +19,6 @@ import java.time.LocalDate;
             this.taken = taken;
         }
 
-        // Sæt om medicinen er taget
-        public void setTaken(boolean taken) {
-            this.taken = taken;
-        }
-
         // Hent datoen for medicinindtastningen
         public LocalDate getDate() {
             return date;
@@ -32,15 +27,5 @@ import java.time.LocalDate;
         // Hent medicinens navn
         public String getMedication() {
             return medication;
-        }
-
-        // Hent dosis
-        public String getDose() {
-            return dose;
-        }
-
-        // Hent om medicinen er taget
-        public boolean isTaken() {
-            return taken;
         }
     }

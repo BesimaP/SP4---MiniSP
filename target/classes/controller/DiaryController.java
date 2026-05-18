@@ -13,11 +13,6 @@ import java.time.LocalDate;
 
         public DiaryController() {}
 
-        // Køres når brugeren klikker Tilføj Note
-        public void handleAddNote(LocalDate date, String title, String content) {
-            handleSave(date, title, content);
-        }
-
         // Gemmer en dagbogsnote i databasen
         public void handleSave(LocalDate date, String title, String content) {
             Connection connection = DatabaseConnection.getConnection();

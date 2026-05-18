@@ -33,11 +33,6 @@ import java.time.LocalDate;
             return name;
         }
 
-        // Hent patientens fødselsdato
-        public LocalDate getDateOfBirth() {
-            return dateOfBirth;
-        }
-
         // Hent patientens diagnose
         public String getDiagnosis() {
             return diagnosis;

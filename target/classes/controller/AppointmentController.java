@@ -12,12 +12,7 @@ import java.util.ArrayList;
     // AppointmentController håndterer oprettelse og hentning af aftaler
     public class AppointmentController {
 
-        // Køres når brugeren klikker Tilføj Aftale
-        public void handleAddAppointment(LocalDate date, String type, String location) {
-            handleSave(date, type, location);
-        }
-
-        // Markerer en aftale som gennemført i databasen
+        //TODO - Fremtidig feature - Markerer en aftale som gennemført i databasen
         public void handleMarkCompleted(int appointmentId) {
             Connection connection = DatabaseConnection.getConnection();
 

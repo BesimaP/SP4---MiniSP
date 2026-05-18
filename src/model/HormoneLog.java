@@ -33,9 +33,4 @@ import java.time.LocalDate;
         public double getValue() {
             return value;
         }
-
-        // Hent enheden for målingen
-        public String getUnit() {
-            return unit;
-        }
     }

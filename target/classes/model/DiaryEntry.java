@@ -27,9 +27,4 @@ import java.time.LocalDate;
         public String getTitle() {
             return title;
         }
-
-        // Hent indholdet af noten
-        public String getContent() {
-            return content;
-        }
     }

@@ -27,9 +27,4 @@ import java.time.LocalDate;
         public AppointmentType getType() {
             return type;
         }
-
-        // Hent stedet for aftalen
-        public String getLocation() {
-            return location;
-        }
     }

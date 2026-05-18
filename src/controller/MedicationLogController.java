@@ -10,12 +10,6 @@ import java.time.LocalDate;
     // MedicationLogController håndterer tilføjelse og gemning af medicinindtastninger
     public class MedicationLogController {
 
-        // Køres når brugeren klikker Tilføj Medicin
-        // Videresender til handleSave med de samme parametre
-        public void handleAddMedication(LocalDate date, String medication, String dose, boolean taken) {
-            handleSave(date, medication, dose, taken);
-        }
-
         // Gemmer en medicinindtastning i databasen
         public void handleSave(LocalDate date, String medication, String dose, boolean taken) {
 
