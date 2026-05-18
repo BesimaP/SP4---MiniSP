@@ -37,7 +37,7 @@ public class DashboardView {
             reminderStage.setTitle("Reminder");
 
             // Titel med kalender ikon
-            Label titleLabel = new Label("📅  Upcoming appointments");
+            Label titleLabel = new Label("Upcoming appointments");
             titleLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;");
 
             // Separator under titlen
