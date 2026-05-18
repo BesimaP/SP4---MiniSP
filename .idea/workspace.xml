@@ -4,68 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="enum klasserne med kommentar nu">
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="view klasserne ned kommentar og readme opdateret">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Klassediagram3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/data/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/DiaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DiaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/HormoneLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/HormoneLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/JourneyTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/JourneyTypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ManageProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ManageProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/MedicationLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MedicationLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/NewRoundController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/NewRoundController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/RoundHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/RoundHistoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/StartSystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/StartSystemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/TimelineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/TimelineController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/AppointmentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AppointmentView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DashboardView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/DiaryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DiaryView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/EndRoundView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/EndRoundView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/HormoneLogView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HormoneLogView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/JourneyTypeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/JourneyTypeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/MedicationLogView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MedicationLogView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/NewRoundView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/NewRoundView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ProfileView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ProfileView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/RoundHistoryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RoundHistoryView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/StartSystemView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/StartSystemView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/TimelineView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TimelineView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/AppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/DiaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/DiaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/HormoneLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/HormoneLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/JourneyTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/JourneyTypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ManageProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ManageProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/MedicationLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MedicationLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/NewRoundController.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/NewRoundController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/RoundHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RoundHistoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/StartSystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/StartSystemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/TimelineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/TimelineController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Session.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/AppointmentView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/AppointmentView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/AppointmentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/AppointmentView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/DashboardView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/DashboardView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/DashboardView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/DiaryView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/DiaryView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/DiaryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/DiaryView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/EndRoundView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/EndRoundView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/EndRoundView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/EndRoundView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/HormoneLogView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HormoneLogView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/HormoneLogView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/HormoneLogView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/JourneyTypeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/JourneyTypeView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/JourneyTypeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/JourneyTypeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/MedicationLogView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MedicationLogView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/NewRoundView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/NewRoundView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/NewRoundView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/NewRoundView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/RoundHistoryView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/RoundHistoryView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/RoundHistoryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/RoundHistoryView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/StartSystemView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/StartSystemView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/StartSystemView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/StartSystemView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/TimelineView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/TimelineView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/TimelineView.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/TimelineView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,23 +197,7 @@
       <workItem from="1778698310724" duration="2563000" />
       <workItem from="1778740763654" duration="4222000" />
       <workItem from="1778756306997" duration="309000" />
-      <workItem from="1778757236099" duration="19892000" />
-    </task>
-    <task id="LOCAL-00058" summary="rettelse af appointment og hisotry design">
-      <option name="closed" value="true" />
-      <created>1778743403356</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1778743403356</updated>
-    </task>
-    <task id="LOCAL-00059" summary="rettelse af appointment og hisotry design">
-      <option name="closed" value="true" />
-      <created>1778743923469</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1778743923469</updated>
+      <workItem from="1778757236099" duration="23868000" />
     </task>
     <task id="LOCAL-00060" summary="rettelse i dahsboard med statisk kortene øverst design">
       <option name="closed" value="true" />
@@ -651,14 +575,29 @@
       <option name="project" value="LOCAL" />
       <updated>1778949210482</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="view klasserne ned kommentar og readme opdateret">
+      <option name="closed" value="true" />
+      <created>1778951435992</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1778951435992</updated>
+    </task>
+    <task id="LOCAL-00108" summary="view klasserne ned kommentar og readme opdateret">
+      <option name="closed" value="true" />
+      <created>1778951444130</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1778951444130</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="checkupcomingappointments indsat" />
     <MESSAGE value="dashboard nu med logoutbutton&#10;hormonlogview nu med validering&#10;HormoneLogView ubrugt datefield fjernet" />
     <MESSAGE value="stave fejl" />
     <MESSAGE value="merge med style og DET VIRKER" />
@@ -683,6 +622,7 @@
     <MESSAGE value="skarpere billede af hjertet" />
     <MESSAGE value="controller klasserne med kommentar nu" />
     <MESSAGE value="enum klasserne med kommentar nu" />
-    <option name="LAST_COMMIT_MESSAGE" value="enum klasserne med kommentar nu" />
+    <MESSAGE value="view klasserne ned kommentar og readme opdateret" />
+    <option name="LAST_COMMIT_MESSAGE" value="view klasserne ned kommentar og readme opdateret" />
   </component>
 </project>
