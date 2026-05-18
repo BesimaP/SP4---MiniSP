@@ -10,6 +10,9 @@ package model;
         // static betyder at den deles på tværs af hele programmet
         private static Patient currentPatient;
 
+        // Husker om påmindelsen allerede er vist i denne session
+        private static boolean reminderShown = false;
+
         // Gemmer id på det forløb patienten har valgt
         // Bruges af alle controllers til at hente og gemme data til det rigtige forløb
         private static int currentJourneyId;
@@ -32,5 +35,13 @@ package model;
         // Hent det aktive journey_id — bruges i alle controllers til database-kald
         public static int getCurrentJourneyId() {
             return currentJourneyId;
+        }
+
+        public static boolean isReminderShown() {
+            return reminderShown;
+        }
+
+        public static void setReminderShown(boolean shown) {
+            reminderShown = shown;
         }
     }

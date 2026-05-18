@@ -4,31 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="view klasserne ned kommentar og readme opdateret">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/DiaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DiaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/HormoneLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/HormoneLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/MedicationLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MedicationLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/DiaryEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DiaryEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/FertilityJourney.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/FertilityJourney.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/HormoneLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/HormoneLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/MedicationLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MedicationLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/AppointmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/AppointmentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/AppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/DiaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/DiaryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/DiaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/DiaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/HormoneLogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/HormoneLogController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/HormoneLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/HormoneLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Appointment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Appointment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/DiaryEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/DiaryEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/FertilityJourney.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/FertilityJourney.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/HormoneLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/HormoneLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/MedicationLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/MedicationLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Patient.java" afterDir="false" />
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="fjernet udbrugte metoder">
+      <change beforePath="$PROJECT_DIR$/src/model/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DashboardView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,23 +198,7 @@
       <workItem from="1778698310724" duration="2563000" />
       <workItem from="1778740763654" duration="4222000" />
       <workItem from="1778756306997" duration="309000" />
-      <workItem from="1778757236099" duration="26334000" />
-    </task>
-    <task id="LOCAL-00062" summary="rettelse i dahsboard med statisk kortene øverst design">
-      <option name="closed" value="true" />
-      <created>1778744396584</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1778744396584</updated>
-    </task>
-    <task id="LOCAL-00063" summary="rettelse i dahsboard med statisk kortene øverst design">
-      <option name="closed" value="true" />
-      <created>1778744646842</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1778744646842</updated>
+      <workItem from="1778757236099" duration="26652000" />
     </task>
     <task id="LOCAL-00064" summary="rettelse i dahsboard med statisk kortene øverst design">
       <option name="closed" value="true" />
@@ -614,14 +576,29 @@
       <option name="project" value="LOCAL" />
       <updated>1779094994403</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="fjernet udbrugte metoder">
+      <option name="closed" value="true" />
+      <created>1779095679055</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1779095679055</updated>
+    </task>
+    <task id="LOCAL-00112" summary="fjernet udbrugte metoder">
+      <option name="closed" value="true" />
+      <created>1779095683510</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1779095683510</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dashboard nu med logoutbutton&#10;hormonlogview nu med validering&#10;HormoneLogView ubrugt datefield fjernet" />
     <MESSAGE value="stave fejl" />
     <MESSAGE value="merge med style og DET VIRKER" />
     <MESSAGE value="rettelse af appointment og hisotry design" />
@@ -646,6 +623,7 @@
     <MESSAGE value="controller klasserne med kommentar nu" />
     <MESSAGE value="enum klasserne med kommentar nu" />
     <MESSAGE value="view klasserne ned kommentar og readme opdateret" />
-    <option name="LAST_COMMIT_MESSAGE" value="view klasserne ned kommentar og readme opdateret" />
+    <MESSAGE value="fjernet udbrugte metoder" />
+    <option name="LAST_COMMIT_MESSAGE" value="fjernet udbrugte metoder" />
   </component>
 </project>

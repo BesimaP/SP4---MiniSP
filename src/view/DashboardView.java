@@ -28,16 +28,19 @@ public class DashboardView {
         Session.setCurrentPatient(patient);
 
         // Tjek om patienten har kommende aftaler og vis en pæn popup
+        // isReminderShown() sikrer at popup kun vises én gang per login
         AppointmentController appointmentController = new AppointmentController();
         ArrayList<String> appointments = appointmentController.getUpcomingAppointments();
 
-        if (!appointments.isEmpty()) {
+        if (!appointments.isEmpty() && !Session.isReminderShown()) {
+            Session.setReminderShown(true); // husk at popup er vist
+
             // Opret et nyt vindue til påmindelsen
             Stage reminderStage = new Stage();
             reminderStage.setTitle("Reminder");
 
-            // Titel med kalender ikon
-            Label titleLabel = new Label("Upcoming appointments");
+            // Titel
+            Label titleLabel = new Label("📅  Upcoming appointments");
             titleLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;");
 
             // Separator under titlen
@@ -283,6 +286,7 @@ public class DashboardView {
                     // Ryd Session og gå tilbage til login
                     Session.setCurrentPatient(null);
                     Session.setCurrentJourneyId(0);
+                    Session.setReminderShown(false); // nulstil så næste login viser popup igen
                     new StartSystemView().show(stage);
                 }
             });
