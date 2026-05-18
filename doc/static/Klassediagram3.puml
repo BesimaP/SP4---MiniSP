@@ -28,10 +28,13 @@ package "model" {
   class Session {
     - Patient currentPatient
     - int currentJourneyId
+    - boolean reminderShown
     + void setCurrentPatient(Patient patient)
     + Patient getCurrentPatient()
     + void setCurrentJourneyId(int journeyId)
     + int getCurrentJourneyId()
+    + boolean isReminderShown()
+    + void setReminderShown(boolean shown)
   }
 
   class FertilityJourney {
@@ -200,6 +203,7 @@ package "controller" {
   class HormoneLogController {
     + void handleAddValue()
     + void handleSave()
+    + String getLatestHormoneValue()
   }
 
   class MedicationLogController {
@@ -214,6 +218,7 @@ package "controller" {
   class DiaryController {
     + void handleAddNote()
     + void handleSave()
+    + int countDiaryEntries()
   }
 
   class RoundHistoryController {
@@ -238,6 +243,9 @@ DiaryView --> DiaryController
 RoundHistoryView --> RoundHistoryController
 EndRoundView --> EndRoundController
 DashboardView --> AppointmentController
+DashboardView --> HormoneLogController
+DashboardView --> DiaryController
+DashboardView --> RoundHistoryController
 
 ' CONTROLLER -> MODEL
 StartSystemController --> Patient
