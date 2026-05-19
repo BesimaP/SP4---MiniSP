@@ -13,6 +13,7 @@ class Appointment {
   date
   type
   location
+  completed
 }
 
 class MedicationLog {
@@ -119,7 +120,7 @@ Journey *-- Event : has a
 Journey *-- Appointment : has a
 Journey *-- MedicationLog : has a
 Journey *-- DiaryEntry : has a
-FertilityJourney *-- HormoneLog : has a
+Journey *-- HormoneLog : has a
 
 ' Is a
 Journey -- Status : is a

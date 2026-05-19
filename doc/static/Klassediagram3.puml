@@ -19,22 +19,21 @@ package "model" {
     - String password
     + int getId()
     + String getName()
-    + LocalDate getDateOfBirth()
     + String getDiagnosis()
     + String getUsername()
     + String getPassword()
   }
 
   class Session {
-    - Patient currentPatient
-    - int currentJourneyId
-    - boolean reminderShown
-    + void setCurrentPatient(Patient patient)
-    + Patient getCurrentPatient()
-    + void setCurrentJourneyId(int journeyId)
-    + int getCurrentJourneyId()
-    + boolean isReminderShown()
-    + void setReminderShown(boolean shown)
+    - {static} Patient currentPatient
+    - {static} int currentJourneyId
+    - {static} boolean reminderShown
+    + {static} void setCurrentPatient(Patient patient)
+    + {static} Patient getCurrentPatient()
+    + {static} void setCurrentJourneyId(int journeyId)
+    + {static} int getCurrentJourneyId()
+    + {static} boolean isReminderShown()
+    + {static} void setReminderShown(boolean shown)
   }
 
   class FertilityJourney {
@@ -44,8 +43,6 @@ package "model" {
     - Result result
     + void setResult(Result result)
     + int getRoundNumber()
-    + int getEggsRetrieved()
-    + int getEggsFertilised()
     + Result getResult()
   }
 
@@ -86,9 +83,9 @@ package "model" {
     - LocalDate date
     - AppointmentType type
     - String location
+    - boolean completed
     + LocalDate getDate()
     + AppointmentType getType()
-    + String getLocation()
   }
 
   class MedicationLog {
@@ -96,11 +93,8 @@ package "model" {
     - String medication
     - String dose
     - boolean taken
-    + void setTaken(boolean taken)
     + LocalDate getDate()
     + String getMedication()
-    + String getDose()
-    + boolean isTaken()
   }
 
   class HormoneLog {
@@ -111,7 +105,6 @@ package "model" {
     + LocalDate getDate()
     + String getHormone()
     + double getValue()
-    + String getUnit()
   }
 
   class DiaryEntry {
@@ -120,7 +113,6 @@ package "model" {
     - String content
     + LocalDate getDate()
     + String getTitle()
-    + String getContent()
   }
 }
 
@@ -194,20 +186,17 @@ package "controller" {
   }
 
   class AppointmentController {
-    + void handleAddAppointment()
     + void handleMarkCompleted()
     + void handleSave()
     + ArrayList<String> getUpcomingAppointments()
   }
 
   class HormoneLogController {
-    + void handleAddValue()
     + void handleSave()
     + String getLatestHormoneValue()
   }
 
   class MedicationLogController {
-    + void handleAddMedication()
     + void handleSave()
   }
 
@@ -216,7 +205,6 @@ package "controller" {
   }
 
   class DiaryController {
-    + void handleAddNote()
     + void handleSave()
     + int countDiaryEntries()
   }
@@ -283,7 +271,7 @@ Journey *-- Event
 Journey *-- Appointment
 Journey *-- MedicationLog
 Journey *-- DiaryEntry
-FertilityJourney *-- HormoneLog
+Journey *-- HormoneLog
 
 ' ENUMS
 Journey -- Status
