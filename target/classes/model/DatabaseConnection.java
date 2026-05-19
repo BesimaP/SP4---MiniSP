@@ -5,8 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-// DatabaseConnection håndterer forbindelsen til SQLite-databasen simpl.db
-    // Klassen bruger et singleton-mønster — det betyder at der kun oprettes
+    // DatabaseConnection håndterer forbindelsen til SQLite-databasen simpl.db
     // én forbindelse til databasen, som deles af alle controllers i systemet.
     // Forbindelsen oprettes første gang getConnection() kaldes og genbruges derefter.
     public class DatabaseConnection {

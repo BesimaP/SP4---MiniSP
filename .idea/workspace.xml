@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="rettelser i usecase">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/DatabaseConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/DatabaseConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,14 +206,8 @@
       <workItem from="1779096665882" duration="1002000" />
       <workItem from="1779097677957" duration="1531000" />
       <workItem from="1779175514927" duration="3314000" />
-    </task>
-    <task id="LOCAL-00071" summary="journeytypeview design merget">
-      <option name="closed" value="true" />
-      <created>1778754897533</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1778754897533</updated>
+      <workItem from="1779184368985" duration="1621000" />
+      <workItem from="1779214484754" duration="985000" />
     </task>
     <task id="LOCAL-00072" summary="hormonview med design">
       <option name="closed" value="true" />
@@ -596,7 +593,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779183740679</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="rettelser i usecase">
+      <option name="closed" value="true" />
+      <created>1779184418897</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1779184418898</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
