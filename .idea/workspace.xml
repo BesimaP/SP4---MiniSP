@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="klassediagram opdateret">
+    <list default="true" id="aa709f8e-400b-4a95-9241-6a0baf880919" name="Changes" comment="rettelser i usecase">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/data/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/static/Domænemodel1.puml" beforeDir="false" afterPath="$PROJECT_DIR$/doc/static/Domænemodel1.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/static/Klassediagram3.puml" beforeDir="false" afterPath="$PROJECT_DIR$/doc/static/Klassediagram3.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/DatabaseInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DatabaseInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/DatabaseConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/DatabaseConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,23 +202,7 @@
       <workItem from="1778757236099" duration="26985000" />
       <workItem from="1779096665882" duration="1002000" />
       <workItem from="1779097677957" duration="1531000" />
-      <workItem from="1779175514927" duration="1930000" />
-    </task>
-    <task id="LOCAL-00069" summary="nu med radioknapper / toggleBUtton">
-      <option name="closed" value="true" />
-      <created>1778747099116</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1778747099116</updated>
-    </task>
-    <task id="LOCAL-00070" summary="journeytypeview design merget">
-      <option name="closed" value="true" />
-      <created>1778749268787</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1778749268787</updated>
+      <workItem from="1779175514927" duration="3314000" />
     </task>
     <task id="LOCAL-00071" summary="journeytypeview design merget">
       <option name="closed" value="true" />
@@ -603,15 +580,29 @@
       <option name="project" value="LOCAL" />
       <updated>1779099209996</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="klassediagram opdateret, domæne også">
+      <option name="closed" value="true" />
+      <created>1779182517773</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1779182517773</updated>
+    </task>
+    <task id="LOCAL-00119" summary="rettelser i usecase">
+      <option name="closed" value="true" />
+      <created>1779183740679</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1779183740679</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="rettelse af appointment og hisotry design" />
-    <MESSAGE value="rettelse i dahsboard med statisk kortene øverst design" />
     <MESSAGE value="rettelser i hormoncontroller" />
     <MESSAGE value="joruneyview design" />
     <MESSAGE value="nu med radioknapper / toggleBUtton" />
@@ -635,6 +626,8 @@
     <MESSAGE value="fjernet udbrugte metoder" />
     <MESSAGE value="dashboardview reminderpopup" />
     <MESSAGE value="klassediagram opdateret" />
-    <option name="LAST_COMMIT_MESSAGE" value="klassediagram opdateret" />
+    <MESSAGE value="klassediagram opdateret, domæne også" />
+    <MESSAGE value="rettelser i usecase" />
+    <option name="LAST_COMMIT_MESSAGE" value="rettelser i usecase" />
   </component>
 </project>

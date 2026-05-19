@@ -23,9 +23,4 @@ else Events found
   v --> u : Shows all events chronologically
 end
 
-u -> v : Clicks on an event
-v -> c : handleSelectEvent()
-c --> v : showDetails()
-v --> u : Shows details for the event
-
 @enduml
