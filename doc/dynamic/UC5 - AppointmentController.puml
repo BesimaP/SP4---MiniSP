@@ -27,16 +27,6 @@ v -> c : handleSave()
 alt Fields are empty
   c --> v : showError()
   v --> u : "One or more required fields are empty"
-else Date is in the past
-  c --> v : showWarning()
-  v --> u : "Date is in the past — do you want to save anyway?"
-  u -> v : Confirms
-  v -> c : handleConfirm()
-  c -> m : new Appointment(date, type, location)
-  c -> db : INSERT INTO appointment VALUES (?, ?, ?, ?)
-  db --> c : OK
-  c --> v : showUpdatedList()
-  v --> u : List updated
 else All OK
   c -> m : new Appointment(date, type, location)
   c -> db : INSERT INTO appointment VALUES (?, ?, ?, ?)

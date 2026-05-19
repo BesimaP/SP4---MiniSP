@@ -49,8 +49,8 @@ Regnvejrsdag:
 ## UC5: Appointment
 Systemet viser en skærm med kommende aftaler i en kalendervisning. 
 Brugeren klikker Tilføj Aftale og udfylder dato, type (scanning, konsultation mv.) og sted. 
-Brugeren klikker Gem. Systemet gemmer aftalen i databasen og opdaterer listen. 
-Brugeren kan markere en aftale som gennemført samt redigere eller slette en aftale. 
+Brugeren klikker Gem. Systemet gemmer aftalen i databasen og opdaterer listen.
+Brugeren kan markere en aftale som gennemført.
 Dashboardet viser kommende vigtige datoer.
 Systemet gemmer en hændelse i event tabellen.
 
@@ -69,14 +69,14 @@ Regnvejrsdag:
 
 
 ## UC7: MedicationLog
-Systemet viser en skærm med tidligere medicinindtastninger for den aktive runde. 
-Brugeren klikker Tilføj Medicin og udfylder navn, dosis og tidspunkt. 
-Brugeren kan registrere om medicin er taget samt redigere eller afslutte medicinering. 
+Systemet viser en skærm med tidligere medicinindtastninger for den aktive runde.
+Brugeren klikker Tilføj Medicin og udfylder navn, dosis og tidspunkt.
 Brugeren klikker Gem. Systemet gemmer medicinindtastningen i databasen og opdaterer listen.
 Systemet gemmer en hændelse i event tabellen.
 
 Regnvejrsdag:
 - Et eller flere påkrævede felter er tomme: Systemet viser en fejlbesked og gemmer ikke.
+
 
 ## UC8: Timeline
 Systemet viser en skærm med alle hændelser for den aktive runde i kronologisk rækkefølge. 
@@ -87,7 +87,7 @@ Regnvejrsdag:
 
 
 ## UC9: Diary
-Systemet viser en skærm til dagbogsnote med dato, humør, titel og indhold.
+Systemet viser en skærm til dagbogsnote med dato, titel og indhold.
 Brugeren udfylder felterne og klikker Save.
 Systemet gemmer noten i databasen.
 Systemet gemmer en hændelse i event tabellen.
@@ -115,3 +115,11 @@ Systemet gemmer en hændelse i event tabellen.
 Regnvejrsdag:
 - Intet resultat er valgt: Systemet viser en fejlbesked og afslutter ikke runden.
 
+
+## Fremtidige features
+
+Følgende features er identificeret men ikke implementeret i denne version:
+- Humør-felt på dagbogsnoter (UC9) — for at give patienten et nemt overblik over deres følelsesmæssige forløb
+- Redigér og slet aftaler (UC5) — for at give patienten fuld kontrol over deres kalender
+- Markér medicin som taget (UC7) — så medicinloggen kan bruges som daglig tjekliste
+- Indtastning af eggsRetrieved og eggsFertilised ved End Round (UC11) — så rundehistorikken viser fuldstændige data

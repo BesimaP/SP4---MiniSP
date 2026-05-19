@@ -1,45 +1,26 @@
 @startuml
 !pragma layout smetana
 
-title UC7: MedicationLog
+title UC8: Timeline
 
 actor "Patient" as u
-participant "MedicationLogView" as v
-participant "MedicationLogController" as c
-participant "MedicationLog" as m
+participant "TimelineView" as v
+participant "TimelineController" as c
+participant "Event" as m
 database "SQLite" as db
 
-u -> v : Opens medication screen
+u -> v : Opens timeline screen
 v -> c : show(stage)
-c -> db : SELECT * FROM medication_log WHERE journey_id = ?
+c -> db : SELECT * FROM event WHERE journey_id = ? ORDER BY date ASC
 db --> c : ResultSet
-c --> v : showMedicationList()
-v --> u : Shows previous medication entries
 
-u -> v : Clicks Add Medication
-c --> v : showCreateMedicationScreen()
-v --> u : Shows screen with fields
-
-u -> v : Fills in name, dose and date
-u -> v : Clicks Save
-v -> c : handleSave()
-
-alt Fields are empty
-  c --> v : showError()
-  v --> u : "One or more required fields are empty"
-else All OK
-  c -> m : new MedicationLog(date, medication, dose, taken)
-  c -> db : INSERT INTO medication_log VALUES (?, ?, ?, ?, ?)
-  db --> c : OK
-  c --> v : showUpdatedList()
-  v --> u : List updated
+alt No events found
+  c --> v : showEmptyMessage()
+  v --> u : "Timeline is empty"
+else Events found
+  c -> m : new Event(date, type, description)
+  c --> v : showEvents()
+  v --> u : Shows all events chronologically
 end
-
-u -> v : Marks medication as taken
-v -> c : handleMarkTaken()
-c -> db : UPDATE medication_log SET taken = 1 WHERE id = ?
-db --> c : OK
-c --> v : showUpdatedList()
-v --> u : Medication marked as taken
 
 @enduml
